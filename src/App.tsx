@@ -1,24 +1,27 @@
-
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Agents from './components/Agents'
-import Integration from './components/Integration'
-import Results from './components/Results'
-import Footer from './components/Footer'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import ProblemCards from './components/ProblemCards';
+import Features from './components/Features';
+import ImpactMetrics from './components/ImpactMetrics';
+import AgentsSection from './components/AgentsSection';
+import Security from './components/Security';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-white selection:text-black font-sans">
+    <div className="min-h-screen bg-brand-light font-sans text-text-main selection:bg-brand-green/20">
       <Navbar />
       <main>
         <Hero />
-        <Agents />
-        <Integration />
-        <Results />
+        <ProblemCards />
+        <Features />
+        <ImpactMetrics />
+        <AgentsSection />
+        <Security />
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,11 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0a0a0a;
-  --color-foreground: #ededed;
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+
+  --color-brand-green: #0b4f3b;
+  --color-brand-green-hover: #083c2d;
+  --color-brand-light: #fcfcfc;
+  --color-brand-gray: #f5f5f5;
+  --color-brand-border: #e5e5e5;
+  --color-text-main: #111111;
+  --color-text-muted: #666666;
 }
 
 body {
-  @apply bg-background text-foreground font-sans;
+  background-color: var(--color-brand-light);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
 }

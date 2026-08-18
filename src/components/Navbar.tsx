@@ -1,35 +1,38 @@
-;
-import { Menu } from 'lucide-react';
+import { ArrowRight, Menu } from 'lucide-react';
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img src="/1.png" alt="mnnsor mark" className="w-8 h-8 opacity-80" />
-          <img src="/2.png" alt="mnnsor logo" className="h-4 opacity-80 hidden sm:block" />
-        </div>
+    <nav className="fixed w-full z-50 bg-[#fcfcfc]/80 backdrop-blur-md border-b border-brand-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex-shrink-0 flex items-center gap-2">
+            <div className="w-8 h-8 bg-brand-green rounded-md flex items-center justify-center">
+              <span className="text-white font-serif italic text-xl leading-none">m</span>
+            </div>
+            <span className="font-semibold text-xl tracking-tight text-text-main">mnnsor</span>
+          </div>
 
-        <div className="hidden md:flex items-center gap-8 text-sm text-foreground/70 font-medium">
-          <a href="#agentes" className="hover:text-white transition-colors">Agentes</a>
-          <a href="#integracion" className="hover:text-white transition-colors">Integración</a>
-          <a href="#resultados" className="hover:text-white transition-colors">Resultados</a>
-        </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#" className="text-sm font-medium text-text-muted hover:text-text-main transition-colors">Plataforma</a>
+            <a href="#agentes" className="text-sm font-medium text-text-muted hover:text-text-main transition-colors">Agentes</a>
+            <a href="#" className="text-sm font-medium text-text-muted hover:text-text-main transition-colors">Soluciones</a>
+            <a href="#" className="text-sm font-medium text-text-muted hover:text-text-main transition-colors">Compañía</a>
+          </div>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="#demo"
-            className="hidden sm:inline-flex items-center justify-center bg-white text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors"
-          >
-            Acceso
-          </a>
-          <button className="md:hidden text-foreground">
-            <Menu className="w-6 h-6" />
-          </button>
+          <div className="hidden md:flex items-center space-x-4">
+            <a href="#" className="text-sm font-medium text-text-main hover:text-text-muted transition-colors">Iniciar sesión</a>
+            <button className="bg-brand-green text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-green-hover transition-colors flex items-center gap-2">
+              Agendar demo <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="md:hidden flex items-center">
+            <button className="text-text-main">
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
         </div>
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
