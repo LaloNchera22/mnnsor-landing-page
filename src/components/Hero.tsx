@@ -18,10 +18,10 @@ export default function Hero() {
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
         <div
           data-reveal
-          className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-line bg-paper/70 px-3.5 py-1.5 backdrop-blur"
+          className="mb-7 inline-flex items-center gap-2.5 rounded-none border border-line bg-paper/70 px-3.5 py-1.5 backdrop-blur"
         >
           <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-pulse-dot absolute inline-flex h-full w-full rounded-full bg-ink" />
+            <span className="animate-pulse-dot absolute inline-flex h-full w-full rounded-none bg-ink" />
           </span>
           <span className="label-mono text-ink">Sistema Autónomo de Obra · v2</span>
         </div>
@@ -29,10 +29,10 @@ export default function Hero() {
         <h1
           data-reveal
           style={{ transitionDelay: '80ms' }}
-          className="mx-auto max-w-3xl font-serif text-[2.9rem] leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-[5.1rem]"
+          className="mx-auto max-w-3xl font-sans text-[2.9rem] leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-[5.1rem]"
         >
           La inteligencia que
-          <br className="hidden sm:block" /> construye <span className="italic">el mañana</span>
+          <br className="hidden sm:block" /> construye <span className="">el mañana</span>
         </h1>
 
         <p
@@ -52,14 +52,14 @@ export default function Hero() {
         >
           <a
             href={CONTACT.demo}
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-6 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
           >
             Agendar demo
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <Link
             to="/plataforma"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel sm:w-auto"
           >
             <Play className="h-4 w-4" /> Ver la plataforma en acción
           </Link>
@@ -100,13 +100,13 @@ function ProductMock() {
   ];
 
   return (
-    <div className="sweep relative overflow-hidden rounded-[22px] border border-line-strong bg-paper shadow-[0_40px_90px_-40px_rgba(0,0,0,0.35)]">
+    <div className="sweep relative overflow-hidden rounded-none border border-line-strong bg-paper shadow-[0_40px_90px_-40px_rgba(0,0,0,0.35)]">
       {/* Chrome */}
       <div className="flex items-center gap-2 border-b border-line bg-panel/60 px-4 py-3">
-        <span className="h-3 w-3 rounded-full border border-line-strong bg-paper" />
-        <span className="h-3 w-3 rounded-full border border-line-strong bg-paper" />
-        <span className="h-3 w-3 rounded-full border border-line-strong bg-paper" />
-        <div className="mx-auto flex items-center gap-2 rounded-md border border-line bg-paper px-3 py-1">
+        <span className="h-3 w-3 rounded-none border border-line-strong bg-paper" />
+        <span className="h-3 w-3 rounded-none border border-line-strong bg-paper" />
+        <span className="h-3 w-3 rounded-none border border-line-strong bg-paper" />
+        <div className="mx-auto flex items-center gap-2 rounded-none border border-line bg-paper px-3 py-1">
           <ShieldCheck className="h-3 w-3 text-muted" />
           <span className="font-mono text-[11px] text-muted">app.mnnsor.io / torre-central</span>
         </div>
@@ -123,7 +123,7 @@ function ProductMock() {
           ].map(({ icon: Icon, label, active }) => (
             <div
               key={label}
-              className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm ${
+              className={`flex items-center gap-2.5 rounded-none px-3 py-2 text-sm ${
                 active ? 'bg-ink text-paper' : 'text-muted'
               }`}
             >
@@ -131,10 +131,10 @@ function ProductMock() {
               {label}
             </div>
           ))}
-          <div className="mt-auto rounded-xl border border-line bg-paper p-3">
+          <div className="mt-auto rounded-none border border-line bg-paper p-3">
             <div className="label-mono mb-1.5 text-muted-soft">Agentes activos</div>
             <div className="flex items-center gap-2 text-sm font-medium text-ink">
-              <span className="animate-pulse-dot h-2 w-2 rounded-full bg-ink" />
+              <span className="animate-pulse-dot h-2 w-2 rounded-none bg-ink" />
               3 en ejecución
             </div>
           </div>
@@ -147,8 +147,8 @@ function ProductMock() {
               <div className="label-mono text-muted-soft">Proyecto</div>
               <div className="text-lg font-semibold text-ink">Torre Central · Fase 2</div>
             </div>
-            <div className="hidden items-center gap-2 rounded-full border border-line bg-panel/50 px-3 py-1 text-xs font-medium text-muted sm:flex">
-              <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-ink" />
+            <div className="hidden items-center gap-2 rounded-none border border-line bg-panel/50 px-3 py-1 text-xs font-medium text-muted sm:flex">
+              <span className="animate-pulse-dot h-1.5 w-1.5 rounded-none bg-ink" />
               Sincronizado hace 40 s
             </div>
           </div>
@@ -156,7 +156,7 @@ function ProductMock() {
           {/* KPIs */}
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {kpis.map((k) => (
-              <div key={k.label} className="rounded-xl border border-line bg-paper-warm/60 p-4">
+              <div key={k.label} className="rounded-none border border-line bg-paper/60 p-4">
                 <div className="mb-2 text-xs font-medium text-muted">{k.label}</div>
                 <div className="text-2xl font-semibold tracking-tight text-ink">{k.value}</div>
                 <div
@@ -164,7 +164,7 @@ function ProductMock() {
                     k.ok ? 'text-muted' : 'text-ink'
                   }`}
                 >
-                  <span className={`h-1.5 w-1.5 rounded-full ${k.ok ? 'bg-muted-soft' : 'bg-ink'}`} />
+                  <span className={`h-1.5 w-1.5 rounded-none ${k.ok ? 'bg-muted-soft' : 'bg-ink'}`} />
                   {k.delta}
                 </div>
               </div>
@@ -172,7 +172,7 @@ function ProductMock() {
           </div>
 
           {/* Schedule */}
-          <div className="mt-4 rounded-xl border border-line bg-paper p-4">
+          <div className="mt-4 rounded-none border border-line bg-paper p-4">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-sm font-semibold text-ink">Ruta crítica · avance por fase</span>
               <span className="label-mono text-muted-soft">Gantt</span>
@@ -181,9 +181,9 @@ function ProductMock() {
               {phases.map((p) => (
                 <div key={p.name} className="grid grid-cols-12 items-center gap-3">
                   <span className="col-span-4 truncate text-xs font-medium text-muted">{p.name}</span>
-                  <div className="col-span-6 h-2 overflow-hidden rounded-full bg-panel-2">
+                  <div className="col-span-6 h-2 overflow-hidden rounded-none bg-panel-2">
                     <div
-                      className="h-full rounded-full bg-ink"
+                      className="h-full rounded-none bg-ink"
                       style={{ width: `${p.pct}%` }}
                     />
                   </div>

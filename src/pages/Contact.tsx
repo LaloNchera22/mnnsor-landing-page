@@ -56,7 +56,7 @@ export default function Contact() {
         title={
           <>
             Hablemos de tu obra,
-            <span className="italic text-muted"> no de un caso genérico.</span>
+            <span className="text-muted"> no de un caso genérico.</span>
           </>
         }
         description={
@@ -81,9 +81,9 @@ export default function Contact() {
                   href={o.href}
                   data-reveal
                   style={{ transitionDelay: `${i * 70}ms` }}
-                  className="group flex flex-col rounded-[22px] border border-line bg-paper-warm/50 p-7 transition-colors hover:bg-paper-warm"
+                  className="group flex flex-col rounded-none border border-line bg-paper/50 p-7 transition-colors hover:bg-paper"
                 >
-                  <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
+                  <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
                     <Icon className="h-5 w-5" />
                   </span>
                   <h2 className="mb-2 text-lg font-semibold tracking-tight text-ink">{o.title}</h2>
@@ -99,7 +99,7 @@ export default function Contact() {
 
           <div
             data-reveal
-            className="mt-10 flex flex-col items-center justify-between gap-4 rounded-[22px] border border-line bg-paper-warm/50 px-7 py-6 sm:flex-row"
+            className="mt-10 flex flex-col items-center justify-between gap-4 rounded-none border border-line bg-paper/50 px-7 py-6 sm:flex-row"
           >
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-ink" />

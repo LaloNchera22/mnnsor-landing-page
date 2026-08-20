@@ -26,7 +26,7 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
       style={{ transitionDelay: `${index * 90}ms` }}
       className="border-t border-white/15 pt-6"
     >
-      <div className="font-serif text-5xl tracking-tight text-paper sm:text-6xl">
+      <div className="font-sans text-5xl tracking-tight text-paper sm:text-6xl">
         {metric.prefix}
         <span ref={ref}>{value}</span>
         {metric.suffix}
@@ -69,7 +69,7 @@ export default function Results() {
         title={
           <>
             Cambia la economía de cada proyecto,
-            <span className="italic text-muted"> no solo el flujo de trabajo.</span>
+            <span className="text-muted"> no solo el flujo de trabajo.</span>
           </>
         }
         description="Los agentes no engrosan tu plantilla de supervisión: la multiplican. Escala más obras con el mismo equipo senior, con decisiones que llegan a tiempo."
@@ -104,7 +104,7 @@ export default function Results() {
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl"
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl"
             >
               Dónde se nota la diferencia.
             </h2>
@@ -118,20 +118,20 @@ export default function Results() {
                   key={s.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="grid grid-cols-1 gap-6 rounded-[26px] border border-line bg-paper-warm/50 p-7 lg:grid-cols-[0.8fr_1fr_1fr] lg:items-center lg:p-9"
+                  className="grid grid-cols-1 gap-6 rounded-none border border-line bg-paper/50 p-7 lg:grid-cols-[0.8fr_1fr_1fr] lg:items-center lg:p-9"
                 >
                   <div>
-                    <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-paper">
+                    <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper">
                       <Icon className="h-5 w-5" />
                     </div>
                     <p className="label-mono text-muted-soft">{s.tag}</p>
                     <h3 className="mt-1 text-lg font-semibold tracking-tight text-ink">{s.title}</h3>
                   </div>
-                  <div className="rounded-2xl border border-line bg-paper p-5">
+                  <div className="rounded-none border border-line bg-paper p-5">
                     <p className="mb-2 label-mono text-muted-soft">Antes</p>
                     <p className="text-sm leading-relaxed text-muted">{s.before}</p>
                   </div>
-                  <div className="rounded-2xl bg-ink p-5 text-paper">
+                  <div className="rounded-none bg-ink p-5 text-paper">
                     <p className="mb-2 label-mono text-white/50">Con mnnsor</p>
                     <p className="text-sm leading-relaxed text-white/85">{s.after}</p>
                   </div>
@@ -143,7 +143,7 @@ export default function Results() {
       </section>
 
       {/* Cómo se mide */}
-      <section className="border-b border-line bg-paper-warm py-24 lg:py-28">
+      <section className="border-b border-line bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div>
@@ -153,7 +153,7 @@ export default function Results() {
               <h2
                 data-reveal
                 style={{ transitionDelay: '80ms' }}
-                className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl"
+                className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl"
               >
                 Empezamos por una línea base tuya.
               </h2>
@@ -167,8 +167,8 @@ export default function Results() {
               ].map((row) => {
                 const Icon = row.icon;
                 return (
-                  <div key={row.k} className="flex items-start gap-4 rounded-2xl border border-line bg-paper p-5">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ink text-paper">
+                  <div key={row.k} className="flex items-start gap-4 rounded-none border border-line bg-paper p-5">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-ink text-paper">
                       <Icon className="h-4.5 w-4.5" />
                     </span>
                     <div>

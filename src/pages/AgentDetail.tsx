@@ -35,7 +35,7 @@ export default function AgentDetail() {
         ]}
         title={
           <span className="inline-flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
-            <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-ink text-paper">
+            <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-none bg-ink text-paper">
               <Icon className="h-7 w-7" />
             </span>
             {agent.name}
@@ -59,16 +59,16 @@ export default function AgentDetail() {
           <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-center">
             <p
               data-reveal
-              className="max-w-2xl font-serif text-2xl leading-[1.35] tracking-tight text-ink sm:text-[1.7rem]"
+              className="max-w-2xl font-sans text-2xl leading-[1.35] tracking-tight text-ink sm:text-[1.7rem]"
             >
               {agent.intro}
             </p>
             <div
               data-reveal
               style={{ transitionDelay: '120ms' }}
-              className="rounded-[26px] border border-line bg-paper-warm/50 p-8"
+              className="rounded-none border border-line bg-paper/50 p-8"
             >
-              <div className="font-serif text-6xl tracking-tight text-ink">{agent.metric.value}</div>
+              <div className="font-sans text-6xl tracking-tight text-ink">{agent.metric.value}</div>
               <p className="mt-3 leading-relaxed text-muted">{agent.metric.label}</p>
               <p className="mt-4 font-mono text-[11px] text-muted-soft">
                 Rango ilustrativo observado en despliegues; los resultados varían por proyecto.
@@ -79,7 +79,7 @@ export default function AgentDetail() {
       </section>
 
       {/* Capacidades vs Límites — el alcance honesto */}
-      <section className="border-b border-line bg-paper-warm py-24 lg:py-28">
+      <section className="border-b border-line bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -88,7 +88,7 @@ export default function AgentDetail() {
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl"
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl"
             >
               Lo que hace —y lo que deliberadamente no hace.
             </h2>
@@ -104,15 +104,15 @@ export default function AgentDetail() {
 
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
             {/* Capacidades */}
-            <div data-reveal className="rounded-[26px] border border-line bg-paper p-7 sm:p-9">
-              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-line bg-paper-warm px-3 py-1.5">
+            <div data-reveal className="rounded-none border border-line bg-paper p-7 sm:p-9">
+              <div className="mb-6 inline-flex items-center gap-2.5 rounded-none border border-line bg-paper px-3 py-1.5">
                 <Check className="h-3.5 w-3.5 text-ink" />
                 <span className="label-mono text-ink">Capacidades</span>
               </div>
               <ul className="space-y-4">
                 {agent.capabilities.map((c) => (
                   <li key={c} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-none bg-ink">
                       <Check className="h-3 w-3 text-paper" />
                     </span>
                     <span className="text-sm leading-relaxed text-ink">{c}</span>
@@ -125,16 +125,16 @@ export default function AgentDetail() {
             <div
               data-reveal
               style={{ transitionDelay: '100ms' }}
-              className="rounded-[26px] border border-line bg-paper p-7 sm:p-9"
+              className="rounded-none border border-line bg-paper p-7 sm:p-9"
             >
-              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-line bg-paper-warm px-3 py-1.5">
+              <div className="mb-6 inline-flex items-center gap-2.5 rounded-none border border-line bg-paper px-3 py-1.5">
                 <X className="h-3.5 w-3.5 text-ink" />
                 <span className="label-mono text-ink">Límites y supervisión</span>
               </div>
               <ul className="space-y-4">
                 {agent.limits.map((l) => (
                   <li key={l} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-line-strong">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-none border border-line-strong">
                       <X className="h-3 w-3 text-muted" />
                     </span>
                     <span className="text-sm leading-relaxed text-muted">{l}</span>
@@ -160,7 +160,7 @@ export default function AgentDetail() {
                     key={inp.label}
                     data-reveal
                     style={{ transitionDelay: `${i * 80}ms` }}
-                    className="rounded-2xl border border-line bg-paper-warm/50 p-5"
+                    className="rounded-none border border-line bg-paper/50 p-5"
                   >
                     <p className="mb-1 text-sm font-semibold text-ink">{inp.label}</p>
                     <p className="text-sm leading-relaxed text-muted">{inp.detail}</p>
@@ -179,9 +179,9 @@ export default function AgentDetail() {
                     key={o}
                     data-reveal
                     style={{ transitionDelay: `${i * 80}ms` }}
-                    className="flex items-start gap-3 rounded-2xl border border-line bg-paper p-5"
+                    className="flex items-start gap-3 rounded-none border border-line bg-paper p-5"
                   >
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-none bg-ink">
                       <ArrowRight className="h-3 w-3 text-paper" />
                     </span>
                     <span className="text-sm leading-relaxed text-ink">{o}</span>
@@ -194,7 +194,7 @@ export default function AgentDetail() {
       </section>
 
       {/* Flujo de trabajo */}
-      <section className="border-b border-line bg-paper-warm py-24 lg:py-28">
+      <section className="border-b border-line bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -203,13 +203,13 @@ export default function AgentDetail() {
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl"
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl"
             >
               Cinco pasos, con un humano en el último.
             </h2>
           </div>
 
-          <ol className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
             {agent.workflow.map((s, i) => (
               <li
                 key={s.title}
@@ -217,7 +217,7 @@ export default function AgentDetail() {
                 style={{ transitionDelay: `${i * 80}ms` }}
                 className="bg-paper p-6"
               >
-                <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink font-mono text-xs font-bold text-paper">
+                <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-none bg-ink font-mono text-xs font-bold text-paper">
                   {i + 1}
                 </span>
                 <h3 className="mb-2 text-sm font-semibold tracking-tight text-ink">{s.title}</h3>
@@ -233,7 +233,7 @@ export default function AgentDetail() {
             {agent.integrations.map((t) => (
               <span
                 key={t}
-                className="rounded-md border border-line bg-paper px-2.5 py-1 font-mono text-[11px] text-muted"
+                className="rounded-none border border-line bg-paper px-2.5 py-1 font-mono text-[11px] text-muted"
               >
                 {t}
               </span>
@@ -257,12 +257,12 @@ export default function AgentDetail() {
                   to={`/agentes/${a.slug}`}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="group rounded-[22px] border border-line bg-paper-warm/50 p-6 transition-colors hover:bg-paper-warm"
+                  className="group rounded-none border border-line bg-paper/50 p-6 transition-colors hover:bg-paper"
                 >
-                  <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-ink text-paper">
+                  <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-none bg-ink text-paper">
                     <OtherIcon className="h-4.5 w-4.5" />
                   </span>
-                  <h3 className="mb-1 font-serif text-xl tracking-tight text-ink">{a.name}</h3>
+                  <h3 className="mb-1 font-sans text-xl tracking-tight text-ink">{a.name}</h3>
                   <p className="text-sm text-muted">{a.discipline}</p>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
                     Ver agente

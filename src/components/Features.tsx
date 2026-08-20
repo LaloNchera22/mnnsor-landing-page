@@ -40,10 +40,10 @@ export default function Features() {
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-[3.25rem]"
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-[3.25rem]"
             >
               Construida para la realidad de la obra,
-              <span className="italic text-muted"> no para el laboratorio.</span>
+              <span className="text-muted"> no para el laboratorio.</span>
             </h2>
             <p
               data-reveal
@@ -57,7 +57,7 @@ export default function Features() {
           </div>
 
           {/* Feature list */}
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
             {features.map((f, idx) => {
               const Icon = f.icon;
               return (
@@ -65,9 +65,9 @@ export default function Features() {
                   key={f.title}
                   data-reveal
                   style={{ transitionDelay: `${idx * 90}ms` }}
-                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper-warm lg:p-8"
+                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
                 >
-                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">
+                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mb-2.5 text-lg font-semibold tracking-tight text-ink">{f.title}</h3>

@@ -54,7 +54,7 @@ export default function PageHeader({ eyebrow, title, description, crumbs, childr
         <h1
           data-reveal
           style={{ transitionDelay: '80ms' }}
-          className="max-w-4xl font-serif text-4xl leading-[1.04] tracking-tight text-ink sm:text-5xl lg:text-6xl"
+          className="max-w-4xl font-sans text-4xl leading-[1.04] tracking-tight text-ink sm:text-5xl lg:text-6xl"
         >
           {title}
         </h1>

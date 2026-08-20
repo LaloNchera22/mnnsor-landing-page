@@ -22,7 +22,7 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
       style={{ transitionDelay: `${index * 90}ms` }}
       className="border-t border-white/15 pt-6"
     >
-      <div className="font-serif text-5xl tracking-tight text-paper sm:text-6xl">
+      <div className="font-sans text-5xl tracking-tight text-paper sm:text-6xl">
         {metric.prefix}
         <span ref={ref}>{value}</span>
         {metric.suffix}
@@ -46,10 +46,10 @@ export default function ImpactMetrics() {
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-serif text-3xl leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl"
+              className="font-sans text-3xl leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl"
             >
               Cambia la economía de cada proyecto,
-              <span className="italic text-white/60"> no solo el flujo de trabajo.</span>
+              <span className="text-white/60"> no solo el flujo de trabajo.</span>
             </h2>
             <p
               data-reveal

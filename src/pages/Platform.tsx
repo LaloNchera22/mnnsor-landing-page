@@ -76,7 +76,7 @@ export default function Platform() {
         title={
           <>
             Un sistema operativo para la obra,
-            <span className="italic text-muted"> no otra herramienta que administrar.</span>
+            <span className="text-muted"> no otra herramienta que administrar.</span>
           </>
         }
         description="mnnsor conecta la documentación que ya generas con una fuerza de trabajo de agentes de IA especializados. Se despliega sobre tu stack actual y opera bajo la supervisión de tu equipo senior."
@@ -87,7 +87,7 @@ export default function Platform() {
           </MailButton>
           <Link
             to="/agentes"
-            className="group inline-flex items-center justify-center gap-2 rounded-full border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel"
+            className="group inline-flex items-center justify-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel"
           >
             Ver los agentes
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -105,13 +105,13 @@ export default function Platform() {
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
               De documentos dispersos a decisiones con evidencia.
             </h2>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
             {pipeline.map((p, i) => {
               const Icon = p.icon;
               return (
@@ -119,10 +119,10 @@ export default function Platform() {
                   key={p.step}
                   data-reveal
                   style={{ transitionDelay: `${i * 90}ms` }}
-                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper-warm lg:p-8"
+                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
                 >
                   <div className="mb-6 flex items-center justify-between">
-                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
                       <Icon className="h-5 w-5" />
                     </div>
                     <span className="font-mono text-xs text-muted-soft">{p.step}</span>
@@ -137,7 +137,7 @@ export default function Platform() {
       </section>
 
       {/* Principios de diseño */}
-      <section className="border-b border-line bg-paper-warm py-24 lg:py-32">
+      <section className="border-b border-line bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-x-16 gap-y-14 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
@@ -147,10 +147,10 @@ export default function Platform() {
               <h2
                 data-reveal
                 style={{ transitionDelay: '80ms' }}
-                className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-[3rem]"
+                className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-[3rem]"
               >
                 Construida para la realidad de la obra,
-                <span className="italic text-muted"> no para el laboratorio.</span>
+                <span className="text-muted"> no para el laboratorio.</span>
               </h2>
               <p
                 data-reveal
@@ -162,7 +162,7 @@ export default function Platform() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
               {principles.map((f, i) => {
                 const Icon = f.icon;
                 return (
@@ -170,9 +170,9 @@ export default function Platform() {
                     key={f.title}
                     data-reveal
                     style={{ transitionDelay: `${i * 90}ms` }}
-                    className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper-warm lg:p-8"
+                    className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
                   >
-                    <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">
+                    <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="mb-2.5 text-lg font-semibold tracking-tight text-ink">{f.title}</h3>
@@ -195,7 +195,7 @@ export default function Platform() {
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
               Activa solo los agentes que tu obra necesita.
             </h2>
@@ -218,15 +218,15 @@ export default function Platform() {
                   to={`/agentes/${a.slug}`}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="group flex flex-col rounded-[22px] border border-line bg-paper-warm/50 p-7 transition-colors hover:bg-paper-warm"
+                  className="group flex flex-col rounded-none border border-line bg-paper/50 p-7 transition-colors hover:bg-paper"
                 >
                   <div className="mb-5 flex items-center justify-between">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-paper">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper">
                       <Icon className="h-5 w-5" />
                     </span>
                     <span className="font-mono text-[11px] text-muted-soft">{a.code}</span>
                   </div>
-                  <h3 className="mb-1.5 font-serif text-2xl tracking-tight text-ink">{a.name}</h3>
+                  <h3 className="mb-1.5 font-sans text-2xl tracking-tight text-ink">{a.name}</h3>
                   <p className="mb-4 label-mono text-muted-soft">{a.discipline}</p>
                   <p className="mb-6 text-sm leading-relaxed text-muted">{a.summary}</p>
                   <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
@@ -241,7 +241,7 @@ export default function Platform() {
       </section>
 
       {/* Despliegue + gobernanza */}
-      <section className="border-b border-line bg-paper-warm py-24 lg:py-32">
+      <section className="border-b border-line bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             <div>
@@ -251,7 +251,7 @@ export default function Platform() {
               <h2
                 data-reveal
                 style={{ transitionDelay: '80ms' }}
-                className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
+                className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
               >
                 Adopción sin fricción, control sin sorpresas.
               </h2>
@@ -279,7 +279,7 @@ export default function Platform() {
             <div
               data-reveal
               style={{ transitionDelay: '160ms' }}
-              className="rounded-[26px] border border-line bg-paper p-7 sm:p-9"
+              className="rounded-none border border-line bg-paper p-7 sm:p-9"
             >
               <div className="mb-6 flex items-center gap-2.5">
                 <ShieldCheck className="h-4 w-4 text-ink" />
@@ -296,9 +296,9 @@ export default function Platform() {
                   return (
                     <div
                       key={row.k}
-                      className="flex items-start gap-4 rounded-xl border border-line bg-paper-warm/50 p-4"
+                      className="flex items-start gap-4 rounded-none border border-line bg-paper/50 p-4"
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line text-ink">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-none border border-line text-ink">
                         <Icon className="h-4 w-4" />
                       </span>
                       <div>

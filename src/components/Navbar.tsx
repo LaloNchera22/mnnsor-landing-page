@@ -47,7 +47,7 @@ export default function Navbar() {
         aria-label="Principal"
         className={`transition-all duration-500 ${
           scrolled || open
-            ? 'border-b border-line bg-paper-warm/85 backdrop-blur-xl'
+            ? 'border-b border-line bg-paper/85 backdrop-blur-xl'
             : 'border-b border-transparent bg-transparent'
         }`}
       >
@@ -89,7 +89,7 @@ export default function Navbar() {
                         : 'invisible -translate-y-1 opacity-0'
                     }`}
                   >
-                    <div className="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_30px_70px_-40px_rgba(0,0,0,0.4)]">
+                    <div className="overflow-hidden rounded-none border border-line bg-paper shadow-[0_30px_70px_-40px_rgba(0,0,0,0.4)]">
                       <div className="grid grid-cols-1 gap-px bg-line sm:grid-cols-2">
                         {AGENTS.map((a) => {
                           const Icon = a.icon;
@@ -97,9 +97,9 @@ export default function Navbar() {
                             <Link
                               key={a.slug}
                               to={`/agentes/${a.slug}`}
-                              className="group flex items-start gap-3 bg-paper p-4 transition-colors hover:bg-paper-warm"
+                              className="group flex items-start gap-3 bg-paper p-4 transition-colors hover:bg-paper"
                             >
-                              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink text-paper">
+                              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-none bg-ink text-paper">
                                 <Icon className="h-4 w-4" />
                               </span>
                               <span>
@@ -114,7 +114,7 @@ export default function Navbar() {
                       </div>
                       <Link
                         to="/agentes"
-                        className="flex items-center justify-between bg-paper-warm px-4 py-3 text-xs font-medium text-ink"
+                        className="flex items-center justify-between bg-paper px-4 py-3 text-xs font-medium text-ink"
                       >
                         Ver todos los agentes y su alcance
                         <ArrowUpRight className="h-3.5 w-3.5" />
@@ -147,7 +147,7 @@ export default function Navbar() {
             </a>
             <a
               href={CONTACT.demo}
-              className="group inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-1.5 rounded-none bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
             >
               Agendar demo
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -167,7 +167,7 @@ export default function Navbar() {
 
         {/* Mobile sheet */}
         <div
-          className={`overflow-hidden border-t border-line bg-paper-warm/95 backdrop-blur-xl transition-[max-height] duration-500 md:hidden ${
+          className={`overflow-hidden border-t border-line bg-paper/95 backdrop-blur-xl transition-[max-height] duration-500 md:hidden ${
             open ? 'max-h-[36rem]' : 'max-h-0'
           }`}
         >
@@ -177,7 +177,7 @@ export default function Navbar() {
                 key={l.to}
                 to={l.to}
                 className={({ isActive }) =>
-                  `rounded-lg px-3 py-2.5 text-base font-medium transition-colors ${
+                  `rounded-none px-3 py-2.5 text-base font-medium transition-colors ${
                     isActive ? 'bg-panel text-ink' : 'text-muted hover:bg-panel hover:text-ink'
                   }`
                 }
@@ -187,7 +187,7 @@ export default function Navbar() {
             ))}
             <a
               href={CONTACT.demo}
-              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full bg-ink px-4 py-3 text-sm font-medium text-paper"
+              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-none bg-ink px-4 py-3 text-sm font-medium text-paper"
             >
               Agendar demo <ArrowUpRight className="h-4 w-4" />
             </a>

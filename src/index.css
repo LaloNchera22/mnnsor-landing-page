@@ -6,14 +6,14 @@
  * ------------------------------------------------------------------ */
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-serif: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
 
   /* Light surfaces — warm neutrals, never a flat clinical white */
   --color-paper: #ffffff;
-  --color-paper-warm: #f7f6f3;
-  --color-panel: #f1f0ec;
-  --color-panel-2: #ebe9e4;
+  --color-paper-warm: #ffffff;
+  --color-panel: #f5f5f5;
+  --color-panel-2: #e5e5e5;
 
   /* Ink scale */
   --color-ink: #0a0a0a;
@@ -25,7 +25,7 @@
   --color-line: #e5e3dd;
   --color-line-strong: #d6d3cc;
 
-  --radius-card: 18px;
+  --radius-card: 0px;
 
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -39,7 +39,7 @@ html {
 }
 
 body {
-  background-color: var(--color-paper-warm);
+  background-color: var(--color-paper);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

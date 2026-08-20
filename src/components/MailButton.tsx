@@ -14,7 +14,7 @@ interface MailButtonProps {
 }
 
 const base =
-  'group inline-flex items-center justify-center gap-2 rounded-full text-base font-medium transition-transform duration-300 hover:-translate-y-0.5';
+  'group inline-flex items-center justify-center gap-2 rounded-none text-base font-medium transition-transform duration-300 hover:-translate-y-0.5';
 
 const variants: Record<Variant, string> = {
   solid: 'bg-ink px-6 py-3.5 text-paper',
