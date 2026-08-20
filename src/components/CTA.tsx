@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import { CONTACT } from '../lib/contact';
 
 export default function CTA() {
   return (
@@ -28,14 +29,14 @@ export default function CTA() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
             <a
-              href="mailto:hola@mnnsor.io"
+              href={CONTACT.demo}
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-paper px-7 py-3.5 text-base font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
             >
               Agendar demo
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
-              href="#plataforma"
+              href={CONTACT.sales}
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-base font-medium text-paper transition-colors duration-300 hover:bg-white/10 sm:w-auto"
             >
               Hablar con ventas
