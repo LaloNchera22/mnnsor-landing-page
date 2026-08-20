@@ -52,7 +52,12 @@ export default function ProblemCards() {
                 style={{ transitionDelay: `${idx * 110}ms` }}
                 className="group relative bg-paper p-8 transition-colors duration-500 hover:bg-panel/50 lg:p-10"
               >
-                <div className="mb-8 flex items-center justify-between">
+                <span className="absolute -top-px -left-px h-2 w-2 border-t border-l border-ink/40 transition-colors group-hover:border-ink z-10" />
+                <span className="absolute -top-px -right-px h-2 w-2 border-t border-r border-ink/40 transition-colors group-hover:border-ink z-10" />
+                <span className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-ink/40 transition-colors group-hover:border-ink z-10" />
+                <span className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-ink/40 transition-colors group-hover:border-ink z-10" />
+
+                <div className="mb-8 flex items-center justify-between relative z-20">
                   <div className="flex h-11 w-11 items-center justify-center rounded-none border border-line bg-paper transition-colors duration-500 group-hover:border-ink group-hover:bg-ink">
                     <Icon className="h-5 w-5 text-ink transition-colors duration-500 group-hover:text-paper" />
                   </div>
