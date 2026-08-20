@@ -1,57 +1,81 @@
-import { MousePointer2, Zap, Shield, Search } from 'lucide-react';
+import { Workflow, Zap, ScanText, GitPullRequestArrow } from 'lucide-react';
+
+const features = [
+  {
+    icon: Workflow,
+    title: 'Lee tu obra tal como es',
+    description:
+      'Planos, catálogos de conceptos y programas existentes se ingieren sin reformatear nada. El sistema se adapta a tu documentación, no al revés.',
+  },
+  {
+    icon: ScanText,
+    title: 'Extracción con criterio',
+    description:
+      'Interpreta datos no estructurados —bitácoras, estimaciones en PDF, correos con contratistas— y los convierte en información accionable con fiabilidad de nivel humano.',
+  },
+  {
+    icon: Zap,
+    title: 'Operativo en días',
+    description:
+      'Sin proyectos de TI de meses. Cargas tu información y los agentes aprenden la estructura del proyecto en horas, listos para reportar desde el primer día.',
+  },
+  {
+    icon: GitPullRequestArrow,
+    title: 'La última palabra es humana',
+    description:
+      'Cada decisión financiera o de ruta crítica pasa por un flujo de aprobación. La IA propone y ejecuta lo tedioso; tu equipo autoriza lo que importa.',
+  },
+];
 
 export default function Features() {
-  const features = [
-    {
-      icon: <MousePointer2 className="w-6 h-6 text-brand-green" />,
-      title: "Integración sin Fricción",
-      description: "El sistema puede leer planos, catálogos de conceptos y programas de obra existentes sin necesidad de cambiar tus herramientas actuales."
-    },
-    {
-      icon: <Zap className="w-6 h-6 text-brand-green" />,
-      title: "Despliegue Instantáneo",
-      description: "Sin implementaciones IT de meses. Sube tu información y los agentes aprenden la estructura de tu proyecto en horas."
-    },
-    {
-      icon: <Search className="w-6 h-6 text-brand-green" />,
-      title: "Extracción Inteligente",
-      description: "Analiza datos no estructurados de bitácoras, estimaciones en PDF y correos con contratistas con fiabilidad humana."
-    },
-    {
-      icon: <Shield className="w-6 h-6 text-brand-green" />,
-      title: "Grado Empresarial",
-      description: "Infraestructura robusta con flujos de aprobación donde un humano siempre tiene la última palabra en decisiones financieras o de ruta crítica."
-    }
-  ];
-
   return (
-    <section className="py-24 bg-brand-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif text-text-main mb-6">
-            La plataforma construida para la <span className="italic text-brand-green">realidad en obra</span>
-          </h2>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto">
-            La construcción no corre sobre APIs modernas. Funciona con planos as-built en PDF, mensajes y estimaciones en Excel. Nuestro sistema está diseñado para dominarlos todos.
-          </p>
-        </div>
+    <section className="border-t border-line bg-paper py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-x-16 gap-y-14 lg:grid-cols-[0.9fr_1.1fr]">
+          {/* Sticky heading */}
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <p data-reveal className="mb-5 label-mono text-muted-soft">
+              La plataforma
+            </p>
+            <h2
+              data-reveal
+              style={{ transitionDelay: '80ms' }}
+              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-[3.25rem]"
+            >
+              Construida para la realidad de la obra,
+              <span className="italic text-muted"> no para el laboratorio.</span>
+            </h2>
+            <p
+              data-reveal
+              style={{ transitionDelay: '160ms' }}
+              className="mt-6 max-w-md leading-relaxed text-muted"
+            >
+              La construcción no corre sobre APIs modernas. Corre sobre PDF,
+              hojas de cálculo y decisiones de campo. mnnsor está diseñado para
+              dominar ese terreno.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-          {features.map((feature, idx) => (
-            <div key={idx} className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
-                  {feature.icon}
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-text-main mb-3">{feature.title}</h3>
-                <p className="text-text-muted leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
+          {/* Feature list */}
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
+            {features.map((f, idx) => {
+              const Icon = f.icon;
+              return (
+                <article
+                  key={f.title}
+                  data-reveal
+                  style={{ transitionDelay: `${idx * 90}ms` }}
+                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper-warm lg:p-8"
+                >
+                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mb-2.5 text-lg font-semibold tracking-tight text-ink">{f.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{f.description}</p>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

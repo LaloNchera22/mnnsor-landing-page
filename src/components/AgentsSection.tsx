@@ -1,141 +1,204 @@
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, Check, CalendarClock, Boxes, AlertTriangle } from 'lucide-react';
 
 export default function AgentsSection() {
   return (
-    <section className="py-24 bg-white border-t border-brand-border" id="agentes">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-text-main mb-6 max-w-2xl">
-            Conoce a tu nueva <span className="italic text-brand-green">fuerza de trabajo digital</span>
+    <section id="agentes" className="border-t border-line bg-paper-warm py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <p data-reveal className="mb-5 label-mono text-muted-soft">
+            Los agentes
+          </p>
+          <h2
+            data-reveal
+            style={{ transitionDelay: '80ms' }}
+            className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
+          >
+            Una fuerza de trabajo digital,
+            <span className="italic text-muted"> especializada por oficio.</span>
           </h2>
-          <p className="text-lg text-text-muted max-w-2xl">
-            Agentes de IA pre-entrenados listos para desplegarse desde el primer día, especializados en los aspectos más tediosos y críticos del ciclo de vida de la construcción.
+          <p
+            data-reveal
+            style={{ transitionDelay: '160ms' }}
+            className="mt-6 leading-relaxed text-muted"
+          >
+            Agentes pre-entrenados que se despliegan desde el primer día en las
+            tareas más críticas —y más tediosas— del ciclo de construcción.
           </p>
         </div>
 
-        <div className="space-y-12">
-          {/* Agent 1 - Cronos */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brand-gray/30 rounded-3xl p-8 lg:p-12 border border-brand-border">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-border text-sm mb-6">
-                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                <span className="font-medium">Planificación</span>
-              </div>
-              <h3 className="text-3xl font-serif text-text-main mb-4">Agente Cronos</h3>
-              <p className="text-text-muted mb-8 leading-relaxed">
-                Sincronización automática de diagramas Gantt y detección proactiva de cuellos de botella en la ruta crítica, comparando el plan contra la realidad en sitio.
-              </p>
+        <div className="mt-16 space-y-6">
+          {/* Cronos */}
+          <AgentRow
+            reversed={false}
+            eyebrow="Planificación"
+            icon={CalendarClock}
+            name="Agente Cronos"
+            code="CRN-01"
+            description="Sincroniza el Gantt con la realidad de campo y anticipa cuellos de botella en la ruta crítica antes de que se conviertan en retrasos."
+            bullets={[
+              'Analiza programas de obra complejos en segundos',
+              'Re-programa dinámicamente ante cada desviación',
+              'Alerta de riesgos en la ruta crítica en tiempo real',
+            ]}
+            cta="Ver capacidades de Cronos"
+            mock={<CronosMock />}
+          />
 
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                  <span className="text-text-main">Analiza programas de obra complejos en segundos</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                  <span className="text-text-main">Ajuste dinámico frente a desviaciones</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                  <span className="text-text-main">Alerta de riesgos en la ruta crítica</span>
-                </li>
-              </ul>
-
-              <button className="text-brand-green font-medium flex items-center gap-2 hover:text-brand-green-hover transition-colors">
-                Ver capacidades de Cronos <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div className="bg-white rounded-2xl border border-brand-border shadow-sm p-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl"></div>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-brand-border pb-4">
-                  <div className="font-medium text-sm">Estado de Cronograma</div>
-                  <div className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-md font-medium">Re-calculando</div>
-                </div>
-
-                {['Cimentación', 'Estructura Metálica', 'Instalaciones'].map((fase, i) => (
-                  <div key={i} className="flex items-center justify-between p-3 bg-brand-gray/50 rounded-lg border border-brand-border">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white rounded-md border border-brand-border flex items-center justify-center text-xs font-bold text-text-muted">
-                        {fase.substring(0, 3).toUpperCase()}
-                      </div>
-                      <span className="text-sm font-medium">{fase}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-green-500' : i === 1 ? 'bg-yellow-500 animate-pulse' : 'bg-brand-border'}`}></div>
-                      <span className="text-xs text-text-muted">
-                        {i === 0 ? 'Completado' : i === 1 ? 'Retraso de 3 días detectado' : 'Pendiente'}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Agent 2 - Cubic */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brand-gray/30 rounded-3xl p-8 lg:p-12 border border-brand-border">
-            <div className="order-2 lg:order-1 bg-white rounded-2xl border border-brand-border shadow-sm p-6 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl"></div>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-brand-border pb-4">
-                  <div className="font-medium text-sm">Análisis de Materiales</div>
-                  <div className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-md font-medium">Actualizado</div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="p-3 border border-red-200 bg-red-50 rounded-lg">
-                    <div className="flex justify-between items-start mb-2">
-                      <span className="text-xs font-semibold text-red-700 uppercase tracking-wider">Alerta de Desviación</span>
-                      <span className="text-xs text-red-500">Acero de Refuerzo</span>
-                    </div>
-                    <p className="text-sm text-red-900">Cantidades BIM: 120 Ton. Estimado real en avance: 128 Ton.</p>
-                  </div>
-
-                  <div className="p-3 border border-green-200 bg-green-50 rounded-lg">
-                    <div className="flex justify-between items-start mb-2">
-                      <span className="text-xs font-semibold text-green-700 uppercase tracking-wider">Validado</span>
-                      <span className="text-xs text-green-500">Concreto Premezclado</span>
-                    </div>
-                    <p className="text-sm text-green-900">Volumen extraído del modelo coincide con órdenes de compra.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-border text-sm mb-6">
-                <span className="w-2 h-2 rounded-full bg-purple-500"></span>
-                <span className="font-medium">Materiales</span>
-              </div>
-              <h3 className="text-3xl font-serif text-text-main mb-4">Agente Cubic</h3>
-              <p className="text-text-muted mb-8 leading-relaxed">
-                Extracción precisa de cantidades desde archivos BIM y gestión automatizada de órdenes de compra, controlando el presupuesto contra el catálogo de conceptos.
-              </p>
-
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                  <span className="text-text-main">Extracción automatizada de modelos BIM</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                  <span className="text-text-main">Conciliación de estimaciones vs reales</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                  <span className="text-text-main">Prevención de sobrecostos por desperdicios</span>
-                </li>
-              </ul>
-
-              <button className="text-brand-green font-medium flex items-center gap-2 hover:text-brand-green-hover transition-colors">
-                Descubrir Cubic <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
+          {/* Cubic */}
+          <AgentRow
+            reversed
+            eyebrow="Materiales"
+            icon={Boxes}
+            name="Agente Cubic"
+            code="CBC-02"
+            description="Extrae cantidades directo del modelo BIM y concilia lo comprado contra lo instalado, cerrando la fuga de margen por desperdicio."
+            bullets={[
+              'Extracción automatizada de cantidades desde IFC/BIM',
+              'Conciliación de estimaciones contra avance real',
+              'Prevención de sobrecostos por desperdicio de material',
+            ]}
+            cta="Descubrir Cubic"
+            mock={<CubicMock />}
+          />
         </div>
       </div>
     </section>
+  );
+}
+
+interface AgentRowProps {
+  reversed: boolean;
+  eyebrow: string;
+  icon: React.ComponentType<{ className?: string }>;
+  name: string;
+  code: string;
+  description: string;
+  bullets: string[];
+  cta: string;
+  mock: React.ReactNode;
+}
+
+function AgentRow({ reversed, eyebrow, icon: Icon, name, code, description, bullets, cta, mock }: AgentRowProps) {
+  return (
+    <div
+      data-reveal
+      className="grid grid-cols-1 items-center gap-10 rounded-[26px] border border-line bg-paper p-6 sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
+    >
+      <div className={reversed ? 'lg:order-2' : ''}>
+        <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-line bg-paper-warm px-3 py-1.5">
+          <Icon className="h-3.5 w-3.5 text-ink" />
+          <span className="label-mono text-ink">{eyebrow}</span>
+          <span className="font-mono text-[11px] text-muted-soft">· {code}</span>
+        </div>
+        <h3 className="mb-4 font-serif text-3xl tracking-tight text-ink">{name}</h3>
+        <p className="mb-7 max-w-md leading-relaxed text-muted">{description}</p>
+        <ul className="mb-8 space-y-3.5">
+          {bullets.map((b) => (
+            <li key={b} className="flex items-start gap-3">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink">
+                <Check className="h-3 w-3 text-paper" />
+              </span>
+              <span className="text-sm text-ink">{b}</span>
+            </li>
+          ))}
+        </ul>
+        <a
+          href="#contacto"
+          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
+        >
+          {cta}
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </a>
+      </div>
+
+      <div className={reversed ? 'lg:order-1' : ''}>{mock}</div>
+    </div>
+  );
+}
+
+function CronosMock() {
+  const rows = [
+    { name: 'Cimentación', state: 'done', note: 'Completado' },
+    { name: 'Estructura metálica', state: 'warn', note: 'Retraso de 3 días' },
+    { name: 'Instalaciones', state: 'idle', note: 'Pendiente' },
+  ];
+  return (
+    <div className="rounded-2xl border border-line bg-paper-warm/50 p-5">
+      <div className="mb-4 flex items-center justify-between border-b border-line pb-4">
+        <span className="text-sm font-semibold text-ink">Estado del cronograma</span>
+        <span className="inline-flex items-center gap-1.5 rounded-md bg-ink px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-paper">
+          <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-paper" />
+          Re-calculando
+        </span>
+      </div>
+      <div className="space-y-2.5">
+        {rows.map((r) => (
+          <div
+            key={r.name}
+            className="flex items-center justify-between rounded-lg border border-line bg-paper px-3 py-3"
+          >
+            <div className="flex items-center gap-3">
+              <span className="flex h-7 w-7 items-center justify-center rounded-md border border-line font-mono text-[10px] font-bold text-muted">
+                {r.name.slice(0, 3).toUpperCase()}
+              </span>
+              <span className="text-sm font-medium text-ink">{r.name}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              {r.state === 'warn' ? (
+                <AlertTriangle className="h-3.5 w-3.5 text-ink" />
+              ) : (
+                <span
+                  className={`h-2 w-2 rounded-full ${
+                    r.state === 'done' ? 'bg-ink' : 'bg-line-strong'
+                  }`}
+                />
+              )}
+              <span className="font-mono text-[11px] text-muted-soft">{r.note}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CubicMock() {
+  return (
+    <div className="rounded-2xl border border-line bg-paper-warm/50 p-5">
+      <div className="mb-4 flex items-center justify-between border-b border-line pb-4">
+        <span className="text-sm font-semibold text-ink">Análisis de materiales</span>
+        <span className="rounded-md border border-line px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted">
+          Actualizado
+        </span>
+      </div>
+      <div className="space-y-3">
+        {/* Deviation — high emphasis: filled ink */}
+        <div className="rounded-lg bg-ink p-4 text-paper">
+          <div className="mb-2 flex items-start justify-between">
+            <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider">
+              <AlertTriangle className="h-3 w-3" /> Desviación
+            </span>
+            <span className="font-mono text-[11px] text-white/60">Acero de refuerzo</span>
+          </div>
+          <p className="text-sm text-white/85">
+            Modelo BIM: <span className="font-medium text-paper">120 t</span> · Real en
+            avance: <span className="font-medium text-paper">128 t</span>{' '}
+            <span className="text-white/60">(+6.7%)</span>
+          </p>
+        </div>
+        {/* Validated — low emphasis: outline */}
+        <div className="rounded-lg border border-line bg-paper p-4">
+          <div className="mb-2 flex items-start justify-between">
+            <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-muted">
+              <Check className="h-3 w-3" /> Validado
+            </span>
+            <span className="font-mono text-[11px] text-muted-soft">Concreto premezclado</span>
+          </div>
+          <p className="text-sm text-muted">
+            El volumen extraído del modelo coincide con las órdenes de compra.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

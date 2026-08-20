@@ -1,15 +1,81 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Agents Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Primary meta -->
+    <title>mnnsor — Agentes de IA para la construcción</title>
+    <meta
+      name="description"
+      content="mnnsor despliega agentes de IA que planifican, coordinan y auditan tus obras. Extrae datos de planos, BIM y estimaciones, controla la ruta crítica y reduce desvíos presupuestales sin migrar tus herramientas."
+    />
+    <meta name="author" content="mnnsor" />
+    <meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://mnnsor.io/" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/1.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="mnnsor" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:url" content="https://mnnsor.io/" />
+    <meta property="og:title" content="mnnsor — Agentes de IA para la construcción" />
+    <meta
+      property="og:description"
+      content="Agentes de IA que planifican, coordinan y auditan tus obras con el criterio de un ingeniero senior y la constancia de un sistema que nunca deja de vigilar el proyecto."
+    />
+    <meta property="og:image" content="https://mnnsor.io/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="mnnsor — Sistema Autónomo de Obra" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="mnnsor — Agentes de IA para la construcción" />
+    <meta
+      name="twitter:description"
+      content="Agentes de IA que planifican, coordinan y auditan tus obras sin migrar tus herramientas. Implementación en días, no en trimestres."
+    />
+    <meta name="twitter:image" content="https://mnnsor.io/og-cover.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "mnnsor",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Plataforma de agentes de IA para la industria de la construcción: planeación de obra, extracción de cantidades desde BIM, control presupuestal y auditoría continua de la ruta crítica.",
+        "url": "https://mnnsor.io/",
+        "inLanguage": "es",
+        "offers": {
+          "@type": "Offer",
+          "category": "SaaS",
+          "availability": "https://schema.org/InStock"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "mnnsor",
+          "url": "https://mnnsor.io/"
+        }
+      }
+    </script>
   </head>
-  <body class="font-sans antialiased bg-[#fcfcfc] text-[#1a1a1a]">
+  <body class="font-sans antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -1,40 +1,77 @@
-import { ShieldCheck, Lock, Check } from 'lucide-react';
+import { Lock, KeyRound, EyeOff, ShieldCheck } from 'lucide-react';
+
+const pillars = [
+  {
+    icon: ShieldCheck,
+    title: 'SOC 2 Tipo II',
+    description: 'Infraestructura y controles operativos auditados de forma independiente y continua.',
+  },
+  {
+    icon: KeyRound,
+    title: 'Cifrado extremo a extremo',
+    description: 'AES-256 en reposo y TLS 1.3 en tránsito para cada plano, estimación y bitácora.',
+  },
+  {
+    icon: EyeOff,
+    title: 'Cero retención en modelos',
+    description: 'Los LLM no se entrenan con tus datos. La información sensible se anonimiza de forma automática.',
+  },
+];
 
 export default function Security() {
   return (
-    <section className="py-24 bg-brand-light border-t border-brand-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-brand-gray/30 rounded-3xl border border-brand-border p-8 md:p-16 text-center">
-          <div className="w-16 h-16 bg-white border border-brand-border rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm">
-            <ShieldCheck className="w-8 h-8 text-brand-green" />
+    <section id="seguridad" className="border-t border-line bg-paper py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
+            <p data-reveal className="mb-5 label-mono text-muted-soft">
+              Seguridad
+            </p>
+            <h2
+              data-reveal
+              style={{ transitionDelay: '80ms' }}
+              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
+            >
+              Tus proyectos son tu activo.
+              <span className="italic text-muted"> Los tratamos como tal.</span>
+            </h2>
+            <p
+              data-reveal
+              style={{ transitionDelay: '160ms' }}
+              className="mt-6 max-w-md leading-relaxed text-muted"
+            >
+              mnnsor se construyó desde los cimientos con protocolos estrictos de
+              seguridad, para que tus datos, presupuestos y planos permanezcan
+              bajo tu control en todo momento.
+            </p>
+            <div
+              data-reveal
+              style={{ transitionDelay: '240ms' }}
+              className="mt-8 inline-flex items-center gap-3 rounded-full border border-line bg-paper-warm px-4 py-2.5"
+            >
+              <Lock className="h-4 w-4 text-ink" />
+              <span className="text-sm font-medium text-ink">Datos alojados en tu región, bajo tus políticas</span>
+            </div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-serif text-text-main mb-6">
-            Seguridad de grado <span className="italic text-brand-green">empresarial</span>
-          </h2>
-
-          <p className="text-text-muted max-w-2xl mx-auto mb-12">
-            La información de tus proyectos es tu activo más valioso. Mnnsor está construido desde sus cimientos con estrictos protocolos de seguridad para asegurar que tus datos, presupuestos y planos as-built permanezcan protegidos en todo momento.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-left">
-            <div className="bg-white p-6 rounded-xl border border-brand-border">
-              <Lock className="w-5 h-5 text-text-main mb-4" />
-              <div className="font-semibold text-text-main mb-2">SOC 2 Tipo II</div>
-              <div className="text-sm text-text-muted">Infraestructura y seguridad operativa auditadas de manera independiente.</div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border border-brand-border">
-              <Check className="w-5 h-5 text-text-main mb-4" />
-              <div className="font-semibold text-text-main mb-2">Encriptación de Datos</div>
-              <div className="text-sm text-text-muted">Encriptación AES-256 en reposo y TLS 1.3 para todos los datos en tránsito.</div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border border-brand-border">
-              <ShieldCheck className="w-5 h-5 text-text-main mb-4" />
-              <div className="font-semibold text-text-main mb-2">Cero Retención de Datos</div>
-              <div className="text-sm text-text-muted">Los LLMs no entrenan con tus datos de proyecto. La información confidencial se anonimiza automáticamente.</div>
-            </div>
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-3">
+            {pillars.map((p, idx) => {
+              const Icon = p.icon;
+              return (
+                <div
+                  key={p.title}
+                  data-reveal
+                  style={{ transitionDelay: `${idx * 100}ms` }}
+                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper-warm"
+                >
+                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line text-ink transition-colors duration-500 group-hover:border-ink group-hover:bg-ink group-hover:text-paper">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mb-2 text-base font-semibold tracking-tight text-ink">{p.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{p.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

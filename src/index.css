@@ -1,20 +1,174 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ *
+ *  mnnsor — monochrome design system
+ *  A warm black & white palette, technical mono labels, editorial serif.
+ * ------------------------------------------------------------------ */
 @theme {
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
 
-  --color-brand-green: #0b4f3b;
-  --color-brand-green-hover: #083c2d;
-  --color-brand-light: #fcfcfc;
-  --color-brand-gray: #f5f5f5;
-  --color-brand-border: #e5e5e5;
-  --color-text-main: #111111;
-  --color-text-muted: #666666;
+  /* Light surfaces — warm neutrals, never a flat clinical white */
+  --color-paper: #ffffff;
+  --color-paper-warm: #f7f6f3;
+  --color-panel: #f1f0ec;
+  --color-panel-2: #ebe9e4;
+
+  /* Ink scale */
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #1b1b1a;
+  --color-muted: #5f5e59;
+  --color-muted-soft: #8b8a84;
+
+  /* Hairlines */
+  --color-line: #e5e3dd;
+  --color-line-strong: #d6d3cc;
+
+  --radius-card: 18px;
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ------------------------------------------------------------------ *
+ *  Base
+ * ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--color-brand-light);
-  color: var(--color-text-main);
+  background-color: var(--color-paper-warm);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Editorial serif refinement */
+.font-serif {
+  font-feature-settings: "liga" 1, "calt" 1;
+  letter-spacing: -0.01em;
+}
+
+/* Technical eyebrow / label style */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Fine top-hairline used to separate sections without heavy borders */
+.hairline {
+  border-top: 1px solid var(--color-line);
+}
+
+/* ------------------------------------------------------------------ *
+ *  Subtle paper grain — the kind of detail a designer adds, not an AI.
+ * ------------------------------------------------------------------ */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------------ *
+ *  Logo handling — assets ship near-white; invert them for light UI.
+ * ------------------------------------------------------------------ */
+.logo-ink {
+  filter: invert(1) brightness(0.06);
+}
+
+/* ------------------------------------------------------------------ *
+ *  Reveal-on-scroll
+ * ------------------------------------------------------------------ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.9s var(--ease-out-quint),
+    transform 0.9s var(--ease-out-quint);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------------ *
+ *  Ambient keyframes
+ * ------------------------------------------------------------------ */
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -14px, 0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.82); }
+}
+
+@keyframes sweep {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(320%); }
+}
+
+.animate-drift { animation: drift 9s ease-in-out infinite; }
+.animate-marquee { animation: marquee 32s linear infinite; }
+.animate-pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* Shine sweep for the hero product surface */
+.sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.55) 50%, transparent 60%);
+  transform: translateX(-120%);
+  animation: sweep 7s ease-in-out 1.2s infinite;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ *
+ *  Reduced motion — turn all of it off, honestly.
+ * ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  [data-reveal] { opacity: 1; transform: none; }
 }

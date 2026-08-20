@@ -1,48 +1,69 @@
-import { FileText, Clock, AlertCircle } from 'lucide-react';
+import { FileWarning, Timer, TrendingDown } from 'lucide-react';
+
+const problems = [
+  {
+    icon: FileWarning,
+    kicker: 'Fricción',
+    title: 'Datos atrapados en el papel',
+    description:
+      'Bitácoras, estimaciones y planos as-built viven en PDF y Excel. Tu equipo se convierte en un puente humano que copia y reconcilia cifras en lugar de dirigir la obra.',
+  },
+  {
+    icon: Timer,
+    kicker: 'Latencia',
+    title: 'Decisiones que llegan tarde',
+    description:
+      'Cuando un desvío se detecta en la junta semanal, ya cuesta dinero. El procesamiento manual retrasa cada decisión sobre la ruta crítica y el flujo de caja.',
+  },
+  {
+    icon: TrendingDown,
+    kicker: 'Margen',
+    title: 'Errores que erosionan la utilidad',
+    description:
+      'Una cantidad mal capturada se propaga hasta el cierre de obra. Los pequeños errores humanos se acumulan en sobrecostos que nadie presupuestó.',
+  },
+];
 
 export default function ProblemCards() {
-  const problems = [
-    {
-      icon: <FileText className="w-5 h-5 text-brand-green" />,
-      title: "Descoordinación en Campo",
-      description: "Los ingenieros pasan horas extrayendo y sincronizando datos manualmente desde reportes fragmentados."
-    },
-    {
-      icon: <Clock className="w-5 h-5 text-brand-green" />,
-      title: "Retrasos en la Ruta Crítica",
-      description: "El procesamiento manual genera demoras en la toma de decisiones, afectando tiempos de entrega y presupuestos."
-    },
-    {
-      icon: <AlertCircle className="w-5 h-5 text-brand-green" />,
-      title: "Errores Costosos",
-      description: "La captura de datos humanos inevitablemente conduce a errores que impactan estimaciones, calidad y márgenes."
-    }
-  ];
-
   return (
-    <section className="py-24 bg-white border-y border-brand-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif text-text-main mb-4">
-            El cuello de botella de la <span className="italic text-brand-green">construcción</span>
-          </h2>
-          <p className="text-text-muted max-w-2xl mx-auto">
-            Los sistemas actuales están fragmentados. Residentes y contratistas se ven forzados a actuar como puentes humanos entre software desactualizado.
+    <section className="bg-paper-warm py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <p data-reveal className="mb-5 label-mono text-muted-soft">
+            El problema
           </p>
+          <h2
+            data-reveal
+            style={{ transitionDelay: '80ms' }}
+            className="font-serif text-3xl leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl"
+          >
+            La construcción no falla por falta de talento.
+            <span className="italic text-muted"> Falla por falta de datos a tiempo.</span>
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {problems.map((problem, idx) => (
-            <div key={idx} className="bg-brand-gray/50 border border-brand-border rounded-2xl p-8 hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 bg-white border border-brand-border rounded-xl flex items-center justify-center mb-6 shadow-sm">
-                {problem.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-text-main mb-3">{problem.title}</h3>
-              <p className="text-text-muted leading-relaxed">
-                {problem.description}
-              </p>
-            </div>
-          ))}
+        <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line md:grid-cols-3">
+          {problems.map((p, idx) => {
+            const Icon = p.icon;
+            return (
+              <article
+                key={p.title}
+                data-reveal
+                style={{ transitionDelay: `${idx * 110}ms` }}
+                className="group relative bg-paper p-8 transition-colors duration-500 hover:bg-panel/50 lg:p-10"
+              >
+                <div className="mb-8 flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-paper-warm transition-colors duration-500 group-hover:border-ink group-hover:bg-ink">
+                    <Icon className="h-5 w-5 text-ink transition-colors duration-500 group-hover:text-paper" />
+                  </div>
+                  <span className="font-mono text-xs text-muted-soft">0{idx + 1}</span>
+                </div>
+                <p className="mb-2 label-mono text-muted-soft">{p.kicker}</p>
+                <h3 className="mb-3 text-xl font-semibold tracking-tight text-ink">{p.title}</h3>
+                <p className="leading-relaxed text-muted">{p.description}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
