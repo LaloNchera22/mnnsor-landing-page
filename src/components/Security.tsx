@@ -30,10 +30,10 @@ export default function Security() {
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-serif text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
               Tus proyectos son tu activo.
-              <span className="italic text-muted"> Los tratamos como tal.</span>
+              <span className="text-muted"> Los tratamos como tal.</span>
             </h2>
             <p
               data-reveal
@@ -47,14 +47,14 @@ export default function Security() {
             <div
               data-reveal
               style={{ transitionDelay: '240ms' }}
-              className="mt-8 inline-flex items-center gap-3 rounded-full border border-line bg-paper-warm px-4 py-2.5"
+              className="mt-8 inline-flex items-center gap-3 rounded-none border border-line bg-paper px-4 py-2.5"
             >
               <Lock className="h-4 w-4 text-ink" />
               <span className="text-sm font-medium text-ink">Datos alojados en tu región, bajo tus políticas</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-3">
             {pillars.map((p, idx) => {
               const Icon = p.icon;
               return (
@@ -62,9 +62,9 @@ export default function Security() {
                   key={p.title}
                   data-reveal
                   style={{ transitionDelay: `${idx * 100}ms` }}
-                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper-warm"
+                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper"
                 >
-                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line text-ink transition-colors duration-500 group-hover:border-ink group-hover:bg-ink group-hover:text-paper">
+                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none border border-line text-ink transition-colors duration-500 group-hover:border-ink group-hover:bg-ink group-hover:text-paper">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mb-2 text-base font-semibold tracking-tight text-ink">{p.title}</h3>
