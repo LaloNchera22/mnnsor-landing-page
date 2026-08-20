@@ -1,34 +1,70 @@
+import { useCountUp } from '../hooks/useCountUp';
+
+interface Metric {
+  end: number;
+  suffix: string;
+  prefix?: string;
+  label: string;
+}
+
+const metrics: Metric[] = [
+  { end: 10, suffix: '×', label: 'Más rápido en planeación y re-programación' },
+  { end: 85, suffix: '%', label: 'Menos captura manual de datos' },
+  { end: 30, suffix: '%', prefix: '−', label: 'Reducción de desvíos presupuestales' },
+  { end: 24, suffix: '/7', label: 'Vigilancia continua de la ruta crítica' },
+];
+
+function Stat({ metric, index }: { metric: Metric; index: number }) {
+  const { ref, value } = useCountUp(metric.end);
+  return (
+    <div
+      data-reveal
+      style={{ transitionDelay: `${index * 90}ms` }}
+      className="border-t border-white/15 pt-6"
+    >
+      <div className="font-serif text-5xl tracking-tight text-paper sm:text-6xl">
+        {metric.prefix}
+        <span ref={ref}>{value}</span>
+        {metric.suffix}
+      </div>
+      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-white/55">
+        {metric.label}
+      </p>
+    </div>
+  );
+}
+
 export default function ImpactMetrics() {
   return (
-    <section className="py-24 bg-brand-green text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="resultados" className="bg-ink py-24 text-paper lg:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
-            <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
-              Transforma la economía de tus <span className="italic text-brand-green-hover opacity-80">proyectos</span>
+            <p data-reveal className="mb-5 label-mono text-white/45">
+              El impacto
+            </p>
+            <h2
+              data-reveal
+              style={{ transitionDelay: '80ms' }}
+              className="font-serif text-3xl leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl"
+            >
+              Cambia la economía de cada proyecto,
+              <span className="italic text-white/60"> no solo el flujo de trabajo.</span>
             </h2>
-            <p className="text-brand-gray/80 text-lg mb-8 leading-relaxed max-w-lg">
-              Nuestros agentes de IA no solo complementan a tu equipo; transforman tu capacidad operativa de manera fundamental, permitiéndote escalar proyectos sin tener que incrementar la plantilla de supervisión linealmente.
+            <p
+              data-reveal
+              style={{ transitionDelay: '160ms' }}
+              className="mt-6 max-w-md leading-relaxed text-white/55"
+            >
+              Los agentes no engrosan tu plantilla de supervisión: la
+              multiplican. Escala más obras con el mismo equipo senior.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="border-l-2 border-brand-green-hover pl-6 py-2">
-              <div className="text-5xl font-serif mb-2">10x</div>
-              <div className="text-sm text-brand-gray/80 font-medium">Mayor velocidad en planeación</div>
-            </div>
-            <div className="border-l-2 border-brand-green-hover pl-6 py-2">
-              <div className="text-5xl font-serif mb-2">85%</div>
-              <div className="text-sm text-brand-gray/80 font-medium">Reducción en entrada manual de datos</div>
-            </div>
-            <div className="border-l-2 border-brand-green-hover pl-6 py-2">
-              <div className="text-5xl font-serif mb-2">100%</div>
-              <div className="text-sm text-brand-gray/80 font-medium">Control de estimaciones y avance</div>
-            </div>
-            <div className="border-l-2 border-brand-green-hover pl-6 py-2">
-              <div className="text-5xl font-serif mb-2">24/7</div>
-              <div className="text-sm text-brand-gray/80 font-medium">Monitoreo continuo de obra</div>
-            </div>
+          <div className="grid grid-cols-2 gap-x-10 gap-y-12">
+            {metrics.map((m, i) => (
+              <Stat key={m.label} metric={m} index={i} />
+            ))}
           </div>
         </div>
       </div>

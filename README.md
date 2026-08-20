@@ -1,32 +1,47 @@
-# React + TypeScript + Vite
+# mnnsor — Landing
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Landing page de **mnnsor**, una plataforma de agentes de IA para la industria
+de la construcción. Construida con React 19, TypeScript, Vite y Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## Diseño
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Sistema monocromático** (blanco y negro cálido) definido con tokens en
+  `src/index.css` bajo `@theme`.
+- **Tipografía**: Instrument Serif (display editorial), Inter (texto) e
+  IBM Plex Mono (etiquetas técnicas).
+- **Animaciones sobrias**: reveal on-scroll (`src/hooks/useReveal.ts`),
+  contadores animados (`src/hooks/useCountUp.ts`), micro-interacciones y un
+  grano de papel sutil. Todo respeta `prefers-reduced-motion`.
+- **Accesibilidad**: landmarks semánticos, `skip link`, estados de foco
+  visibles y `aria-label` en controles.
 
-## React Compiler
+## SEO
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+`index.html` incluye meta description, Open Graph, Twitter Card, `canonical`,
+`theme-color`, favicon monocromático y datos estructurados JSON-LD
+(`SoftwareApplication`). La imagen social se genera con:
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+node scripts/make-og.mjs   # → public/og-cover.png (1200×630)
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Desarrollo
+
+```bash
+npm install
+npm run dev       # servidor de desarrollo
+npm run build     # typecheck + build de producción
+npm run lint      # oxlint
+npm run preview   # sirve el build
+```
+
+## Estructura
+
+```
+src/
+  App.tsx            # composición de secciones + reveal global
+  components/        # Navbar, Hero, TrustBar, ProblemCards, Features,
+                     # ImpactMetrics, AgentsSection, Security, CTA, Footer, Logo
+  hooks/             # useReveal, useCountUp
+  index.css          # design system + keyframes
+```

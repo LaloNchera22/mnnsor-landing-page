@@ -1,74 +1,193 @@
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowUpRight, Play, LayoutGrid, GanttChartSquare, Boxes, ShieldCheck } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gray border border-brand-border text-sm mb-8">
-          <span className="w-2 h-2 rounded-full bg-brand-green"></span>
-          <span className="font-medium">Presentamos el Sistema Autónomo de Obra</span>
-          <ArrowRight className="w-4 h-4 text-text-muted" />
+    <section className="relative overflow-hidden pt-36 pb-20 lg:pt-44 lg:pb-28" id="plataforma">
+      {/* Ambient monochrome wash — restrained, not a gradient soup */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(0,0,0,0.05),transparent_70%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35] [background-image:linear-gradient(to_right,var(--color-line)_1px,transparent_1px)] [background-size:88px_100%] [mask-image:radial-gradient(70%_50%_at_50%_0%,#000,transparent)]"
+      />
+
+      <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
+        <div
+          data-reveal
+          className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-line bg-paper/70 px-3.5 py-1.5 backdrop-blur"
+        >
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-pulse-dot absolute inline-flex h-full w-full rounded-full bg-ink" />
+          </span>
+          <span className="label-mono text-ink">Sistema Autónomo de Obra · v2</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-text-main mb-6 tracking-tight max-w-4xl mx-auto leading-[1.1]">
-          La inteligencia que construye <span className="italic text-brand-green">el mañana</span>
+        <h1
+          data-reveal
+          style={{ transitionDelay: '80ms' }}
+          className="mx-auto max-w-3xl font-serif text-[2.9rem] leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-[5.1rem]"
+        >
+          La inteligencia que
+          <br className="hidden sm:block" /> construye <span className="italic">el mañana</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
-          Automatiza y optimiza flujos de trabajo en construcción usando agentes de IA que coordinan, planifican y analizan obras como lo haría un ingeniero humano.
+        <p
+          data-reveal
+          style={{ transitionDelay: '160ms' }}
+          className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-muted"
+        >
+          Agentes de IA que planifican, coordinan y auditan tus obras con el
+          criterio de un ingeniero senior —y la constancia de un sistema que
+          nunca deja de vigilar el proyecto.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-brand-green text-white px-6 py-3 rounded-xl text-base font-medium hover:bg-brand-green-hover transition-colors flex items-center gap-2 w-full sm:w-auto justify-center">
-            Agendar demo <ArrowRight className="w-4 h-4" />
-          </button>
-          <button className="bg-white text-text-main border border-brand-border px-6 py-3 rounded-xl text-base font-medium hover:bg-brand-gray transition-colors flex items-center gap-2 w-full sm:w-auto justify-center shadow-sm">
-            <Play className="w-4 h-4" /> Ver recorrido de la plataforma
-          </button>
+        <div
+          data-reveal
+          style={{ transitionDelay: '240ms' }}
+          className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row"
+        >
+          <a
+            href="#contacto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+          >
+            Agendar demo
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+          <a
+            href="#agentes"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel sm:w-auto"
+          >
+            <Play className="h-4 w-4" /> Ver la plataforma en acción
+          </a>
+        </div>
+
+        <p
+          data-reveal
+          style={{ transitionDelay: '320ms' }}
+          className="mt-6 text-sm text-muted-soft"
+        >
+          Sin migrar tus herramientas. Implementación en días, no en trimestres.
+        </p>
+      </div>
+
+      {/* Product surface */}
+      <div
+        data-reveal
+        style={{ transitionDelay: '200ms' }}
+        className="animate-drift mx-auto mt-16 max-w-5xl px-4 sm:mt-20 sm:px-6"
+      >
+        <ProductMock />
+      </div>
+    </section>
+  );
+}
+
+function ProductMock() {
+  const kpis = [
+    { label: 'Avance físico', value: '68.4%', delta: '+2.1% sem', ok: true },
+    { label: 'Desvío presupuestal', value: '−1.8%', delta: 'bajo control', ok: true },
+    { label: 'Riesgos en ruta crítica', value: '2', delta: 'requiere acción', ok: false },
+  ];
+  const phases = [
+    { name: 'Cimentación', pct: 100, note: 'Completado' },
+    { name: 'Estructura metálica', pct: 74, note: 'En proceso' },
+    { name: 'Instalaciones MEP', pct: 32, note: 'Programado' },
+    { name: 'Acabados', pct: 8, note: 'Pendiente' },
+  ];
+
+  return (
+    <div className="sweep relative overflow-hidden rounded-[22px] border border-line-strong bg-paper shadow-[0_40px_90px_-40px_rgba(0,0,0,0.35)]">
+      {/* Chrome */}
+      <div className="flex items-center gap-2 border-b border-line bg-panel/60 px-4 py-3">
+        <span className="h-3 w-3 rounded-full border border-line-strong bg-paper" />
+        <span className="h-3 w-3 rounded-full border border-line-strong bg-paper" />
+        <span className="h-3 w-3 rounded-full border border-line-strong bg-paper" />
+        <div className="mx-auto flex items-center gap-2 rounded-md border border-line bg-paper px-3 py-1">
+          <ShieldCheck className="h-3 w-3 text-muted" />
+          <span className="font-mono text-[11px] text-muted">app.mnnsor.io / torre-central</span>
         </div>
       </div>
 
-      {/* Decorative background elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-green/5 rounded-full blur-3xl -z-10"></div>
+      <div className="grid grid-cols-12">
+        {/* Sidebar */}
+        <aside className="col-span-3 hidden flex-col gap-1 border-r border-line bg-panel/30 p-4 md:flex">
+          {[
+            { icon: LayoutGrid, label: 'Panel', active: true },
+            { icon: GanttChartSquare, label: 'Cronograma' },
+            { icon: Boxes, label: 'Materiales' },
+            { icon: ShieldCheck, label: 'Auditoría' },
+          ].map(({ icon: Icon, label, active }) => (
+            <div
+              key={label}
+              className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm ${
+                active ? 'bg-ink text-paper' : 'text-muted'
+              }`}
+            >
+              <Icon className="h-4 w-4" />
+              {label}
+            </div>
+          ))}
+          <div className="mt-auto rounded-xl border border-line bg-paper p-3">
+            <div className="label-mono mb-1.5 text-muted-soft">Agentes activos</div>
+            <div className="flex items-center gap-2 text-sm font-medium text-ink">
+              <span className="animate-pulse-dot h-2 w-2 rounded-full bg-ink" />
+              3 en ejecución
+            </div>
+          </div>
+        </aside>
 
-      {/* Dashboard Mockup */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 relative">
-        <div className="rounded-2xl border border-brand-border bg-white shadow-2xl overflow-hidden relative">
-          {/* Mac-like header */}
-          <div className="h-12 border-b border-brand-border bg-brand-gray/50 flex items-center px-4 gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-            <div className="mx-auto bg-white border border-brand-border rounded-md px-32 py-1 text-xs text-text-muted flex items-center gap-2">
-              <span className="w-3 h-3 rounded-sm bg-brand-green/20 flex items-center justify-center"><span className="w-1.5 h-1.5 rounded-sm bg-brand-green"></span></span>
-              mnnsor-artisan.app
+        {/* Main */}
+        <div className="col-span-12 p-5 md:col-span-9 md:p-6">
+          <div className="mb-5 flex items-center justify-between">
+            <div>
+              <div className="label-mono text-muted-soft">Proyecto</div>
+              <div className="text-lg font-semibold text-ink">Torre Central · Fase 2</div>
+            </div>
+            <div className="hidden items-center gap-2 rounded-full border border-line bg-panel/50 px-3 py-1 text-xs font-medium text-muted sm:flex">
+              <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-ink" />
+              Sincronizado hace 40 s
             </div>
           </div>
 
-          {/* Dashboard Content */}
-          <div className="grid grid-cols-12 h-[500px]">
-            {/* Sidebar */}
-            <div className="col-span-3 border-r border-brand-border bg-brand-gray/30 p-4">
-              <div className="space-y-4">
-                <div className="h-8 bg-brand-border/50 rounded-md w-3/4"></div>
-                <div className="h-4 bg-brand-border/30 rounded-md w-full"></div>
-                <div className="h-4 bg-brand-border/30 rounded-md w-5/6"></div>
-                <div className="h-4 bg-brand-border/30 rounded-md w-full"></div>
-                <div className="h-4 bg-brand-border/30 rounded-md w-4/5"></div>
+          {/* KPIs */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {kpis.map((k) => (
+              <div key={k.label} className="rounded-xl border border-line bg-paper-warm/60 p-4">
+                <div className="mb-2 text-xs font-medium text-muted">{k.label}</div>
+                <div className="text-2xl font-semibold tracking-tight text-ink">{k.value}</div>
+                <div
+                  className={`mt-1.5 inline-flex items-center gap-1 text-[11px] font-medium ${
+                    k.ok ? 'text-muted' : 'text-ink'
+                  }`}
+                >
+                  <span className={`h-1.5 w-1.5 rounded-full ${k.ok ? 'bg-muted-soft' : 'bg-ink'}`} />
+                  {k.delta}
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* Schedule */}
+          <div className="mt-4 rounded-xl border border-line bg-paper p-4">
+            <div className="mb-4 flex items-center justify-between">
+              <span className="text-sm font-semibold text-ink">Ruta crítica · avance por fase</span>
+              <span className="label-mono text-muted-soft">Gantt</span>
             </div>
-            {/* Main Area */}
-            <div className="col-span-9 p-8 bg-white">
-              <div className="flex justify-between items-center mb-8">
-                <div className="h-8 bg-brand-border/50 rounded-md w-1/4"></div>
-                <div className="h-8 bg-brand-green/10 rounded-md w-32"></div>
-              </div>
-              <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="h-24 bg-brand-border/20 rounded-xl border border-brand-border flex items-center px-4"><span className="text-sm font-medium text-text-muted">Avance de Obra</span></div>
-                <div className="h-24 bg-brand-border/20 rounded-xl border border-brand-border flex items-center px-4"><span className="text-sm font-medium text-text-muted">Presupuesto</span></div>
-                <div className="h-24 bg-brand-border/20 rounded-xl border border-brand-border flex items-center px-4"><span className="text-sm font-medium text-text-muted">Riesgos Críticos</span></div>
-              </div>
-              <div className="h-64 bg-brand-border/10 rounded-xl border border-brand-border flex items-center justify-center"><span className="text-sm text-text-muted">Gantt Chart & Ruta Crítica</span></div>
+            <div className="space-y-3">
+              {phases.map((p) => (
+                <div key={p.name} className="grid grid-cols-12 items-center gap-3">
+                  <span className="col-span-4 truncate text-xs font-medium text-muted">{p.name}</span>
+                  <div className="col-span-6 h-2 overflow-hidden rounded-full bg-panel-2">
+                    <div
+                      className="h-full rounded-full bg-ink"
+                      style={{ width: `${p.pct}%` }}
+                    />
+                  </div>
+                  <span className="col-span-2 text-right font-mono text-[11px] text-muted-soft">{p.note}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
