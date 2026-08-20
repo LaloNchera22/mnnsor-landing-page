@@ -14,31 +14,21 @@ export default function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35] [background-image:linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(to_right,var(--color-line)_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(70%_50%_at_50%_0%,#000,transparent)]"
       />
-      <div className="absolute inset-0 pointer-events-none h-px w-full bg-ink/20 animate-scan z-0" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-[1] h-[600px] overflow-hidden"
+      >
+        <div className="hero-beam" />
+      </div>
 
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
-        <div
-          data-reveal
-          className="relative mb-7 inline-flex items-center gap-2.5 rounded-none border border-line bg-paper/70 px-3.5 py-1.5 backdrop-blur"
-        >
-          <span className="absolute -top-px -left-px h-1.5 w-1.5 border-t border-l border-ink" />
-          <span className="absolute -top-px -right-px h-1.5 w-1.5 border-t border-r border-ink" />
-          <span className="absolute -bottom-px -left-px h-1.5 w-1.5 border-b border-l border-ink" />
-          <span className="absolute -bottom-px -right-px h-1.5 w-1.5 border-b border-r border-ink" />
-
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-pulse-dot absolute inline-flex h-full w-full rounded-none bg-ink" />
-          </span>
-          <span className="label-mono text-ink">Sistema Autónomo de Obra · v2</span>
-        </div>
-
         <h1
           data-reveal
-          style={{ transitionDelay: '80ms' }}
           className="mx-auto max-w-3xl font-sans text-[2.9rem] leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-[5.1rem]"
         >
           La inteligencia que
-          <br className="hidden sm:block" /> construye <span className="">el mañana</span>
+          <br className="hidden sm:block" /> construye{' '}
+          <span className="font-serif font-normal italic tracking-normal">el mañana</span>
         </h1>
 
         <p
