@@ -12,14 +12,20 @@ export default function Hero() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35] [background-image:linear-gradient(to_right,var(--color-line)_1px,transparent_1px)] [background-size:88px_100%] [mask-image:radial-gradient(70%_50%_at_50%_0%,#000,transparent)]"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35] [background-image:linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(to_right,var(--color-line)_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(70%_50%_at_50%_0%,#000,transparent)]"
       />
+      <div className="absolute inset-0 pointer-events-none h-px w-full bg-ink/20 animate-scan z-0" />
 
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
         <div
           data-reveal
-          className="mb-7 inline-flex items-center gap-2.5 rounded-none border border-line bg-paper/70 px-3.5 py-1.5 backdrop-blur"
+          className="relative mb-7 inline-flex items-center gap-2.5 rounded-none border border-line bg-paper/70 px-3.5 py-1.5 backdrop-blur"
         >
+          <span className="absolute -top-px -left-px h-1.5 w-1.5 border-t border-l border-ink" />
+          <span className="absolute -top-px -right-px h-1.5 w-1.5 border-t border-r border-ink" />
+          <span className="absolute -bottom-px -left-px h-1.5 w-1.5 border-b border-l border-ink" />
+          <span className="absolute -bottom-px -right-px h-1.5 w-1.5 border-b border-r border-ink" />
+
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-pulse-dot absolute inline-flex h-full w-full rounded-none bg-ink" />
           </span>
@@ -156,7 +162,11 @@ function ProductMock() {
           {/* KPIs */}
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {kpis.map((k) => (
-              <div key={k.label} className="rounded-none border border-line bg-paper/60 p-4">
+              <div key={k.label} className="relative rounded-none border border-line bg-paper/60 p-4">
+                <span className="absolute -top-px -left-px h-1.5 w-1.5 border-t border-l border-ink/40" />
+                <span className="absolute -top-px -right-px h-1.5 w-1.5 border-t border-r border-ink/40" />
+                <span className="absolute -bottom-px -left-px h-1.5 w-1.5 border-b border-l border-ink/40" />
+                <span className="absolute -bottom-px -right-px h-1.5 w-1.5 border-b border-r border-ink/40" />
                 <div className="mb-2 text-xs font-medium text-muted">{k.label}</div>
                 <div className="text-2xl font-semibold tracking-tight text-ink">{k.value}</div>
                 <div
@@ -172,7 +182,11 @@ function ProductMock() {
           </div>
 
           {/* Schedule */}
-          <div className="mt-4 rounded-none border border-line bg-paper p-4">
+          <div className="relative mt-4 rounded-none border border-line bg-paper p-4">
+            <span className="absolute -top-px -left-px h-1.5 w-1.5 border-t border-l border-ink/40" />
+            <span className="absolute -top-px -right-px h-1.5 w-1.5 border-t border-r border-ink/40" />
+            <span className="absolute -bottom-px -left-px h-1.5 w-1.5 border-b border-l border-ink/40" />
+            <span className="absolute -bottom-px -right-px h-1.5 w-1.5 border-b border-r border-ink/40" />
             <div className="mb-4 flex items-center justify-between">
               <span className="text-sm font-semibold text-ink">Ruta crítica · avance por fase</span>
               <span className="label-mono text-muted-soft">Gantt</span>
