@@ -6,7 +6,7 @@ import { useEffect } from 'react';
  * already in the viewport on load reveal immediately, so nothing above the
  * fold ever sits blank. Runs once per element — no thrashing on scroll.
  */
-export function useReveal() {
+export function useReveal(deps: unknown[] = []) {
   useEffect(() => {
     const nodes = Array.from(
       document.querySelectorAll<HTMLElement>('[data-reveal]'),
@@ -31,5 +31,6 @@ export function useReveal() {
 
     nodes.forEach((n) => observer.observe(n));
     return () => observer.disconnect();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
 }

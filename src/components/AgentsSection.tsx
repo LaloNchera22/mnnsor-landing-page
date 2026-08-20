@@ -1,4 +1,5 @@
 import { ArrowUpRight, Check, CalendarClock, Boxes, AlertTriangle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function AgentsSection() {
   return (
@@ -41,6 +42,7 @@ export default function AgentsSection() {
               'Alerta de riesgos en la ruta crítica en tiempo real',
             ]}
             cta="Ver capacidades de Cronos"
+            to="/agentes/cronos"
             mock={<CronosMock />}
           />
 
@@ -58,8 +60,19 @@ export default function AgentsSection() {
               'Prevención de sobrecostos por desperdicio de material',
             ]}
             cta="Descubrir Cubic"
+            to="/agentes/cubic"
             mock={<CubicMock />}
           />
+        </div>
+
+        <div data-reveal className="mt-10 flex justify-center">
+          <Link
+            to="/agentes"
+            className="group inline-flex items-center gap-2 rounded-full border border-line-strong bg-paper px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-panel"
+          >
+            Conoce los 4 agentes y su alcance real
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </div>
       </div>
     </section>
@@ -75,10 +88,11 @@ interface AgentRowProps {
   description: string;
   bullets: string[];
   cta: string;
+  to: string;
   mock: React.ReactNode;
 }
 
-function AgentRow({ reversed, eyebrow, icon: Icon, name, code, description, bullets, cta, mock }: AgentRowProps) {
+function AgentRow({ reversed, eyebrow, icon: Icon, name, code, description, bullets, cta, to, mock }: AgentRowProps) {
   return (
     <div
       data-reveal
@@ -102,13 +116,13 @@ function AgentRow({ reversed, eyebrow, icon: Icon, name, code, description, bull
             </li>
           ))}
         </ul>
-        <a
-          href="#contacto"
+        <Link
+          to={to}
           className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
         >
           {cta}
           <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </a>
+        </Link>
       </div>
 
       <div className={reversed ? 'lg:order-1' : ''}>{mock}</div>

@@ -1,26 +1,33 @@
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import Logo from './Logo';
+import { AGENTS } from '../data/agents';
+import { CONTACT, SUPPORT_EMAIL } from '../lib/contact';
 
-const columns = [
-  {
-    title: 'Plataforma',
-    links: [
-      { label: 'Agentes', href: '#agentes' },
-      { label: 'Seguridad', href: '#seguridad' },
-      { label: 'Resultados', href: '#resultados' },
-      { label: 'Integraciones', href: '#plataforma' },
-    ],
-  },
-  {
-    title: 'Compañía',
-    links: [
-      { label: 'Sobre nosotros', href: '#' },
-      { label: 'Carreras', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Contacto', href: '#contacto' },
-    ],
-  },
-];
+const platform = {
+  title: 'Plataforma',
+  links: [
+    { label: 'Visión general', to: '/plataforma' },
+    { label: 'Agentes', to: '/agentes' },
+    { label: 'Seguridad', to: '/seguridad' },
+    { label: 'Resultados', to: '/resultados' },
+  ],
+};
+
+const agentsCol = {
+  title: 'Agentes',
+  links: AGENTS.map((a) => ({ label: a.name, to: `/agentes/${a.slug}` })),
+};
+
+const company = {
+  title: 'Compañía',
+  links: [
+    { label: 'Contacto', to: '/contacto' },
+    { label: 'Agendar demo', href: CONTACT.demo },
+    { label: 'Soporte', href: CONTACT.support },
+    { label: 'Seguridad', to: '/seguridad' },
+  ],
+};
 
 const socials = [
   { id: 'x-icon', label: 'X', href: '#' },
@@ -32,7 +39,7 @@ export default function Footer() {
   return (
     <footer className="bg-ink pt-20 pb-10 text-paper">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-10 border-b border-white/10 pb-14 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-10 border-b border-white/10 pb-14 md:grid-cols-5">
           <div className="col-span-2">
             <Logo tone="light" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
@@ -40,26 +47,41 @@ export default function Footer() {
               flujos de trabajo de la industria de la construcción.
             </p>
             <a
-              href="#contacto"
+              href={CONTACT.demo}
               className="group mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-paper"
             >
               Agendar una demo
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
+            <a
+              href={CONTACT.general}
+              className="mt-4 block font-mono text-xs text-white/45 transition-colors hover:text-paper"
+            >
+              {SUPPORT_EMAIL}
+            </a>
           </div>
 
-          {columns.map((col) => (
+          {[platform, agentsCol, company].map((col) => (
             <nav key={col.title} aria-label={col.title}>
               <h2 className="mb-4 label-mono text-white/40">{col.title}</h2>
               <ul className="space-y-3">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <a
-                      href={l.href}
-                      className="text-sm text-white/65 transition-colors hover:text-paper"
-                    >
-                      {l.label}
-                    </a>
+                    {'to' in l && l.to ? (
+                      <Link
+                        to={l.to}
+                        className="text-sm text-white/65 transition-colors hover:text-paper"
+                      >
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={(l as { href: string }).href}
+                        className="text-sm text-white/65 transition-colors hover:text-paper"
+                      >
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

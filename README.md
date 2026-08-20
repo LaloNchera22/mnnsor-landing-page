@@ -1,7 +1,39 @@
-# mnnsor — Landing
+# mnnsor — Sitio
 
-Landing page de **mnnsor**, una plataforma de agentes de IA para la industria
-de la construcción. Construida con React 19, TypeScript, Vite y Tailwind CSS v4.
+Sitio de **mnnsor**, una plataforma de agentes de IA para la industria
+de la construcción. Construido con React 19, TypeScript, Vite, Tailwind CSS v4
+y React Router. Diseño editorial y profesional, inspirado en sitios de producto
+empresarial (p. ej. Palantir).
+
+## Páginas
+
+Sitio multi-página con enrutamiento del lado del cliente (`react-router-dom`):
+
+| Ruta                | Contenido                                                        |
+| ------------------- | --------------------------------------------------------------- |
+| `/`                 | Home: hero, problema, plataforma, impacto, agentes, seguridad.  |
+| `/plataforma`       | Cómo funciona, principios de diseño, módulos, despliegue.       |
+| `/agentes`          | Listado de los 4 agentes con su alcance.                         |
+| `/agentes/:slug`    | Detalle por agente: capacidades, **límites reales**, flujo, I/O. |
+| `/seguridad`        | Pilares, ciclo de vida de datos y gobernanza empresarial.       |
+| `/resultados`       | Métricas, escenarios antes/después y metodología de medición.   |
+| `/contacto`         | Opciones de contacto (cada una abre un correo predefinido).     |
+
+Los agentes se describen con **alcances honestos**: lo que hacen con fiabilidad
+y, con la misma franqueza, dónde termina su autonomía y empieza la supervisión
+humana. Ver `src/data/agents.ts`.
+
+## Contacto por correo
+
+Todos los botones de acción abren un borrador de correo a **support@mnnsor.com**
+con asunto y cuerpo predefinidos según el contexto (demo, ventas, piloto,
+seguridad, soporte, general). La lógica está centralizada en `src/lib/contact.ts`
+y se usa vía `MailButton` / `CTASection`.
+
+## Enrutamiento en producción
+
+El sitio es una SPA. Para hosting estático se incluye fallback a `index.html`:
+`public/_redirects` (Netlify) y `vercel.json` (Vercel).
 
 ## Diseño
 
@@ -39,9 +71,14 @@ npm run preview   # sirve el build
 
 ```
 src/
-  App.tsx            # composición de secciones + reveal global
-  components/        # Navbar, Hero, TrustBar, ProblemCards, Features,
-                     # ImpactMetrics, AgentsSection, Security, CTA, Footer, Logo
-  hooks/             # useReveal, useCountUp
+  App.tsx            # definición de rutas (BrowserRouter)
+  layouts/           # SiteLayout (navbar + outlet + footer + reveal)
+  pages/             # Home, Platform, Agents, AgentDetail, SecurityPage,
+                     # Results, Contact, NotFound
+  components/        # Navbar, Hero, Footer, PageHeader, MailButton,
+                     # CTASection, ScrollToTop, + secciones de la home
+  data/agents.ts     # catálogo de agentes con alcances y límites reales
+  lib/contact.ts     # correos predefinidos a support@mnnsor.com
+  hooks/             # useReveal (re-ejecutable por ruta), useCountUp
   index.css          # design system + keyframes
 ```
