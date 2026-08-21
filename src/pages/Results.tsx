@@ -31,7 +31,7 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
         <span ref={ref}>{value}</span>
         {metric.suffix}
       </div>
-      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-white/55">{metric.label}</p>
+      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-paper/55">{metric.label}</p>
     </div>
   );
 }
@@ -78,7 +78,7 @@ export default function Results() {
       {/* Métricas */}
       <section className="bg-ink py-24 text-paper lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <p data-reveal className="mb-12 label-mono text-white/45">
+          <p data-reveal className="mb-12 label-mono text-paper/45">
             Rangos observados en despliegues
           </p>
           <div className="grid grid-cols-2 gap-x-10 gap-y-12 lg:grid-cols-4">
@@ -86,7 +86,7 @@ export default function Results() {
               <Stat key={m.label} metric={m} index={i} />
             ))}
           </div>
-          <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-white/40">
+          <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
             Cifras ilustrativas basadas en la experiencia de despliegue. No constituyen una
             garantía de resultados; el impacto real depende de la madurez de tus procesos y de
             la calidad de tu documentación.
@@ -132,8 +132,8 @@ export default function Results() {
                     <p className="text-sm leading-relaxed text-muted">{s.before}</p>
                   </div>
                   <div className="rounded-none bg-ink p-5 text-paper">
-                    <p className="mb-2 label-mono text-white/50">Con mnnsor</p>
-                    <p className="text-sm leading-relaxed text-white/85">{s.after}</p>
+                    <p className="mb-2 label-mono text-paper/50">Con mnnsor</p>
+                    <p className="text-sm leading-relaxed text-paper/85">{s.after}</p>
                   </div>
                 </div>
               );

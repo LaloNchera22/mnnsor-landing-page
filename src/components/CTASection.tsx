@@ -36,7 +36,7 @@ export default function CTASection({
           <h2 className="mx-auto max-w-2xl font-sans text-3xl leading-[1.08] tracking-tight text-paper sm:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="mx-auto mt-6 max-w-lg leading-relaxed text-white/60">{description}</p>
+          <p className="mx-auto mt-6 max-w-lg leading-relaxed text-paper/60">{description}</p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
             <MailButton href={primaryHref} variant="solid-light" full>
               {primaryLabel}
