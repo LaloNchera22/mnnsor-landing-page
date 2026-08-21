@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 bg-black overflow-hidden" id="plataforma">
       <div className="absolute inset-0 z-0">
-        <LavaLamp top="#333333" bottom="#000000" sheen="#555555" />
+        <LavaLamp top="#4a4a4a" bottom="#111111" sheen="#6b6b6b" />
       </div>
       <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-6">
         <h1
