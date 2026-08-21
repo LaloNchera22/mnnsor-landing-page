@@ -1,5 +1,11 @@
-import { ArrowUpRight, Check, CalendarClock, Boxes, AlertTriangle } from 'lucide-react';
+import { ArrowUpRight, Check, FileText, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { AGENTS } from '../data/agents';
+import { CONTACT } from '../lib/contact';
+
+/* Los agentes que se "suman" al protagonista, en el orden del catálogo
+ * (todos menos Atlas, que va destacado arriba). */
+const SECONDARY_AGENTS = AGENTS.filter((a) => a.slug !== 'atlas');
 
 export default function AgentsSection() {
   return (
@@ -7,62 +13,62 @@ export default function AgentsSection() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p data-reveal className="mb-5 label-mono text-muted-soft">
-            Los agentes
+            El agente con el que empiezas
           </p>
           <h2
             data-reveal
             style={{ transitionDelay: '80ms' }}
             className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
           >
-            Una fuerza de trabajo digital,
-            <span className="text-muted"> especializada por oficio.</span>
+            Atlas ordena tu documentación técnica,
+            <span className="text-muted"> desde el primer día.</span>
           </h2>
           <p
             data-reveal
             style={{ transitionDelay: '160ms' }}
             className="mt-6 leading-relaxed text-muted"
           >
-            Agentes pre-entrenados que se despliegan desde el primer día en las
-            tareas más críticas —y más tediosas— del ciclo de construcción.
+            Aterriza en el dolor más tedioso de la oficina técnica —el caos de
+            planos, especificaciones y RFIs— y mide el resultado. Los demás
+            agentes se suman módulo por módulo cuando tenga sentido.
           </p>
         </div>
 
-        <div className="mt-16 space-y-6">
-          {/* Cronos */}
-          <AgentRow
-            reversed={false}
-            eyebrow="Planificación"
-            icon={CalendarClock}
-            name="Agente Cronos"
-            code="CRN-01"
-            description="Sincroniza el Gantt con la realidad de campo y anticipa cuellos de botella en la ruta crítica antes de que se conviertan en retrasos."
-            bullets={[
-              'Analiza programas de obra complejos en segundos',
-              'Re-programa dinámicamente ante cada desviación',
-              'Alerta de riesgos en la ruta crítica en tiempo real',
-            ]}
-            cta="Ver capacidades de Cronos"
-            to="/agentes/cronos"
-            mock={<CronosMock />}
-          />
+        {/* Protagonista — Atlas, a todo el ancho y con más peso visual */}
+        <FlagshipAgent />
 
-          {/* Cubic */}
-          <AgentRow
-            reversed
-            eyebrow="Materiales"
-            icon={Boxes}
-            name="Agente Cubic"
-            code="CBC-02"
-            description="Extrae cantidades directo del modelo BIM y concilia lo comprado contra lo instalado, cerrando la fuga de margen por desperdicio."
-            bullets={[
-              'Extracción automatizada de cantidades desde IFC/BIM',
-              'Conciliación de estimaciones contra avance real',
-              'Prevención de sobrecostos por desperdicio de material',
-            ]}
-            cta="Descubrir Cubic"
-            to="/agentes/cubic"
-            mock={<CubicMock />}
-          />
+        {/* Y además, cuando tenga sentido, suma… */}
+        <div className="mt-16">
+          <p data-reveal className="mb-6 label-mono text-muted-soft">
+            Y cuando tenga sentido, suma…
+          </p>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+            {SECONDARY_AGENTS.map((a, i) => {
+              const Icon = a.icon;
+              return (
+                <Link
+                  key={a.slug}
+                  to={`/agentes/${a.slug}`}
+                  data-reveal
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                  className="group flex flex-col rounded-none border border-line bg-paper/50 p-6 transition-colors hover:bg-paper"
+                >
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-none border border-line text-ink">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <span className="font-mono text-[11px] text-muted-soft">{a.code}</span>
+                  </div>
+                  <h3 className="mb-1.5 font-sans text-xl tracking-tight text-ink">{a.name}</h3>
+                  <p className="mb-5 text-sm leading-relaxed text-muted">{a.tagline}</p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
+                    Conocerlo
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
         </div>
 
         <div data-reveal className="mt-10 flex justify-center">
@@ -79,33 +85,30 @@ export default function AgentsSection() {
   );
 }
 
-interface AgentRowProps {
-  reversed: boolean;
-  eyebrow: string;
-  icon: React.ComponentType<{ className?: string }>;
-  name: string;
-  code: string;
-  description: string;
-  bullets: string[];
-  cta: string;
-  to: string;
-  mock: React.ReactNode;
-}
-
-function AgentRow({ reversed, eyebrow, icon: Icon, name, code, description, bullets, cta, to, mock }: AgentRowProps) {
+function FlagshipAgent() {
+  const bullets = [
+    'Cruza planos, especificaciones y RFIs para hallar contradicciones entre disciplinas',
+    'Rastrea cada RFI y submittal con su estado, responsable y vencimiento',
+    'Redacta el primer borrador de respuesta citando el plano o cláusula pertinente',
+  ];
   return (
     <div
       data-reveal
-      className="grid grid-cols-1 items-center gap-10 rounded-none border border-line bg-paper p-6 sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
+      className="mt-12 grid grid-cols-1 items-center gap-10 rounded-none border border-line-strong bg-paper p-6 shadow-[0_40px_90px_-50px_rgba(0,0,0,0.35)] sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
     >
-      <div className={reversed ? 'lg:order-2' : ''}>
-        <div className="mb-6 inline-flex items-center gap-2.5 rounded-none border border-line bg-paper px-3 py-1.5">
-          <Icon className="h-3.5 w-3.5 text-ink" />
-          <span className="label-mono text-ink">{eyebrow}</span>
-          <span className="font-mono text-[11px] text-muted-soft">· {code}</span>
+      <div>
+        <div className="mb-6 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">
+          <FileText className="h-3.5 w-3.5 text-paper" />
+          <span className="label-mono text-paper">Empieza aquí · Documentación</span>
+          <span className="font-mono text-[11px] text-white/50">· ATL-03</span>
         </div>
-        <h3 className="mb-4 font-sans text-3xl tracking-tight text-ink">{name}</h3>
-        <p className="mb-7 max-w-md leading-relaxed text-muted">{description}</p>
+        <h3 className="mb-4 font-sans text-3xl tracking-tight text-ink sm:text-4xl">Agente Atlas</h3>
+        <p className="mb-7 max-w-md leading-relaxed text-muted">
+          Ordena el volumen documental de la obra —cientos de planos, especificaciones,
+          RFIs y submittals— y encuentra las contradicciones antes de que lleguen a campo.
+          La decisión técnica sigue siendo de tu ingeniero; Atlas le ahorra la búsqueda y
+          el primer borrador.
+        </p>
         <ul className="mb-8 space-y-3.5">
           {bullets.map((b) => (
             <li key={b} className="flex items-start gap-3">
@@ -116,100 +119,66 @@ function AgentRow({ reversed, eyebrow, icon: Icon, name, code, description, bull
             </li>
           ))}
         </ul>
-        <Link
-          to={to}
-          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
-        >
-          {cta}
-          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </Link>
+        <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center">
+          <a
+            href={CONTACT.demoAtlas}
+            className="group inline-flex items-center justify-center gap-2 rounded-none bg-ink px-5 py-3 text-sm font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
+          >
+            Agenda una demo de Atlas
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+          <Link
+            to="/agentes/atlas"
+            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
+          >
+            Ver capacidades y límites
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </div>
       </div>
 
-      <div className={reversed ? 'lg:order-1' : ''}>{mock}</div>
+      <AtlasMock />
     </div>
   );
 }
 
-function CronosMock() {
-  const rows = [
-    { name: 'Cimentación', state: 'done', note: 'Completado' },
-    { name: 'Estructura metálica', state: 'warn', note: 'Retraso de 3 días' },
-    { name: 'Instalaciones', state: 'idle', note: 'Pendiente' },
-  ];
+function AtlasMock() {
   return (
     <div className="rounded-none border border-line bg-paper/50 p-5">
       <div className="mb-4 flex items-center justify-between border-b border-line pb-4">
-        <span className="text-sm font-semibold text-ink">Estado del cronograma</span>
+        <span className="text-sm font-semibold text-ink">Revisión del expediente técnico</span>
         <span className="inline-flex items-center gap-1.5 rounded-none bg-ink px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-paper">
           <span className="animate-pulse-dot h-1.5 w-1.5 rounded-none bg-paper" />
-          Re-calculando
-        </span>
-      </div>
-      <div className="space-y-2.5">
-        {rows.map((r) => (
-          <div
-            key={r.name}
-            className="flex items-center justify-between rounded-none border border-line bg-paper px-3 py-3"
-          >
-            <div className="flex items-center gap-3">
-              <span className="flex h-7 w-7 items-center justify-center rounded-none border border-line font-mono text-[10px] font-bold text-muted">
-                {r.name.slice(0, 3).toUpperCase()}
-              </span>
-              <span className="text-sm font-medium text-ink">{r.name}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              {r.state === 'warn' ? (
-                <AlertTriangle className="h-3.5 w-3.5 text-ink" />
-              ) : (
-                <span
-                  className={`h-2 w-2 rounded-none ${
-                    r.state === 'done' ? 'bg-ink' : 'bg-line-strong'
-                  }`}
-                />
-              )}
-              <span className="font-mono text-[11px] text-muted-soft">{r.note}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function CubicMock() {
-  return (
-    <div className="rounded-none border border-line bg-paper/50 p-5">
-      <div className="mb-4 flex items-center justify-between border-b border-line pb-4">
-        <span className="text-sm font-semibold text-ink">Análisis de materiales</span>
-        <span className="rounded-none border border-line px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted">
-          Actualizado
+          Cruzando
         </span>
       </div>
       <div className="space-y-3">
-        {/* Deviation — high emphasis: filled ink */}
+        {/* Discrepancia — alta jerarquía: relleno ink */}
         <div className="rounded-none bg-ink p-4 text-paper">
           <div className="mb-2 flex items-start justify-between">
             <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider">
-              <AlertTriangle className="h-3 w-3" /> Desviación
+              <AlertTriangle className="h-3 w-3" /> Discrepancia
             </span>
-            <span className="font-mono text-[11px] text-white/60">Acero de refuerzo</span>
+            <span className="font-mono text-[11px] text-white/60">Eje 4 · nivel N+3</span>
           </div>
           <p className="text-sm text-white/85">
-            Modelo BIM: <span className="font-medium text-paper">120 t</span> · Real en
-            avance: <span className="font-medium text-paper">128 t</span>{' '}
-            <span className="text-white/60">(+6.7%)</span>
+            Cota entre disciplinas no coincide: Arquitectura{' '}
+            <span className="font-medium text-paper">6.20 m</span> · Estructura{' '}
+            <span className="font-medium text-paper">6.05 m</span>{' '}
+            <span className="text-white/60">(Δ 15 cm)</span>
           </p>
         </div>
-        {/* Validated — low emphasis: outline */}
+        {/* Borrador — baja jerarquía: outline */}
         <div className="rounded-none border border-line bg-paper p-4">
           <div className="mb-2 flex items-start justify-between">
             <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-muted">
-              <Check className="h-3 w-3" /> Validado
+              <Check className="h-3 w-3" /> Borrador de RFI listo
             </span>
-            <span className="font-mono text-[11px] text-muted-soft">Concreto premezclado</span>
+            <span className="font-mono text-[11px] text-muted-soft">RFI-084</span>
           </div>
           <p className="text-sm text-muted">
-            El volumen extraído del modelo coincide con las órdenes de compra.
+            Respuesta redactada con cita a plano <span className="font-medium text-ink">E-12 rev. C</span>.
+            Pendiente de revisión y firma del ingeniero.
           </p>
         </div>
       </div>
