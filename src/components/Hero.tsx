@@ -36,9 +36,10 @@ export default function Hero() {
           style={{ transitionDelay: '160ms' }}
           className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-muted"
         >
-          Agentes de IA que planifican, coordinan y auditan tus obras con el
-          criterio de un ingeniero senior —y la constancia de un sistema que
-          nunca deja de vigilar el proyecto.
+          Empieza por tu oficina técnica: un agente de IA que encuentra las
+          contradicciones entre planos, especificaciones y RFIs —y redacta el
+          primer borrador de respuesta que tu ingeniero solo revisa y firma.
+          Suma cronograma, materiales y auditoría cuando tenga sentido.
         </p>
 
         <div
@@ -47,10 +48,10 @@ export default function Hero() {
           className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row"
         >
           <a
-            href={CONTACT.demo}
+            href={CONTACT.demoAtlas}
             className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-6 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
           >
-            Agendar demo
+            Agenda una demo de Atlas
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <Link
@@ -61,10 +62,18 @@ export default function Hero() {
           </Link>
         </div>
 
+        <p
+          data-reveal
+          style={{ transitionDelay: '280ms' }}
+          className="mt-5 text-sm text-muted-soft"
+        >
+          Sin instalar nada · Sin migrar tus herramientas · Lo ves sobre tu propia obra
+        </p>
+
         <div
           data-reveal
-          style={{ transitionDelay: '300ms' }}
-          className="mx-auto mt-8 flex max-w-fit items-center gap-2.5 border border-line bg-paper/60 px-4 py-2 text-sm text-muted"
+          style={{ transitionDelay: '340ms' }}
+          className="mx-auto mt-7 flex max-w-fit items-center gap-2.5 border border-line bg-paper/60 px-4 py-2 text-sm text-muted"
         >
           <ShieldCheck className="h-4 w-4 shrink-0 text-ink" />
           <span>
@@ -75,10 +84,10 @@ export default function Hero() {
 
         <p
           data-reveal
-          style={{ transitionDelay: '360ms' }}
+          style={{ transitionDelay: '400ms' }}
           className="mt-6 text-sm text-muted-soft"
         >
-          Sin migrar tus herramientas. Implementación en días, no en trimestres.
+          Demo de 30 min sobre tu documentación real, no un ejemplo genérico.
         </p>
       </div>
 

@@ -6,7 +6,7 @@ import ImpactMetrics from '../components/ImpactMetrics';
 import SocialProof from '../components/SocialProof';
 import AgentsSection from '../components/AgentsSection';
 import Security from '../components/Security';
-import Team from '../components/Team';
+import Objections from '../components/Objections';
 import CTA from '../components/CTA';
 
 export default function Home() {
@@ -21,8 +21,7 @@ export default function Home() {
       <SocialProof />
       <AgentsSection />
       <Security />
-      {/* Equipo/fundadores: se activa cuando haya personas reales en src/data/socialProof.ts */}
-      <Team />
+      <Objections />
       <CTA />
     </>
   );
