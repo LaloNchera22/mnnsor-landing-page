@@ -17,9 +17,9 @@ export default function Hero() {
           data-reveal
           className="mx-auto max-w-3xl font-sans text-[2.9rem] leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[5.1rem]"
         >
-          La inteligencia que
-          <br className="hidden sm:block" /> construye{' '}
-          <span className="inline-block min-w-[280px] text-left">
+          La inteligencia que construye
+          <br />
+          <span className="inline-block text-center">
             <Typewriter
               texts={cycleWords}
               color="#ffffff"
