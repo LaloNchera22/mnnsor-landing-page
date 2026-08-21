@@ -4,6 +4,8 @@ import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import Logo from './Logo';
 import { AGENTS } from '../data/agents';
 import { CONTACT } from '../lib/contact';
+import { useConversion } from './conversion/context';
+import { trackCTA } from '../lib/analytics';
 
 const links = [
   { label: 'Plataforma', to: '/plataforma' },
@@ -19,6 +21,12 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuTimer = useRef<number | undefined>(undefined);
   const { pathname } = useLocation();
+  const { openScheduler } = useConversion();
+
+  const openDemo = (section: string) => {
+    trackCTA(CONTACT.demo.event, section);
+    openScheduler(CONTACT.demo, section);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -145,13 +153,14 @@ export default function Navbar() {
             >
               Iniciar sesión
             </a>
-            <a
-              href={CONTACT.demo}
+            <button
+              type="button"
+              onClick={() => openDemo('navbar')}
               className="group inline-flex items-center gap-1.5 rounded-none bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
             >
               Agendar demo
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </button>
           </div>
 
           <button
@@ -185,12 +194,13 @@ export default function Navbar() {
                 {l.label}
               </NavLink>
             ))}
-            <a
-              href={CONTACT.demo}
+            <button
+              type="button"
+              onClick={() => openDemo('navbar_mobile')}
               className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-none bg-ink px-4 py-3 text-sm font-medium text-paper"
             >
               Agendar demo <ArrowUpRight className="h-4 w-4" />
-            </a>
+            </button>
           </div>
         </div>
       </nav>

@@ -112,6 +112,7 @@ export default function Agents() {
       </section>
 
       <CTASection
+        section="agentes_cta"
         title="¿Cuál agente resolvería tu cuello de botella hoy?"
         description="Cuéntanos tu reto principal y te decimos con franqueza qué agente aplica, qué esperar y qué queda fuera de su alcance."
         primaryLabel="Agendar demo"

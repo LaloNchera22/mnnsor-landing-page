@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import CTASection from '../components/CTASection';
-import MailButton from '../components/MailButton';
+import CTAButton from '../components/CTAButton';
 import { AGENTS } from '../data/agents';
 import { CONTACT } from '../lib/contact';
 
@@ -82,9 +82,9 @@ export default function Platform() {
         description="mnnsor conecta la documentación que ya generas con una fuerza de trabajo de agentes de IA especializados. Se despliega sobre tu stack actual y opera bajo la supervisión de tu equipo senior."
       >
         <div className="flex flex-col gap-3.5 sm:flex-row">
-          <MailButton href={CONTACT.demo} variant="solid">
+          <CTAButton intent={CONTACT.demo} section="plataforma_header" variant="solid">
             Agendar demo
-          </MailButton>
+          </CTAButton>
           <Link
             to="/agentes"
             className="group inline-flex items-center justify-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel"
@@ -270,9 +270,9 @@ export default function Platform() {
                 ))}
               </ul>
               <div data-reveal style={{ transitionDelay: '240ms' }} className="mt-9">
-                <MailButton href={CONTACT.pilot} variant="solid">
+                <CTAButton intent={CONTACT.pilot} section="plataforma_piloto" variant="solid">
                   Proponer un piloto
-                </MailButton>
+                </CTAButton>
               </div>
             </div>
 
@@ -315,6 +315,7 @@ export default function Platform() {
       </section>
 
       <CTASection
+        section="plataforma_cta"
         title={
           <>
             Ve la plataforma sobre tu propia obra.

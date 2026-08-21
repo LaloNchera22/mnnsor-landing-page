@@ -9,9 +9,9 @@ import {
 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import CTASection from '../components/CTASection';
-import MailButton from '../components/MailButton';
+import CTAButton from '../components/CTAButton';
 import { AGENTS, getAgent } from '../data/agents';
-import { agentEnquiry, CONTACT } from '../lib/contact';
+import { agentIntent, CONTACT } from '../lib/contact';
 
 export default function AgentDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -23,6 +23,7 @@ export default function AgentDetail() {
 
   const Icon = agent.icon;
   const others = AGENTS.filter((a) => a.slug !== agent.slug);
+  const enquiry = agentIntent(agent.name);
 
   return (
     <>
@@ -44,12 +45,12 @@ export default function AgentDetail() {
         description={agent.tagline}
       >
         <div className="flex flex-col gap-3.5 sm:flex-row">
-          <MailButton href={agentEnquiry(agent.name)} variant="solid">
+          <CTAButton intent={enquiry} section="agente_header" variant="solid">
             Solicitar información del {agent.code}
-          </MailButton>
-          <MailButton href={CONTACT.demo} variant="outline" arrow={false}>
+          </CTAButton>
+          <CTAButton intent={CONTACT.demo} section="agente_header" variant="outline" arrow={false}>
             Ver en una demo
-          </MailButton>
+          </CTAButton>
         </div>
       </PageHeader>
 
@@ -276,9 +277,10 @@ export default function AgentDetail() {
       </section>
 
       <CTASection
+        section="agente_cta"
         title={<>Pon a {agent.name} a trabajar sobre tu obra.</>}
         description="Agenda una demo con tu propia documentación y verás exactamente qué detecta, qué propone y dónde te pide decidir."
-        primaryHref={agentEnquiry(agent.name)}
+        primaryIntent={enquiry}
         primaryLabel={`Solicitar el ${agent.code}`}
       />
     </>

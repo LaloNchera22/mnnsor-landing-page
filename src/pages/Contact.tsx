@@ -1,53 +1,77 @@
 import { CalendarClock, Briefcase, ShieldCheck, LifeBuoy, FlaskConical, Mail, ArrowUpRight } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
-import { CONTACT, SUPPORT_EMAIL } from '../lib/contact';
+import { CONTACT, SALES_EMAIL, type CTAIntent } from '../lib/contact';
+import { useConversion } from '../components/conversion/context';
+import { trackCTA } from '../lib/analytics';
 
-const options = [
+const SECTION = 'contacto';
+
+interface Option {
+  icon: LucideIcon;
+  title: string;
+  body: string;
+  intent: CTAIntent;
+  cta: string;
+}
+
+const options: Option[] = [
   {
     icon: CalendarClock,
     title: 'Agendar una demo',
     body: 'Una sesión de 30 minutos con tu propia documentación. Verás a los agentes trabajando sobre datos reales.',
-    href: CONTACT.demo,
-    cta: 'Escribir para agendar',
+    intent: CONTACT.demo,
+    cta: 'Elegir horario',
   },
   {
     icon: Briefcase,
     title: 'Hablar con ventas',
     body: 'Precios, alcance y modelo de despliegue para tu organización.',
-    href: CONTACT.sales,
+    intent: CONTACT.sales,
     cta: 'Contactar a ventas',
   },
   {
     icon: FlaskConical,
     title: 'Proponer un piloto',
     body: 'Una prueba de concepto acotada sobre una obra real, con una línea base tuya.',
-    href: CONTACT.pilot,
+    intent: CONTACT.pilot,
     cta: 'Proponer un piloto',
   },
   {
     icon: ShieldCheck,
     title: 'Seguridad y cumplimiento',
     body: 'Documentación SOC 2, tratamiento de datos y sesión técnica con tu equipo de TI.',
-    href: CONTACT.security,
-    cta: 'Escribir a seguridad',
+    intent: CONTACT.security,
+    cta: 'Solicitar documentación',
   },
   {
     icon: LifeBuoy,
     title: 'Soporte',
     body: '¿Ya usas mnnsor y necesitas ayuda? Nuestro equipo de soporte responde.',
-    href: CONTACT.support,
+    intent: CONTACT.support,
     cta: 'Contactar a soporte',
   },
   {
     icon: Mail,
     title: 'Consulta general',
     body: 'Cualquier otra pregunta sobre la plataforma o los agentes.',
-    href: CONTACT.general,
+    intent: CONTACT.general,
     cta: 'Enviar un mensaje',
   },
 ];
 
+const cardCls =
+  'group flex flex-col rounded-none border border-line bg-paper/50 p-7 text-left transition-colors hover:bg-paper';
+
 export default function Contact() {
+  const { openScheduler, openLeadForm } = useConversion();
+
+  const trigger = (intent: CTAIntent) => {
+    trackCTA(intent.event, SECTION);
+    if (intent.action === 'scheduler') openScheduler(intent, SECTION);
+    else openLeadForm(intent, SECTION);
+  };
+
   return (
     <>
       <PageHeader
@@ -61,11 +85,15 @@ export default function Contact() {
         }
         description={
           <>
-            Cada botón abre un correo listo para enviar a{' '}
-            <a href={CONTACT.general} className="font-medium text-ink underline underline-offset-4">
-              {SUPPORT_EMAIL}
-            </a>{' '}
-            con el contexto ya redactado. Solo completas tus datos y lo envías.
+            Elige cómo quieres avanzar: agenda una demo, propón un piloto o
+            cuéntanos tu caso. Respondemos desde{' '}
+            <a
+              href={`mailto:${SALES_EMAIL}`}
+              className="font-medium text-ink underline underline-offset-4"
+            >
+              {SALES_EMAIL}
+            </a>
+            .
           </>
         }
       />
@@ -75,14 +103,8 @@ export default function Contact() {
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {options.map((o, i) => {
               const Icon = o.icon;
-              return (
-                <a
-                  key={o.title}
-                  href={o.href}
-                  data-reveal
-                  style={{ transitionDelay: `${i * 70}ms` }}
-                  className="group flex flex-col rounded-none border border-line bg-paper/50 p-7 transition-colors hover:bg-paper"
-                >
+              const inner = (
+                <>
                   <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
                     <Icon className="h-5 w-5" />
                   </span>
@@ -92,7 +114,38 @@ export default function Contact() {
                     {o.cta}
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
-                </a>
+                </>
+              );
+
+              const style = { transitionDelay: `${i * 70}ms` };
+
+              // Soporte: el correo es el canal real → enlace mailto.
+              if (o.intent.action === 'mailto') {
+                return (
+                  <a
+                    key={o.title}
+                    href={o.intent.mailtoFallback}
+                    onClick={() => trackCTA(o.intent.event, SECTION)}
+                    data-reveal
+                    style={style}
+                    className={cardCls}
+                  >
+                    {inner}
+                  </a>
+                );
+              }
+
+              return (
+                <button
+                  key={o.title}
+                  type="button"
+                  onClick={() => trigger(o.intent)}
+                  data-reveal
+                  style={style}
+                  className={cardCls}
+                >
+                  {inner}
+                </button>
               );
             })}
           </div>
@@ -109,10 +162,10 @@ export default function Contact() {
               </div>
             </div>
             <a
-              href={CONTACT.general}
+              href={`mailto:${SALES_EMAIL}`}
               className="font-mono text-sm font-medium text-ink underline underline-offset-4"
             >
-              {SUPPORT_EMAIL}
+              {SALES_EMAIL}
             </a>
           </div>
         </div>

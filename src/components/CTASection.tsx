@@ -1,25 +1,29 @@
-import MailButton from './MailButton';
-import { CONTACT } from '../lib/contact';
+import CTAButton from './CTAButton';
+import { CONTACT, type CTAIntent } from '../lib/contact';
 
 interface CTASectionProps {
   title: React.ReactNode;
   description: string;
-  primaryHref?: string;
+  /** Sección de origen para la analítica. */
+  section: string;
+  primaryIntent?: CTAIntent;
   primaryLabel?: string;
-  secondaryHref?: string;
+  secondaryIntent?: CTAIntent;
   secondaryLabel?: string;
 }
 
 /**
- * Banner de conversión oscuro reutilizable. Ambos botones abren un correo
- * predefinido a support@mnnsor.com.
+ * Banner de conversión oscuro reutilizable. El botón primario abre el
+ * scheduler (demo) o el formulario de lead según el intent; el secundario
+ * abre el formulario de ventas por defecto. Ambos registran analítica.
  */
 export default function CTASection({
   title,
   description,
-  primaryHref = CONTACT.demo,
+  section,
+  primaryIntent = CONTACT.demo,
   primaryLabel = 'Agendar demo',
-  secondaryHref = CONTACT.sales,
+  secondaryIntent = CONTACT.sales,
   secondaryLabel = 'Hablar con ventas',
 }: CTASectionProps) {
   return (
@@ -38,12 +42,18 @@ export default function CTASection({
           </h2>
           <p className="mx-auto mt-6 max-w-lg leading-relaxed text-white/60">{description}</p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
-            <MailButton href={primaryHref} variant="solid-light" full>
+            <CTAButton intent={primaryIntent} section={section} variant="solid-light" full>
               {primaryLabel}
-            </MailButton>
-            <MailButton href={secondaryHref} variant="outline-light" full arrow={false}>
+            </CTAButton>
+            <CTAButton
+              intent={secondaryIntent}
+              section={section}
+              variant="outline-light"
+              full
+              arrow={false}
+            >
               {secondaryLabel}
-            </MailButton>
+            </CTAButton>
           </div>
         </div>
       </div>

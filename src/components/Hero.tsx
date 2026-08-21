@@ -1,5 +1,6 @@
-import { ArrowUpRight, Play, LayoutGrid, GanttChartSquare, Boxes, ShieldCheck } from 'lucide-react';
+import { Play, LayoutGrid, GanttChartSquare, Boxes, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import CTAButton from './CTAButton';
 import { CONTACT } from '../lib/contact';
 
 export default function Hero() {
@@ -46,13 +47,9 @@ export default function Hero() {
           style={{ transitionDelay: '240ms' }}
           className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row"
         >
-          <a
-            href={CONTACT.demo}
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-6 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
-          >
+          <CTAButton intent={CONTACT.demo} section="hero" variant="solid" full>
             Agendar demo
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+          </CTAButton>
           <Link
             to="/plataforma"
             className="inline-flex w-full items-center justify-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel sm:w-auto"

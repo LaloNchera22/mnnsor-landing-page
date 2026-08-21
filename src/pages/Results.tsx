@@ -184,11 +184,12 @@ export default function Results() {
       </section>
 
       <CTASection
+        section="resultados_cta"
         title="Mide el impacto sobre tu propia obra."
         description="Proponemos un piloto acotado con una línea base tuya, para que los resultados sean tuyos y verificables."
-        primaryHref={CONTACT.pilot}
+        primaryIntent={CONTACT.pilot}
         primaryLabel="Proponer un piloto"
-        secondaryHref={CONTACT.demo}
+        secondaryIntent={CONTACT.demo}
         secondaryLabel="Agendar demo"
       />
     </>

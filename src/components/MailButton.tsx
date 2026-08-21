@@ -1,33 +1,23 @@
 import { ArrowUpRight } from 'lucide-react';
-
-type Variant = 'solid' | 'outline' | 'solid-light' | 'outline-light' | 'link';
+import { ctaClasses, type ButtonVariant } from './buttonStyles';
 
 interface MailButtonProps {
-  /** Enlace `mailto:` predefinido (ver src/lib/contact.ts). */
+  /** Enlace `mailto:` de fallback (ver src/lib/contact.ts). */
   href: string;
   children: React.ReactNode;
-  variant?: Variant;
+  variant?: ButtonVariant;
   className?: string;
   /** Muestra la flecha ↗ (activada por defecto salvo en `link`). */
   arrow?: boolean;
   full?: boolean;
+  /** Se dispara al hacer clic (p. ej. analítica). */
+  onClick?: () => void;
 }
 
-const base =
-  'group inline-flex items-center justify-center gap-2 rounded-none text-base font-medium transition-transform duration-300 hover:-translate-y-0.5';
-
-const variants: Record<Variant, string> = {
-  solid: 'bg-ink px-6 py-3.5 text-paper',
-  outline: 'border border-line-strong bg-paper px-6 py-3.5 text-ink hover:bg-panel',
-  'solid-light': 'bg-paper px-7 py-3.5 text-ink',
-  'outline-light': 'border border-white/25 px-7 py-3.5 text-paper hover:bg-white/10',
-  link: 'text-sm font-semibold text-ink hover:translate-y-0',
-};
-
 /**
- * Botón de acción que abre un correo predefinido a support@mnnsor.com.
- * Centraliza el estilo de CTA para que todos los "botones de mandar
- * correo" del sitio se vean y comporten igual.
+ * Enlace de acción que abre un correo `mailto:`. Hoy se usa sólo como
+ * fallback (p. ej. soporte, o cuando el scheduler/endpoint no está
+ * configurado). Comparte el sistema de estilos con `CTAButton`.
  */
 export default function MailButton({
   href,
@@ -36,13 +26,11 @@ export default function MailButton({
   className = '',
   arrow,
   full,
+  onClick,
 }: MailButtonProps) {
   const showArrow = arrow ?? variant !== 'link';
   return (
-    <a
-      href={href}
-      className={`${base} ${variants[variant]} ${full ? 'w-full sm:w-auto' : ''} ${className}`}
-    >
+    <a href={href} onClick={onClick} className={ctaClasses(variant, { full, className })}>
       {children}
       {showArrow && (
         <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -2,7 +2,11 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import Logo from './Logo';
 import { AGENTS } from '../data/agents';
-import { CONTACT, SUPPORT_EMAIL } from '../lib/contact';
+import { CONTACT, SALES_EMAIL } from '../lib/contact';
+import { useConversion } from './conversion/context';
+import { trackCTA } from '../lib/analytics';
+
+const SECTION = 'footer';
 
 const platform = {
   title: 'Plataforma',
@@ -19,12 +23,19 @@ const agentsCol = {
   links: AGENTS.map((a) => ({ label: a.name, to: `/agentes/${a.slug}` })),
 };
 
-const company = {
+interface FooterLink {
+  label: string;
+  to?: string;
+  href?: string;
+  action?: 'demo';
+}
+
+const company: { title: string; links: FooterLink[] } = {
   title: 'Compañía',
   links: [
     { label: 'Contacto', to: '/contacto' },
-    { label: 'Agendar demo', href: CONTACT.demo },
-    { label: 'Soporte', href: CONTACT.support },
+    { label: 'Agendar demo', action: 'demo' },
+    { label: 'Soporte', href: CONTACT.support.mailtoFallback },
     { label: 'Seguridad', to: '/seguridad' },
   ],
 };
@@ -35,7 +46,16 @@ const socials = [
   { id: 'discord-icon', label: 'Discord', href: '#' },
 ];
 
+const linkCls = 'text-sm text-white/65 transition-colors hover:text-paper';
+
 export default function Footer() {
+  const { openScheduler } = useConversion();
+
+  const openDemo = () => {
+    trackCTA(CONTACT.demo.event, SECTION);
+    openScheduler(CONTACT.demo, SECTION);
+  };
+
   return (
     <footer className="bg-ink pt-20 pb-10 text-paper">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -46,18 +66,19 @@ export default function Footer() {
               La plataforma de agentes de IA construida específicamente para los
               flujos de trabajo de la industria de la construcción.
             </p>
-            <a
-              href={CONTACT.demo}
+            <button
+              type="button"
+              onClick={openDemo}
               className="group mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-paper"
             >
               Agendar una demo
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </button>
             <a
-              href={CONTACT.general}
+              href={`mailto:${SALES_EMAIL}`}
               className="mt-4 block font-mono text-xs text-white/45 transition-colors hover:text-paper"
             >
-              {SUPPORT_EMAIL}
+              {SALES_EMAIL}
             </a>
           </div>
 
@@ -68,17 +89,15 @@ export default function Footer() {
                 {col.links.map((l) => (
                   <li key={l.label}>
                     {'to' in l && l.to ? (
-                      <Link
-                        to={l.to}
-                        className="text-sm text-white/65 transition-colors hover:text-paper"
-                      >
+                      <Link to={l.to} className={linkCls}>
                         {l.label}
                       </Link>
+                    ) : 'action' in l && l.action === 'demo' ? (
+                      <button type="button" onClick={openDemo} className={linkCls}>
+                        {l.label}
+                      </button>
                     ) : (
-                      <a
-                        href={(l as { href: string }).href}
-                        className="text-sm text-white/65 transition-colors hover:text-paper"
-                      >
+                      <a href={(l as { href: string }).href} className={linkCls}>
                         {l.label}
                       </a>
                     )}
@@ -108,10 +127,7 @@ export default function Footer() {
                 aria-label={label}
                 className="opacity-55 transition-opacity duration-300 hover:opacity-100"
               >
-                <svg
-                  className="h-[18px] w-[18px] [filter:invert(1)]"
-                  aria-hidden="true"
-                >
+                <svg className="h-[18px] w-[18px] [filter:invert(1)]" aria-hidden="true">
                   <use href={`/icons.svg#${id}`} />
                 </svg>
               </a>

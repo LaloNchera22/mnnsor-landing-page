@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import CTASection from '../components/CTASection';
-import MailButton from '../components/MailButton';
+import CTAButton from '../components/CTAButton';
 import { CONTACT } from '../lib/contact';
 
 const pillars = [
@@ -80,9 +80,9 @@ export default function SecurityPage() {
         description="mnnsor se construyó desde los cimientos con protocolos estrictos de seguridad, para que tus datos, presupuestos y planos permanezcan bajo tu control en todo momento."
       >
         <div className="flex flex-col gap-3.5 sm:flex-row">
-          <MailButton href={CONTACT.security} variant="solid">
+          <CTAButton intent={CONTACT.security} section="seguridad_header" variant="solid">
             Solicitar documentación de seguridad
-          </MailButton>
+          </CTAButton>
           <div className="inline-flex items-center gap-3 rounded-none border border-line bg-paper px-4 py-2.5">
             <Lock className="h-4 w-4 text-ink" />
             <span className="text-sm font-medium text-ink">Datos en tu región, bajo tus políticas</span>
@@ -173,9 +173,9 @@ export default function SecurityPage() {
                 evaluar la plataforma con el rigor que exige tu organización.
               </p>
               <div data-reveal style={{ transitionDelay: '240ms' }} className="mt-8">
-                <MailButton href={CONTACT.security} variant="solid">
+                <CTAButton intent={CONTACT.security} section="seguridad_docs" variant="solid">
                   Escribir a seguridad
-                </MailButton>
+                </CTAButton>
               </div>
             </div>
             <div
@@ -210,11 +210,12 @@ export default function SecurityPage() {
       </section>
 
       <CTASection
+        section="seguridad_cta"
         title="¿Tu equipo de seguridad tiene preguntas?"
         description="Escríbenos y coordinamos una sesión técnica con la documentación de cumplimiento que tu organización requiera."
-        primaryHref={CONTACT.security}
+        primaryIntent={CONTACT.security}
         primaryLabel="Contactar a seguridad"
-        secondaryHref={CONTACT.demo}
+        secondaryIntent={CONTACT.demo}
         secondaryLabel="Agendar demo"
       />
     </>
