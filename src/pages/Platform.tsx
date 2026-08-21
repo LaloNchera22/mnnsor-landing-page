@@ -81,17 +81,22 @@ export default function Platform() {
         }
         description="mnnsor conecta la documentación que ya generas con una fuerza de trabajo de agentes de IA especializados. Se despliega sobre tu stack actual y opera bajo la supervisión de tu equipo senior."
       >
-        <div className="flex flex-col gap-3.5 sm:flex-row">
-          <MailButton href={CONTACT.demo} variant="solid">
-            Agendar demo
-          </MailButton>
-          <Link
-            to="/agentes"
-            className="group inline-flex items-center justify-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel"
-          >
-            Ver los agentes
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+        <div>
+          <div className="flex flex-col gap-3.5 sm:flex-row">
+            <MailButton href={CONTACT.demo} variant="solid">
+              Agendar demo
+            </MailButton>
+            <Link
+              to="/agentes"
+              className="group inline-flex items-center justify-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel"
+            >
+              Ver los agentes
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+          <p className="mt-5 text-sm text-muted-soft">
+            Sin instalar nada · Sin migrar tus herramientas · Lo ves sobre tu propia obra
+          </p>
         </div>
       </PageHeader>
 
