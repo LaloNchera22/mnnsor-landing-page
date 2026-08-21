@@ -4,23 +4,7 @@ import { CONTACT } from '../lib/contact';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-36 pb-20 lg:pt-44 lg:pb-28" id="plataforma">
-      {/* Ambient monochrome wash — restrained, not a gradient soup */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(0,0,0,0.05),transparent_70%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35] [background-image:linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(to_right,var(--color-line)_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(70%_50%_at_50%_0%,#000,transparent)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-[1] h-[600px] overflow-hidden"
-      >
-        <div className="hero-beam" />
-      </div>
-
+    <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28" id="plataforma">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
         <h1
           data-reveal
@@ -117,7 +101,7 @@ function ProductMock() {
   ];
 
   return (
-    <div className="sweep relative overflow-hidden rounded-none border border-line-strong bg-paper shadow-[0_40px_90px_-40px_rgba(0,0,0,0.35)]">
+    <div className="relative overflow-hidden rounded-none border border-line-strong bg-paper shadow-[0_40px_90px_-40px_rgba(0,0,0,0.35)]">
       {/* Chrome */}
       <div className="flex items-center gap-2 border-b border-line bg-panel/60 px-4 py-3">
         <span className="h-3 w-3 rounded-none border border-line-strong bg-paper" />

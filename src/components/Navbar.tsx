@@ -47,7 +47,7 @@ export default function Navbar() {
         aria-label="Principal"
         className={`transition-all duration-500 ${
           scrolled || open
-            ? 'border-b border-line bg-paper/85 backdrop-blur-xl'
+            ? 'border-b border-line bg-paper/40 backdrop-blur-2xl backdrop-saturate-150'
             : 'border-b border-transparent bg-transparent'
         }`}
       >
@@ -167,7 +167,7 @@ export default function Navbar() {
 
         {/* Mobile sheet */}
         <div
-          className={`overflow-hidden border-t border-line bg-paper/95 backdrop-blur-xl transition-[max-height] duration-500 md:hidden ${
+          className={`overflow-hidden border-t border-line bg-paper/40 backdrop-blur-2xl backdrop-saturate-150 transition-[max-height] duration-500 md:hidden ${
             open ? 'max-h-[36rem]' : 'max-h-0'
           }`}
         >

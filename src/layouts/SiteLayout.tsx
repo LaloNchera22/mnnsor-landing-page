@@ -14,7 +14,7 @@ export default function SiteLayout() {
   useReveal([pathname]);
 
   return (
-    <div className="grain relative min-h-screen bg-paper font-sans text-ink">
+    <div className="relative min-h-screen bg-paper font-sans text-ink">
       <a
         href="#contenido"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-none focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-paper"
