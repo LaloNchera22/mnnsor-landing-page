@@ -61,9 +61,21 @@ export default function Hero() {
           </Link>
         </div>
 
+        <div
+          data-reveal
+          style={{ transitionDelay: '300ms' }}
+          className="mx-auto mt-8 flex max-w-fit items-center gap-2.5 border border-line bg-paper/60 px-4 py-2 text-sm text-muted"
+        >
+          <ShieldCheck className="h-4 w-4 shrink-0 text-ink" />
+          <span>
+            La IA propone, tu equipo senior autoriza —
+            <span className="font-medium text-ink"> cada decisión, auditable</span>.
+          </span>
+        </div>
+
         <p
           data-reveal
-          style={{ transitionDelay: '320ms' }}
+          style={{ transitionDelay: '360ms' }}
           className="mt-6 text-sm text-muted-soft"
         >
           Sin migrar tus herramientas. Implementación en días, no en trimestres.
