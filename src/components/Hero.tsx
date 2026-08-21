@@ -8,14 +8,14 @@ const cycleWords = ['el mañana', 'tu obra', 'tu proyecto', 'tu trabajo', 'tu vi
 
 export default function Hero() {
   return (
-    <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 bg-black overflow-hidden" id="plataforma">
+    <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 bg-ink overflow-hidden" id="plataforma">
       <div className="absolute inset-0 z-0">
         <LavaLamp top="#4a4a4a" bottom="#111111" sheen="#6b6b6b" />
       </div>
       <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-6">
         <h1
           data-reveal
-          className="mx-auto max-w-3xl font-sans text-[2.9rem] leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[5.1rem]"
+          className="mx-auto max-w-3xl font-sans text-[2.9rem] leading-[1.02] tracking-tight text-paper sm:text-6xl lg:text-[5.1rem]"
         >
           La inteligencia que
           <br className="hidden sm:block" /> construye{' '}

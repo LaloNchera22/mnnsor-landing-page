@@ -42,8 +42,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-10 border-b border-white/10 pb-14 md:grid-cols-5">
           <div className="col-span-2">
             <Logo tone="light" />
-            <p className="mt-3 font-mono text-xs text-white/40">se pronuncia «men-sor»</p>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
+            <p className="mt-3 font-mono text-xs text-paper/40">se pronuncia «men-sor»</p>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-paper/55">
               La plataforma de agentes de IA construida específicamente para los
               flujos de trabajo de la industria de la construcción.
             </p>
@@ -56,7 +56,7 @@ export default function Footer() {
             </a>
             <a
               href={CONTACT.general}
-              className="mt-4 block font-mono text-xs text-white/45 transition-colors hover:text-paper"
+              className="mt-4 block font-mono text-xs text-paper/45 transition-colors hover:text-paper"
             >
               {SUPPORT_EMAIL}
             </a>
@@ -64,21 +64,21 @@ export default function Footer() {
 
           {[platform, agentsCol, company].map((col) => (
             <nav key={col.title} aria-label={col.title}>
-              <h2 className="mb-4 label-mono text-white/40">{col.title}</h2>
+              <h2 className="mb-4 label-mono text-paper/40">{col.title}</h2>
               <ul className="space-y-3">
                 {col.links.map((l) => (
                   <li key={l.label}>
                     {'to' in l && l.to ? (
                       <Link
                         to={l.to}
-                        className="text-sm text-white/65 transition-colors hover:text-paper"
+                        className="text-sm text-paper/65 transition-colors hover:text-paper"
                       >
                         {l.label}
                       </Link>
                     ) : (
                       <a
                         href={(l as { href: string }).href}
-                        className="text-sm text-white/65 transition-colors hover:text-paper"
+                        className="text-sm text-paper/65 transition-colors hover:text-paper"
                       >
                         {l.label}
                       </a>
@@ -91,14 +91,14 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col-reverse items-center justify-between gap-6 pt-8 sm:flex-row">
-          <p className="text-sm text-white/45">
+          <p className="text-sm text-paper/45">
             © {new Date().getFullYear()} mnnsor. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-5">
-            <a href="#" className="text-sm text-white/45 transition-colors hover:text-paper">
+            <a href="#" className="text-sm text-paper/45 transition-colors hover:text-paper">
               Privacidad
             </a>
-            <a href="#" className="text-sm text-white/45 transition-colors hover:text-paper">
+            <a href="#" className="text-sm text-paper/45 transition-colors hover:text-paper">
               Términos
             </a>
             <span className="h-4 w-px bg-white/15" />

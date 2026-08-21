@@ -27,7 +27,7 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
         <span ref={ref}>{value}</span>
         {metric.suffix}
       </div>
-      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-white/55">
+      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-paper/55">
         {metric.label}
       </p>
     </div>
@@ -40,7 +40,7 @@ export default function ImpactMetrics() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
-            <p data-reveal className="mb-5 label-mono text-white/45">
+            <p data-reveal className="mb-5 label-mono text-paper/45">
               Objetivos de diseño
             </p>
             <h2
@@ -49,12 +49,12 @@ export default function ImpactMetrics() {
               className="font-sans text-3xl leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl"
             >
               Cambia la economía de cada proyecto,
-              <span className="text-white/60"> no solo el flujo de trabajo.</span>
+              <span className="text-paper/60"> no solo el flujo de trabajo.</span>
             </h2>
             <p
               data-reveal
               style={{ transitionDelay: '160ms' }}
-              className="mt-6 max-w-md leading-relaxed text-white/55"
+              className="mt-6 max-w-md leading-relaxed text-paper/55"
             >
               Los agentes no engrosan tu plantilla de supervisión: la
               multiplican. Escala más obras con el mismo equipo senior.
@@ -69,7 +69,7 @@ export default function ImpactMetrics() {
             </div>
             <p
               data-reveal
-              className="mt-10 border-t border-white/15 pt-5 text-xs leading-relaxed text-white/45"
+              className="mt-10 border-t border-white/15 pt-5 text-xs leading-relaxed text-paper/45"
             >
               Rangos ilustrativos que orientan el diseño de los agentes; los
               resultados varían por proyecto y aún no representan una garantía.

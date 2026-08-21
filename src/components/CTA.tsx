@@ -15,13 +15,13 @@ export default function CTA() {
         />
 
         <div className="relative">
-          <p className="mb-6 label-mono text-white/45">Empieza hoy</p>
+          <p className="mb-6 label-mono text-paper/45">Empieza hoy</p>
           <h2 className="mx-auto max-w-2xl font-sans text-4xl leading-[1.05] tracking-tight text-paper sm:text-5xl lg:text-6xl">
             Deja que tu equipo dirija la obra.
             <br />
-            <span className="text-white/70">Deja que mnnsor lleve los datos.</span>
+            <span className="text-paper/70">Deja que mnnsor lleve los datos.</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-lg leading-relaxed text-white/60">
+          <p className="mx-auto mt-6 max-w-lg leading-relaxed text-paper/60">
             Agenda una demo de 30 minutos con tu propio programa de obra. Verás
             los agentes trabajando sobre tus documentos reales, no sobre un
             ejemplo genérico.
@@ -43,7 +43,7 @@ export default function CTA() {
             </a>
           </div>
 
-          <p className="mt-6 text-sm text-white/45">
+          <p className="mt-6 text-sm text-paper/45">
             Sin instalar nada · Sin migrar tus herramientas · Lo ves sobre tu propia obra
           </p>
         </div>

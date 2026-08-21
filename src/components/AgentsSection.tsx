@@ -100,7 +100,7 @@ function FlagshipAgent() {
         <div className="mb-6 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">
           <FileText className="h-3.5 w-3.5 text-paper" />
           <span className="label-mono text-paper">Empieza aquí · Documentación</span>
-          <span className="font-mono text-[11px] text-white/50">· ATL-03</span>
+          <span className="font-mono text-[11px] text-paper/50">· ATL-03</span>
         </div>
         <h3 className="mb-4 font-sans text-3xl tracking-tight text-ink sm:text-4xl">Agente Atlas</h3>
         <p className="mb-7 max-w-md leading-relaxed text-muted">
@@ -159,13 +159,13 @@ function AtlasMock() {
             <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider">
               <AlertTriangle className="h-3 w-3" /> Discrepancia
             </span>
-            <span className="font-mono text-[11px] text-white/60">Eje 4 · nivel N+3</span>
+            <span className="font-mono text-[11px] text-paper/60">Eje 4 · nivel N+3</span>
           </div>
-          <p className="text-sm text-white/85">
+          <p className="text-sm text-paper/85">
             Cota entre disciplinas no coincide: Arquitectura{' '}
             <span className="font-medium text-paper">6.20 m</span> · Estructura{' '}
             <span className="font-medium text-paper">6.05 m</span>{' '}
-            <span className="text-white/60">(Δ 15 cm)</span>
+            <span className="text-paper/60">(Δ 15 cm)</span>
           </p>
         </div>
         {/* Borrador — baja jerarquía: outline */}
