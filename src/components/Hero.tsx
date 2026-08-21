@@ -1,8 +1,20 @@
+import { useState, useEffect } from 'react';
 import { ArrowUpRight, Play, LayoutGrid, GanttChartSquare, Boxes, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CONTACT } from '../lib/contact';
 
+const cycleWords = ['el mañana', 'tu obra', 'tu proyecto', 'tu trabajo', 'tu vida'];
+
 export default function Hero() {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((current) => (current + 1) % cycleWords.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28" id="plataforma">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
@@ -12,7 +24,12 @@ export default function Hero() {
         >
           La inteligencia que
           <br className="hidden sm:block" /> construye{' '}
-          <span className="font-serif font-normal italic tracking-normal">el mañana</span>
+          <span
+            key={wordIndex}
+            className="inline-block font-serif font-normal tracking-normal animate-text-fade"
+          >
+            {cycleWords[wordIndex]}
+          </span>
         </h1>
 
         <p
