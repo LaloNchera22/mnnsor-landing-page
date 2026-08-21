@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Boxes,
   CheckCircle2,
+  Scale,
 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import CTASection from '../components/CTASection';
@@ -75,11 +76,11 @@ export default function Platform() {
         crumbs={[{ label: 'Inicio', to: '/' }, { label: 'Plataforma' }]}
         title={
           <>
-            Un sistema operativo para la obra,
-            <span className="text-muted"> no otra herramienta que administrar.</span>
+            Una capa de agentes sobre el stack que ya usas,
+            <span className="text-muted"> no una herramienta más que administrar.</span>
           </>
         }
-        description="mnnsor conecta la documentación que ya generas con una fuerza de trabajo de agentes de IA especializados. Se despliega sobre tu stack actual y opera bajo la supervisión de tu equipo senior."
+        description="mnnsor no reemplaza tu Procore, tu P6 ni tu Excel: corre encima de ellos. Conecta la documentación que ya generas con una fuerza de trabajo de agentes de IA especializados que opera bajo la supervisión de tu equipo senior."
       >
         <div className="flex flex-col gap-3.5 sm:flex-row">
           <MailButton href={CONTACT.demo} variant="solid">
@@ -310,6 +311,68 @@ export default function Platform() {
                 })}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Por qué esto es defendible */}
+      <section className="border-b border-line bg-paper py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p data-reveal className="mb-5 label-mono text-muted-soft">
+              Por qué esto es defendible
+            </p>
+            <h2
+              data-reveal
+              style={{ transitionDelay: '80ms' }}
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
+            >
+              Tres cosas que no se copian con otra suscripción.
+            </h2>
+            <p
+              data-reveal
+              style={{ transitionDelay: '160ms' }}
+              className="mt-6 leading-relaxed text-muted"
+            >
+              No competimos por ser el enésimo tablero. Corremos encima de lo que ya
+              tienes y, con el tiempo, la ventaja se vuelve tuya.
+            </p>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line md:grid-cols-3">
+            {[
+              {
+                icon: ShieldCheck,
+                title: 'Nadie firma a ciegas',
+                body: 'Cada acción de los agentes se propone, tu equipo la aprueba o rechaza, y todo queda en bitácora. Tienes la trazabilidad que exigen tu cliente, tu contraloría y una auditoría —sin depender de la memoria de nadie.',
+              },
+              {
+                icon: Scale,
+                title: 'Tu historial, cada obra',
+                body: 'Cruzamos lo proyectado, lo comprado y lo realmente instalado, partida por partida. Ese registro se acumula obra tras obra: mientras más operas, antes detectamos los desvíos —una ventaja que un recién llegado no puede improvisar.',
+              },
+              {
+                icon: FileStack,
+                title: 'Empiezas con lo que ya usas',
+                body: 'No te pedimos cambiar a Procore ni migrar nada. Los agentes leen tus PDF, cronogramas P6, modelos IFC y hojas de Excel tal como existen hoy. Sin un proyecto de TI de meses de por medio.',
+              },
+            ].map((c, i) => {
+              const Icon = c.icon;
+              return (
+                <article
+                  key={c.title}
+                  data-reveal
+                  style={{ transitionDelay: `${i * 90}ms` }}
+                  className="group bg-paper p-7 lg:p-8"
+                >
+                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mb-2.5 text-lg font-semibold tracking-tight text-ink">{c.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{c.body}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
