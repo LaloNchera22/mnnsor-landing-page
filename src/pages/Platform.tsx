@@ -274,10 +274,21 @@ export default function Platform() {
                   </li>
                 ))}
               </ul>
-              <div data-reveal style={{ transitionDelay: '240ms' }} className="mt-9">
+              <div
+                data-reveal
+                style={{ transitionDelay: '240ms' }}
+                className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center"
+              >
                 <MailButton href={CONTACT.pilot} variant="solid">
                   Proponer un piloto
                 </MailButton>
+                <Link
+                  to="/#objeciones"
+                  className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
+                >
+                  Ver las objeciones frecuentes
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
               </div>
             </div>
 
