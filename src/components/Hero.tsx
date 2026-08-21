@@ -1,34 +1,38 @@
-import { useState, useEffect } from 'react';
 import { ArrowUpRight, Play, LayoutGrid, GanttChartSquare, Boxes, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CONTACT } from '../lib/contact';
+import LavaLamp from './LavaLamp';
+import Typewriter from './Typewriter';
 
 const cycleWords = ['el mañana', 'tu obra', 'tu proyecto', 'tu trabajo', 'tu vida'];
 
 export default function Hero() {
-  const [wordIndex, setWordIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((current) => (current + 1) % cycleWords.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28" id="plataforma">
-      <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
+    <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 bg-black overflow-hidden" id="plataforma">
+      <div className="absolute inset-0 z-0">
+        <LavaLamp top="#333333" bottom="#000000" sheen="#555555" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-6">
         <h1
           data-reveal
-          className="mx-auto max-w-3xl font-sans text-[2.9rem] leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-[5.1rem]"
+          className="mx-auto max-w-3xl font-sans text-[2.9rem] leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[5.1rem]"
         >
           La inteligencia que
           <br className="hidden sm:block" /> construye{' '}
-          <span
-            key={wordIndex}
-            className="inline-block font-serif font-normal tracking-normal animate-text-fade"
-          >
-            {cycleWords[wordIndex]}
+          <span className="inline-block min-w-[280px] text-left">
+            <Typewriter
+              texts={cycleWords}
+              color="#ffffff"
+              typedColor="#ffffff"
+              cursorColor="#ffffff"
+              font={{
+                fontFamily: "Inter, system-ui, sans-serif",
+                fontSize: "inherit",
+                fontWeight: "inherit",
+                lineHeight: "inherit",
+                letterSpacing: "inherit"
+              }}
+            />
           </span>
         </h1>
 
