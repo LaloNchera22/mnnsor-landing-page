@@ -68,6 +68,7 @@ const principles = [
 ];
 
 export default function Platform() {
+  const [flagship, ...rest] = AGENTS;
   return (
     <>
       <PageHeader
@@ -79,7 +80,7 @@ export default function Platform() {
             <span className="text-muted"> no otra herramienta que administrar.</span>
           </>
         }
-        description="mnnsor conecta la documentación que ya generas con una fuerza de trabajo de agentes de IA especializados. Se despliega sobre tu stack actual y opera bajo la supervisión de tu equipo senior."
+        description="mnnsor aterriza en tu oficina técnica con Atlas —el agente que ordena planos, especificaciones y RFIs— y desde ahí suma cronograma, materiales y auditoría cuando tenga sentido. Se despliega sobre tu stack actual y opera bajo la supervisión de tu equipo senior."
       >
         <div className="flex flex-col gap-3.5 sm:flex-row">
           <MailButton href={CONTACT.demo} variant="solid">
@@ -197,20 +198,59 @@ export default function Platform() {
               style={{ transitionDelay: '80ms' }}
               className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
-              Activa solo los agentes que tu obra necesita.
+              Empieza por Atlas, tu oficina técnica en piloto automático.
             </h2>
             <p
               data-reveal
               style={{ transitionDelay: '160ms' }}
               className="mt-6 leading-relaxed text-muted"
             >
-              Cada agente es un módulo independiente con un alcance acotado y honesto.
-              Empieza por uno, mide resultados y suma los demás cuando tenga sentido.
+              Atlas ordena el caos documental de la obra desde el primer día. Mídelo, y
+              suma cronograma, materiales y auditoría cuando tenga sentido —cada agente es
+              un módulo independiente, con un alcance acotado y honesto.
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2">
-            {AGENTS.map((a, i) => {
+          {/* Protagonista — Atlas, tarjeta destacada a todo el ancho */}
+          {flagship && (
+            <Link
+              to={`/agentes/${flagship.slug}`}
+              data-reveal
+              className="group mt-14 grid grid-cols-1 gap-8 rounded-none border border-line-strong bg-paper p-8 shadow-[0_40px_90px_-50px_rgba(0,0,0,0.35)] transition-colors hover:bg-paper/70 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:p-12"
+            >
+              <div>
+                <div className="mb-5 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">
+                  <flagship.icon className="h-3.5 w-3.5 text-paper" />
+                  <span className="label-mono text-paper">Empieza aquí · {flagship.discipline}</span>
+                </div>
+                <h3 className="mb-3 font-sans text-3xl tracking-tight text-ink sm:text-4xl">{flagship.name}</h3>
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
+                  Ver capacidades y límites
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+              <div className="border-t border-line pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
+                <p className="mb-6 leading-relaxed text-muted">{flagship.intro}</p>
+                <div className="flex flex-wrap gap-2">
+                  {flagship.integrations.slice(0, 5).map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-none border border-line bg-paper px-2 py-1 font-mono text-[11px] text-muted"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {/* Y además, cuando tenga sentido, suma… */}
+          <p data-reveal className="mt-16 mb-6 label-mono text-muted-soft">
+            Y además, cuando tenga sentido, suma…
+          </p>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {rest.map((a, i) => {
               const Icon = a.icon;
               return (
                 <Link
@@ -221,12 +261,12 @@ export default function Platform() {
                   className="group flex flex-col rounded-none border border-line bg-paper/50 p-7 transition-colors hover:bg-paper"
                 >
                   <div className="mb-5 flex items-center justify-between">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper">
-                      <Icon className="h-5 w-5" />
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-none border border-line text-ink">
+                      <Icon className="h-4.5 w-4.5" />
                     </span>
                     <span className="font-mono text-[11px] text-muted-soft">{a.code}</span>
                   </div>
-                  <h3 className="mb-1.5 font-sans text-2xl tracking-tight text-ink">{a.name}</h3>
+                  <h3 className="mb-1.5 font-sans text-xl tracking-tight text-ink">{a.name}</h3>
                   <p className="mb-4 label-mono text-muted-soft">{a.discipline}</p>
                   <p className="mb-6 text-sm leading-relaxed text-muted">{a.summary}</p>
                   <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-ink">

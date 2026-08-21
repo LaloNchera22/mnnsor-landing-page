@@ -46,6 +46,21 @@ export const CONTACT = {
       SIGN_OFF,
   }),
 
+  demoAtlas: mailto({
+    subject: 'Demo de Atlas (documentación técnica) — mnnsor',
+    body:
+      'Hola equipo de mnnsor:\n\n' +
+      'Me gustaría ver una demo de Atlas sobre nuestra propia documentación técnica: quiero comprobar cómo detecta contradicciones entre planos, especificaciones y RFIs, y cómo redacta el primer borrador de respuesta.\n\n' +
+      'Datos de contacto:\n' +
+      '• Nombre:\n' +
+      '• Empresa:\n' +
+      '• Cargo (oficina técnica / ingeniería / dirección):\n' +
+      '• Teléfono:\n' +
+      '• Volumen documental aproximado (planos, RFIs, submittals):\n' +
+      '• Herramientas que usamos hoy (Procore, Autodesk, SharePoint, PDF…):\n' +
+      SIGN_OFF,
+  }),
+
   sales: mailto({
     subject: 'Contacto con ventas — mnnsor',
     body:

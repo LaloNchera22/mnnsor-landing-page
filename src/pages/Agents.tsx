@@ -77,10 +77,17 @@ export default function Agents() {
                   className="group grid grid-cols-1 gap-8 rounded-none border border-line bg-paper p-7 transition-colors hover:bg-paper/60 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:p-10"
                 >
                   <div>
-                    <div className="mb-5 inline-flex items-center gap-2.5 rounded-none border border-line bg-paper px-3 py-1.5">
-                      <Icon className="h-3.5 w-3.5 text-ink" />
-                      <span className="label-mono text-ink">{a.discipline}</span>
-                      <span className="font-mono text-[11px] text-muted-soft">· {a.code}</span>
+                    <div className="mb-5 flex flex-wrap items-center gap-2.5">
+                      {i === 0 && (
+                        <span className="inline-flex items-center rounded-none bg-ink px-2.5 py-1.5 label-mono text-paper">
+                          Empieza aquí
+                        </span>
+                      )}
+                      <div className="inline-flex items-center gap-2.5 rounded-none border border-line bg-paper px-3 py-1.5">
+                        <Icon className="h-3.5 w-3.5 text-ink" />
+                        <span className="label-mono text-ink">{a.discipline}</span>
+                        <span className="font-mono text-[11px] text-muted-soft">· {a.code}</span>
+                      </div>
                     </div>
                     <h2 className="mb-3 font-sans text-3xl tracking-tight text-ink">{a.name}</h2>
                     <p className="max-w-xl leading-relaxed text-muted">{a.summary}</p>
