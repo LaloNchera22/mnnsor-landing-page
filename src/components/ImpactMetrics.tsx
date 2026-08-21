@@ -41,7 +41,7 @@ export default function ImpactMetrics() {
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
             <p data-reveal className="mb-5 label-mono text-white/45">
-              El impacto
+              Objetivos de diseño
             </p>
             <h2
               data-reveal
@@ -61,10 +61,19 @@ export default function ImpactMetrics() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-10 gap-y-12">
-            {metrics.map((m, i) => (
-              <Stat key={m.label} metric={m} index={i} />
-            ))}
+          <div>
+            <div className="grid grid-cols-2 gap-x-10 gap-y-12">
+              {metrics.map((m, i) => (
+                <Stat key={m.label} metric={m} index={i} />
+              ))}
+            </div>
+            <p
+              data-reveal
+              className="mt-10 border-t border-white/15 pt-5 text-xs leading-relaxed text-white/45"
+            >
+              Rangos ilustrativos que orientan el diseño de los agentes; los
+              resultados varían por proyecto y aún no representan una garantía.
+            </p>
           </div>
         </div>
       </div>
