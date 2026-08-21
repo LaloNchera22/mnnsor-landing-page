@@ -3,8 +3,8 @@ import { Lock, KeyRound, EyeOff, ShieldCheck } from 'lucide-react';
 const pillars = [
   {
     icon: ShieldCheck,
-    title: 'SOC 2 Tipo II',
-    description: 'Infraestructura y controles operativos auditados de forma independiente y continua.',
+    title: 'Prácticas alineadas a SOC 2',
+    description: 'Infraestructura y controles operativos diseñados según los criterios de SOC 2, en preparación para auditoría formal.',
   },
   {
     icon: KeyRound,
