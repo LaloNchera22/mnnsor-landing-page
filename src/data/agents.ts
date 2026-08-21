@@ -110,9 +110,9 @@ export const AGENTS: Agent[] = [
     name: 'Agente Cronos',
     discipline: 'Planeación y control de cronograma',
     icon: CalendarClock,
-    tagline: 'Mantiene el programa de obra sincronizado con lo que reporta el campo.',
+    tagline: 'Evita que un retraso en ruta crítica se propague y cueste dinero: concilia el programa con el avance real de campo.',
     summary:
-      'Compara el programa vigente contra el avance reportado, detecta desviaciones en la ruta crítica y propone re-secuencias —que tu planner aprueba— antes de que un retraso se propague.',
+      'Evita que un retraso en ruta crítica se propague y cueste dinero: compara el programa vigente contra el avance reportado, detecta desviaciones y propone re-secuencias —que tu planner aprueba— antes de que sea tarde.',
     intro:
       'Cronos trabaja sobre el cronograma que ya usas (Primavera P6, MS Project o Excel) y sobre los reportes de avance que tu equipo captura en campo. No “sabe” lo que pasa en obra por sí solo: lee los datos que le das —reportes diarios, porcentajes de avance, fechas reales de inicio y término— y los contrasta contra la línea base para señalar dónde el plan y la realidad empezaron a separarse.',
     capabilities: [
@@ -156,9 +156,9 @@ export const AGENTS: Agent[] = [
     name: 'Agente Cubic',
     discipline: 'Cuantificación de materiales y conciliación',
     icon: Boxes,
-    tagline: 'Extrae cantidades del modelo y las concilia contra lo comprado e instalado.',
+    tagline: 'Tapa la fuga de margen por desperdicio y sobrecosto de material: cuantifica desde el modelo BIM/IFC y lo concilia contra lo comprado e instalado.',
     summary:
-      'Obtiene cantidades directamente del modelo BIM/IFC y las concilia contra órdenes de compra y avance real, señalando desviaciones de material antes de que se conviertan en sobrecosto.',
+      'Tapa la fuga de margen por desperdicio y sobrecosto de material: obtiene cantidades directamente del modelo BIM/IFC y las concilia contra órdenes de compra y avance real, señalando desviaciones antes de que escalen.',
     intro:
       'Cubic lee el modelo BIM (IFC) y los catálogos de conceptos para extraer volúmenes y cantidades, y los compara contra lo que se compró y lo que reporta la obra como instalado. Su precisión depende del nivel de desarrollo (LOD) del modelo: un modelo bien construido produce cuantificaciones confiables; uno incompleto produce estimaciones que el equipo debe validar. Cubic es explícito sobre esa confianza en cada partida.',
     capabilities: [
@@ -196,14 +196,59 @@ export const AGENTS: Agent[] = [
     metric: { value: '85%', label: 'menos captura manual de cantidades' },
   },
   {
+    slug: 'atlas',
+    code: 'ATL-03',
+    name: 'Agente Atlas',
+    discipline: 'Documentación técnica, RFI y submittals',
+    icon: FileText,
+    tagline: 'Evita paros de obra cerrando RFIs y contradicciones a tiempo: cruza planos, especificaciones y correspondencia técnica.',
+    summary:
+      'Cierra RFIs y contradicciones antes de que frenen la obra: lee planos, especificaciones y correspondencia técnica para localizar discrepancias, rastrear RFIs y redactar borradores de respuesta que un ingeniero revisa y firma.',
+    intro:
+      'Atlas ordena el volumen documental de una obra: cientos de planos, cuadernos de especificaciones, RFIs y submittals. Cruza esas fuentes para encontrar contradicciones —una cota que no coincide entre disciplinas, una especificación que contradice el detalle— y prepara borradores de respuesta a RFIs con las referencias correspondientes. La decisión técnica sigue siendo del ingeniero; Atlas le ahorra la búsqueda y el primer borrador.',
+    capabilities: [
+      'Indexa planos y especificaciones (PDF) y los hace consultables por lenguaje natural.',
+      'Detecta discrepancias entre disciplinas (arquitectura, estructura, MEP).',
+      'Rastrea el ciclo de vida de cada RFI y submittal, con fechas y responsables.',
+      'Redacta borradores de respuesta a RFIs citando el plano o cláusula pertinente.',
+      'Resalta cambios entre revisiones de un mismo plano.',
+    ],
+    limits: [
+      'No aprueba ni rechaza submittals: entrega el análisis; la firma es humana.',
+      'No sustituye el criterio de diseño ni asume responsabilidad profesional.',
+      'La calidad de sus hallazgos depende de que la documentación esté legible y actualizada.',
+      'No interpreta planos a mano ilegibles ni información que no esté en los documentos.',
+    ],
+    inputs: [
+      { label: 'Planos', detail: 'Sets en PDF por disciplina, con sus revisiones.' },
+      { label: 'Especificaciones', detail: 'Cuadernos de especificaciones y normas aplicables.' },
+      { label: 'Correspondencia', detail: 'RFIs, submittals y correos técnicos con contratistas.' },
+    ],
+    outputs: [
+      'Buscador documental por lenguaje natural con citas a la fuente.',
+      'Lista de discrepancias entre disciplinas, priorizada.',
+      'Tablero de RFIs y submittals con estado y vencimientos.',
+      'Borradores de respuesta a RFIs (para revisión y firma).',
+    ],
+    workflow: [
+      { title: 'Indexado', description: 'Procesa el set documental y lo vuelve consultable con trazabilidad a la fuente.' },
+      { title: 'Cruce', description: 'Compara disciplinas y revisiones para hallar contradicciones.' },
+      { title: 'Seguimiento', description: 'Ordena RFIs y submittals por estado, responsable y vencimiento.' },
+      { title: 'Borrador', description: 'Prepara respuestas con las referencias citadas.' },
+      { title: 'Revisión', description: 'El ingeniero valida, corrige y firma la respuesta final.' },
+    ],
+    integrations: ['PDF as-built', 'Procore', 'Autodesk', 'Correo', 'SharePoint'],
+    metric: { value: '24/7', label: 'de disponibilidad para consultar el expediente técnico' },
+  },
+  {
     slug: 'vero',
     code: 'VER-04',
     name: 'Agente Vero',
     discipline: 'Auditoría de estimaciones y control presupuestal',
     icon: Receipt,
-    tagline: 'Audita estimaciones y valuaciones contra contrato y avance real.',
+    tagline: 'Frena sobrecobros y protege el presupuesto contratado: audita cada estimación contra contrato, precios unitarios y avance verificado.',
     summary:
-      'Revisa cada estimación o valuación contra el contrato, los precios unitarios y el avance físico verificado, y señala cobros anticipados o inconsistencias para que finanzas decida.',
+      'Frena sobrecobros y protege el presupuesto contratado: revisa cada estimación contra el contrato, los precios unitarios y el avance físico verificado, y señala cobros anticipados o inconsistencias para que finanzas decida.',
     intro:
       'Vero revisa las estimaciones y valuaciones que entran a cobro: verifica que las cantidades correspondan al avance realmente reportado, que los precios unitarios respeten el contrato y que no haya conceptos duplicados o adelantados. No bloquea pagos ni acusa a nadie: entrega a control de costos un dictamen con cada hallazgo y su evidencia, para que la decisión —y la conversación con el contratista— la tenga una persona.',
     capabilities: [

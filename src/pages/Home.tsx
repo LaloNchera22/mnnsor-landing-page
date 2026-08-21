@@ -5,6 +5,7 @@ import Features from '../components/Features';
 import ImpactMetrics from '../components/ImpactMetrics';
 import AgentsSection from '../components/AgentsSection';
 import Security from '../components/Security';
+import Objections from '../components/Objections';
 import CTA from '../components/CTA';
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <ImpactMetrics />
       <AgentsSection />
       <Security />
+      <Objections />
       <CTA />
     </>
   );

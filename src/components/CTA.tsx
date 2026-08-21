@@ -42,6 +42,10 @@ export default function CTA() {
               Hablar con ventas
             </a>
           </div>
+
+          <p className="mt-6 text-sm text-white/45">
+            Sin instalar nada · Sin migrar tus herramientas · Lo ves sobre tu propia obra
+          </p>
         </div>
       </div>
     </section>
