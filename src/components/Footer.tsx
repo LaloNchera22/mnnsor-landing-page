@@ -42,6 +42,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-10 border-b border-white/10 pb-14 md:grid-cols-5">
           <div className="col-span-2">
             <Logo tone="light" />
+            <p className="mt-3 font-mono text-xs text-white/40">se pronuncia «men-sor»</p>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
               La plataforma de agentes de IA construida específicamente para los
               flujos de trabajo de la industria de la construcción.
