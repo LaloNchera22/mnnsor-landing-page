@@ -6,18 +6,16 @@
  * ------------------------------------------------------------------ */
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-serif: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
 
   /* Light surfaces — stark white, neutral grays */
   --color-paper: #ffffff;
-  --color-paper-warm: #ffffff;
   --color-panel: #f4f4f5;
   --color-panel-2: #e4e4e7;
 
   /* Ink scale */
   --color-ink: #000000;
-  --color-ink-soft: #09090b;
   --color-muted: #71717a;
   --color-muted-soft: #a1a1aa;
 
@@ -138,13 +136,33 @@ body {
   100% { transform: translateX(320%); }
 }
 
-@keyframes scan {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(100vh); }
+/* Soft descending light band — a scanner pass, feathered on both axes so
+ * it reads as ambient depth rather than a hard hairline sweeping the page. */
+@keyframes beam {
+  0%   { transform: translateY(-180px); opacity: 0; }
+  18%  { opacity: 1; }
+  82%  { opacity: 1; }
+  100% { transform: translateY(600px); opacity: 0; }
+}
+
+.hero-beam {
+  position: absolute;
+  inset-inline: 0;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.05) 46%,
+    rgba(0, 0, 0, 0.09) 50%,
+    rgba(0, 0, 0, 0.05) 54%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 28%, #000 72%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 28%, #000 72%, transparent);
+  animation: beam 9s var(--ease-out-quint) infinite;
 }
 
 .animate-drift { animation: drift 9s ease-in-out infinite; }
-.animate-scan { animation: scan 8s linear infinite; }
 .animate-marquee { animation: marquee 32s linear infinite; }
 .animate-pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
 
