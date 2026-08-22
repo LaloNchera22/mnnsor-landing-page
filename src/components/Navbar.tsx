@@ -92,23 +92,17 @@ export default function Navbar() {
                     }`}
                   >
                     <div className="overflow-hidden rounded-none border border-line bg-paper shadow-[0_30px_70px_-40px_rgba(0,0,0,0.4)]">
-                      <div className="grid grid-cols-1 gap-px bg-line sm:grid-cols-2">
+                      <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
                         {AGENTS.map((a) => {
-                          const Icon = a.icon;
                           return (
                             <Link
                               key={a.slug}
                               to={`/agentes/${a.slug}`}
-                              className="group flex items-start gap-3 bg-paper p-4 transition-colors hover:bg-panel"
+                              className="group flex flex-col border border-line bg-paper p-4 transition-colors hover:bg-panel"
                             >
-                              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-none bg-ink text-paper">
-                                <Icon className="h-4 w-4" />
-                              </span>
-                              <span>
-                                <span className="block text-sm font-semibold text-ink">{a.name}</span>
-                                <span className="mt-0.5 block text-xs leading-snug text-muted">
-                                  {a.discipline}
-                                </span>
+                              <span className="block text-base font-bold text-ink">{a.name}</span>
+                              <span className="mt-0.5 block text-xs leading-snug text-muted">
+                                {a.discipline}
                               </span>
                             </Link>
                           );
