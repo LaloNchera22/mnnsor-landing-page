@@ -57,20 +57,16 @@ export default function Features() {
           </div>
 
           {/* Feature list */}
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             {features.map((f, idx) => {
-              const Icon = f.icon;
               return (
                 <article
                   key={f.title}
                   data-reveal
                   style={{ transitionDelay: `${idx * 90}ms` }}
-                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
+                  className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
                 >
-                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mb-2.5 text-lg font-semibold tracking-tight text-ink">{f.title}</h3>
+                  <h3 className="mb-2.5 text-xl font-bold tracking-tight text-ink">{f.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{f.description}</p>
                 </article>
               );

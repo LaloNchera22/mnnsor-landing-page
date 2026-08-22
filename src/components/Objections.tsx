@@ -90,28 +90,19 @@ export default function Objections() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line md:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
           {objections.map((o, i) => {
-            const Icon = o.icon;
             const isLast = i === objections.length - 1;
             return (
               <article
                 key={o.question}
                 data-reveal
                 style={{ transitionDelay: `${(i % 2) * 90}ms` }}
-                className={`group flex flex-col bg-paper p-7 transition-colors duration-500 hover:bg-panel/50 lg:p-9 ${
+                className={`group flex flex-col border border-line bg-paper p-7 transition-colors duration-500 hover:bg-panel/50 lg:p-9 ${
                   isLast ? 'md:col-span-2' : ''
                 }`}
               >
-                <div className="mb-6 flex items-center justify-between">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-none border border-line text-ink transition-colors duration-500 group-hover:border-ink group-hover:bg-ink group-hover:text-paper">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <span className="font-mono text-xs text-muted-soft">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <h3 className="mb-3 text-lg font-semibold tracking-tight text-ink">
+                <h3 className="mb-3 text-xl font-bold tracking-tight text-ink">
                   {o.question}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted">{o.answer}</p>
