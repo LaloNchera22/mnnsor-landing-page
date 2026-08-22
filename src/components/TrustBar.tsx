@@ -1,16 +1,27 @@
-import { PencilRuler, Box, Layers, Clock, Briefcase, FileCheck2, Table2, FileText, Building2, ClipboardList } from 'lucide-react';
+import {
+  RevitIcon,
+  AutoCADIcon,
+  NavisworksIcon,
+  PrimaveraIcon,
+  MSProjectIcon,
+  ProcoreIcon,
+  ExcelIcon,
+  PDFIcon,
+  IFCIcon,
+  BitacoraIcon
+} from './icons/SoftwareIcons';
 
 const tools = [
-  { name: 'Autodesk Revit', icon: PencilRuler },
-  { name: 'AutoCAD', icon: Box },
-  { name: 'Navisworks', icon: Layers },
-  { name: 'Primavera P6', icon: Clock },
-  { name: 'MS Project', icon: Briefcase },
-  { name: 'Procore', icon: FileCheck2 },
-  { name: 'Excel', icon: Table2 },
-  { name: 'PDF as-built', icon: FileText },
-  { name: 'IFC / BIM', icon: Building2 },
-  { name: 'Bitácoras', icon: ClipboardList },
+  { name: 'Autodesk Revit', icon: RevitIcon },
+  { name: 'AutoCAD', icon: AutoCADIcon },
+  { name: 'Navisworks', icon: NavisworksIcon },
+  { name: 'Primavera P6', icon: PrimaveraIcon },
+  { name: 'MS Project', icon: MSProjectIcon },
+  { name: 'Procore', icon: ProcoreIcon },
+  { name: 'Excel', icon: ExcelIcon },
+  { name: 'PDF as-built', icon: PDFIcon },
+  { name: 'IFC / BIM', icon: IFCIcon },
+  { name: 'Bitácoras', icon: BitacoraIcon },
 ];
 
 export default function TrustBar() {
@@ -20,7 +31,7 @@ export default function TrustBar() {
         data-reveal
         className="mx-auto mb-7 max-w-7xl px-6 text-center label-mono text-muted-soft"
       >
-        Se conecta con el stack que ya usas en obra
+        SE CONECTA CON EL STACK QUE YA USAS EN OBRA
       </p>
       <div className="marquee-mask relative overflow-hidden" data-reveal>
         <div className="animate-marquee flex w-max items-center gap-14 pr-14">
