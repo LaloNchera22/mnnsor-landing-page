@@ -8,18 +8,17 @@ const cycleWords = ['el mañana', 'tu obra', 'tu proyecto', 'tu trabajo', 'tu vi
 
 export default function Hero() {
   return (
-    <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 bg-ink overflow-hidden" id="plataforma">
+    <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 bg-ink overflow-hidden" id="plataforma">
       <div className="absolute inset-0 z-0">
-        <LavaLamp top="#4a4a4a" bottom="#111111" sheen="#6b6b6b" />
+        <LavaLamp top="#8a8a8a" bottom="#222222" sheen="#a1a1a1" />
       </div>
-      <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-6">
+      <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-6 text-left">
         <h1
           data-reveal
-          className="mx-auto max-w-3xl font-sans text-[2.9rem] leading-[1.02] tracking-tight text-paper sm:text-6xl lg:text-[5.1rem]"
+          className="font-sans text-[2.9rem] leading-[1.02] tracking-tight text-paper sm:text-6xl lg:text-[5.1rem] max-w-4xl"
         >
-          La inteligencia que construye
-          <br />
-          <span className="inline-block text-center">
+          La inteligencia que construye{' '}
+          <span className="inline-block">
             <Typewriter
               texts={cycleWords}
               color="#ffffff"
@@ -39,7 +38,7 @@ export default function Hero() {
         <p
           data-reveal
           style={{ transitionDelay: '160ms' }}
-          className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-muted"
+          className="mt-7 max-w-xl text-lg leading-relaxed text-paper/80"
         >
           Empieza por tu oficina técnica: un agente de IA que encuentra las
           contradicciones entre planos, especificaciones y RFIs —y redacta el
@@ -50,18 +49,18 @@ export default function Hero() {
         <div
           data-reveal
           style={{ transitionDelay: '240ms' }}
-          className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row"
+          className="mt-10 flex flex-col gap-3.5 sm:flex-row"
         >
           <a
             href={CONTACT.demoAtlas}
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-6 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-paper px-6 py-3.5 text-base font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
           >
             Agenda una demo de Atlas
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <Link
             to="/plataforma"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-none border border-paper/20 bg-transparent px-6 py-3.5 text-base font-medium text-paper transition-colors duration-300 hover:bg-paper/10 sm:w-auto"
           >
             <Play className="h-4 w-4" /> Ver la plataforma en acción
           </Link>
@@ -70,27 +69,15 @@ export default function Hero() {
         <p
           data-reveal
           style={{ transitionDelay: '280ms' }}
-          className="mt-5 text-sm text-muted-soft"
+          className="mt-5 text-sm text-paper/60"
         >
           Sin instalar nada · Sin migrar tus herramientas · Lo ves sobre tu propia obra
         </p>
 
-        <div
-          data-reveal
-          style={{ transitionDelay: '340ms' }}
-          className="mx-auto mt-7 flex max-w-fit items-center gap-2.5 border border-line bg-paper/60 px-4 py-2 text-sm text-muted"
-        >
-          <ShieldCheck className="h-4 w-4 shrink-0 text-ink" />
-          <span>
-            La IA propone, tu equipo senior autoriza —
-            <span className="font-medium text-ink"> cada decisión, auditable</span>.
-          </span>
-        </div>
-
         <p
           data-reveal
-          style={{ transitionDelay: '400ms' }}
-          className="mt-6 text-sm text-muted-soft"
+          style={{ transitionDelay: '340ms' }}
+          className="mt-3 text-sm text-paper/60"
         >
           Demo de 30 min sobre tu documentación real, no un ejemplo genérico.
         </p>
@@ -100,7 +87,7 @@ export default function Hero() {
       <div
         data-reveal
         style={{ transitionDelay: '200ms' }}
-        className="animate-drift mx-auto mt-16 max-w-5xl px-4 sm:mt-20 sm:px-6"
+        className="animate-drift mx-auto mt-10 max-w-5xl px-4 sm:mt-12 sm:px-6"
       >
         <ProductMock />
       </div>
