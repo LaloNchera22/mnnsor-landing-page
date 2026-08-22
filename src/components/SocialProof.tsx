@@ -1,4 +1,3 @@
-import { Quote } from 'lucide-react';
 import { useCountUp } from '../hooks/useCountUp';
 import {
   clientLogos,
@@ -86,9 +85,8 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
     <figure
       data-reveal
       style={{ transitionDelay: `${index * 110}ms` }}
-      className="relative flex flex-col bg-paper p-8 lg:p-10"
+      className="relative flex flex-col border border-line bg-paper p-8 lg:p-10"
     >
-      <Quote className="mb-6 h-7 w-7 text-ink" aria-hidden="true" />
       <blockquote className="flex-1 text-lg leading-relaxed tracking-tight text-ink sm:text-xl">
         “{t.quote}”
       </blockquote>
@@ -121,7 +119,7 @@ function Testimonials() {
   return (
     <div className="mb-20">
       <div
-        className={`grid grid-cols-1 gap-px overflow-hidden border border-line bg-line ${
+        className={`grid grid-cols-1 gap-8 ${
           testimonials.length > 1 ? 'md:grid-cols-2' : ''
         }`}
       >

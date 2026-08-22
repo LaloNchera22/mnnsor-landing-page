@@ -40,20 +40,16 @@ export default function Agents() {
       {/* Filosofía honesta */}
       <section className="border-b border-line bg-paper py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {honesty.map((h, i) => {
-              const Icon = h.icon;
               return (
                 <div
                   key={h.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 90}ms` }}
-                  className="bg-paper p-7 lg:p-8"
+                  className="border border-line bg-paper p-7 lg:p-8"
                 >
-                  <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-none border border-line text-ink">
-                    <Icon className="h-4.5 w-4.5" />
-                  </div>
-                  <h3 className="mb-2 text-base font-semibold tracking-tight text-ink">{h.title}</h3>
+                  <h3 className="mb-2 text-xl font-bold tracking-tight text-ink">{h.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{h.body}</p>
                 </div>
               );

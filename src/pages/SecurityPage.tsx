@@ -93,20 +93,16 @@ export default function SecurityPage() {
       {/* Pilares */}
       <section className="border-b border-line bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((p, i) => {
-              const Icon = p.icon;
               return (
                 <div
                   key={p.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
+                  className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
                 >
-                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none border border-line text-ink transition-colors duration-500 group-hover:border-ink group-hover:bg-ink group-hover:text-paper">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mb-2 text-base font-semibold tracking-tight text-ink">{p.title}</h3>
+                  <h3 className="mb-2 text-xl font-bold tracking-tight text-ink">{p.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{p.body}</p>
                 </div>
               );
@@ -130,18 +126,15 @@ export default function SecurityPage() {
               Transparencia en cada etapa.
             </h2>
           </div>
-          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line md:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-4">
             {dataFlow.map((d, i) => (
               <div
                 key={d.k}
                 data-reveal
                 style={{ transitionDelay: `${i * 90}ms` }}
-                className="bg-paper p-7"
+                className="border border-line bg-paper p-7"
               >
-                <span className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-none bg-ink font-mono text-[11px] font-bold text-paper">
-                  {i + 1}
-                </span>
-                <h3 className="mb-2 text-sm font-semibold tracking-tight text-ink">{d.k}</h3>
+                <h3 className="mb-2 text-xl font-bold tracking-tight text-ink">{d.k}</h3>
                 <p className="text-sm leading-relaxed text-muted">{d.v}</p>
               </div>
             ))}

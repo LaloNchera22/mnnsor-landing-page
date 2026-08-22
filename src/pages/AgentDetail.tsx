@@ -209,18 +209,15 @@ export default function AgentDetail() {
             </h2>
           </div>
 
-          <ol className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {agent.workflow.map((s, i) => (
               <li
                 key={s.title}
                 data-reveal
                 style={{ transitionDelay: `${i * 80}ms` }}
-                className="bg-paper p-6"
+                className="border border-line bg-paper p-6"
               >
-                <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-none bg-ink font-mono text-xs font-bold text-paper">
-                  {i + 1}
-                </span>
-                <h3 className="mb-2 text-sm font-semibold tracking-tight text-ink">{s.title}</h3>
+                <h3 className="mb-2 text-xl font-bold tracking-tight text-ink">{s.title}</h3>
                 <p className="text-sm leading-relaxed text-muted">{s.description}</p>
               </li>
             ))}

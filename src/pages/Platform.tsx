@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Boxes,
   CheckCircle2,
-  Scale,
 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import CTASection from '../components/CTASection';
@@ -118,23 +117,16 @@ export default function Platform() {
             </h2>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {pipeline.map((p, i) => {
-              const Icon = p.icon;
               return (
                 <article
                   key={p.step}
                   data-reveal
                   style={{ transitionDelay: `${i * 90}ms` }}
-                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
+                  className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
                 >
-                  <div className="mb-6 flex items-center justify-between">
-                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <span className="font-mono text-xs text-muted-soft">{p.step}</span>
-                  </div>
-                  <h3 className="mb-2.5 text-lg font-semibold tracking-tight text-ink">{p.title}</h3>
+                  <h3 className="mb-2.5 text-xl font-bold tracking-tight text-ink">{p.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{p.body}</p>
                 </article>
               );
@@ -169,20 +161,16 @@ export default function Platform() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
               {principles.map((f, i) => {
-                const Icon = f.icon;
                 return (
                   <article
                     key={f.title}
                     data-reveal
                     style={{ transitionDelay: `${i * 90}ms` }}
-                    className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
+                    className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
                   >
-                    <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="mb-2.5 text-lg font-semibold tracking-tight text-ink">{f.title}</h3>
+                    <h3 className="mb-2.5 text-xl font-bold tracking-tight text-ink">{f.title}</h3>
                     <p className="text-sm leading-relaxed text-muted">{f.body}</p>
                   </article>
                 );
@@ -395,36 +383,29 @@ export default function Platform() {
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line md:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
-                icon: ShieldCheck,
                 title: 'Nadie firma a ciegas',
                 body: 'Cada acción de los agentes se propone, tu equipo la aprueba o rechaza, y todo queda en bitácora. Tienes la trazabilidad que exigen tu cliente, tu contraloría y una auditoría —sin depender de la memoria de nadie.',
               },
               {
-                icon: Scale,
                 title: 'Tu historial, cada obra',
                 body: 'Cruzamos lo proyectado, lo comprado y lo realmente instalado, partida por partida. Ese registro se acumula obra tras obra: mientras más operas, antes detectamos los desvíos —una ventaja que un recién llegado no puede improvisar.',
               },
               {
-                icon: FileStack,
                 title: 'Empiezas con lo que ya usas',
                 body: 'No te pedimos cambiar a Procore ni migrar nada. Los agentes leen tus PDF, cronogramas P6, modelos IFC y hojas de Excel tal como existen hoy. Sin un proyecto de TI de meses de por medio.',
               },
             ].map((c, i) => {
-              const Icon = c.icon;
               return (
                 <article
                   key={c.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 90}ms` }}
-                  className="group bg-paper p-7 lg:p-8"
+                  className="group border border-line bg-paper p-7 lg:p-8"
                 >
-                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mb-2.5 text-lg font-semibold tracking-tight text-ink">{c.title}</h3>
+                  <h3 className="mb-2.5 text-xl font-bold tracking-tight text-ink">{c.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{c.body}</p>
                 </article>
               );
