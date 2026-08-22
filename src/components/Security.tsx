@@ -54,20 +54,16 @@ export default function Security() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {pillars.map((p, idx) => {
-              const Icon = p.icon;
               return (
                 <div
                   key={p.title}
                   data-reveal
                   style={{ transitionDelay: `${idx * 100}ms` }}
-                  className="group bg-paper p-7 transition-colors duration-500 hover:bg-paper"
+                  className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper"
                 >
-                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-none border border-line text-ink transition-colors duration-500 group-hover:border-ink group-hover:bg-ink group-hover:text-paper">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mb-2 text-base font-semibold tracking-tight text-ink">{p.title}</h3>
+                  <h3 className="mb-2 text-lg font-bold tracking-tight text-ink">{p.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{p.description}</p>
                 </div>
               );

@@ -36,7 +36,7 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
     <article
       data-reveal
       style={{ transitionDelay: `${index * 100}ms` }}
-      className="group bg-paper p-8 transition-colors duration-500 hover:bg-panel/50 lg:p-10"
+      className="group border border-line bg-paper p-8 transition-colors duration-500 hover:bg-panel/50 lg:p-10"
     >
       {member.photo ? (
         <img
@@ -52,7 +52,7 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
       )}
 
       <div className="flex items-center gap-2">
-        <h3 className="text-lg font-semibold tracking-tight text-ink">{member.name}</h3>
+        <h3 className="text-xl font-bold tracking-tight text-ink">{member.name}</h3>
         {member.linkedin && (
           <a
             href={member.linkedin}
@@ -107,7 +107,7 @@ export default function Team() {
         </div>
 
         <div
-          className={`mt-16 grid grid-cols-1 gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 ${
+          className={`mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 ${
             team.length >= 3 ? 'lg:grid-cols-3' : ''
           }`}
         >
