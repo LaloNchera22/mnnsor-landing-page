@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CONTACT } from '../lib/contact';
 import LavaLamp from './LavaLamp';
 import Typewriter from './Typewriter';
+import { trackCTA } from '../lib/analytics';
 
 const cycleWords = ['el mañana', 'tu obra', 'tu proyecto', 'tu trabajo', 'tu vida'];
 
@@ -53,6 +54,7 @@ export default function Hero() {
         >
           <a
             href={CONTACT.demoAtlas}
+            onClick={() => trackCTA('Agenda una demo de Atlas', 'Hero')}
             className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-paper px-6 py-3.5 text-base font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
           >
             Agenda una demo de Atlas
@@ -60,6 +62,7 @@ export default function Hero() {
           </a>
           <Link
             to="/plataforma"
+            onClick={() => trackCTA('Ver la plataforma en acción', 'Hero')}
             className="inline-flex w-full items-center justify-center gap-2 rounded-none border border-paper/20 bg-transparent px-6 py-3.5 text-base font-medium text-paper transition-colors duration-300 hover:bg-paper/10 sm:w-auto"
           >
             <Play className="h-4 w-4" /> Ver la plataforma en acción

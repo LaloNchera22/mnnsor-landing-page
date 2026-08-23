@@ -1,51 +1,7 @@
-import { CalendarClock, Briefcase, ShieldCheck, LifeBuoy, FlaskConical, Mail, ArrowUpRight } from 'lucide-react';
+import { Mail, ArrowUpRight } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
-import { CONTACT, SUPPORT_EMAIL } from '../lib/contact';
-
-const options = [
-  {
-    icon: CalendarClock,
-    title: 'Agendar una demo',
-    body: 'Una sesión de 30 minutos con tu propia documentación. Verás a los agentes trabajando sobre datos reales.',
-    href: CONTACT.demo,
-    cta: 'Escribir para agendar',
-  },
-  {
-    icon: Briefcase,
-    title: 'Hablar con ventas',
-    body: 'Precios, alcance y modelo de despliegue para tu organización.',
-    href: CONTACT.sales,
-    cta: 'Contactar a ventas',
-  },
-  {
-    icon: FlaskConical,
-    title: 'Proponer un piloto',
-    body: 'Una prueba de concepto acotada sobre una obra real, con una línea base tuya.',
-    href: CONTACT.pilot,
-    cta: 'Proponer un piloto',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Seguridad y cumplimiento',
-    body: 'Documentación SOC 2, tratamiento de datos y sesión técnica con tu equipo de TI.',
-    href: CONTACT.security,
-    cta: 'Escribir a seguridad',
-  },
-  {
-    icon: LifeBuoy,
-    title: 'Soporte',
-    body: '¿Ya usas mnnsor y necesitas ayuda? Nuestro equipo de soporte responde.',
-    href: CONTACT.support,
-    cta: 'Contactar a soporte',
-  },
-  {
-    icon: Mail,
-    title: 'Consulta general',
-    body: 'Cualquier otra pregunta sobre la plataforma o los agentes.',
-    href: CONTACT.general,
-    cta: 'Enviar un mensaje',
-  },
-];
+import { SALES_EMAIL, LEAD_FORM_URL } from '../lib/contact';
+import { trackCTA } from '../lib/analytics';
 
 export default function Contact() {
   return (
@@ -61,41 +17,137 @@ export default function Contact() {
         }
         description={
           <>
-            Cada botón abre un correo listo para enviar a{' '}
-            <a href={CONTACT.general} className="font-medium text-ink underline underline-offset-4">
-              {SUPPORT_EMAIL}
-            </a>{' '}
-            con el contexto ya redactado. Solo completas tus datos y lo envías.
+            Completa el formulario a continuación para que podamos entender tu caso de uso.
+            Si prefieres, también puedes{' '}
+            <a href={`mailto:${SALES_EMAIL}`} className="font-medium text-ink underline underline-offset-4">
+              enviarnos un correo directo
+            </a>.
           </>
         }
       />
 
       <section className="bg-paper py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {options.map((o, i) => {
-              const Icon = o.icon;
-              return (
-                <a
-                  key={o.title}
-                  href={o.href}
-                  data-reveal
-                  style={{ transitionDelay: `${i * 70}ms` }}
-                  className="group flex flex-col rounded-none border border-line bg-paper/50 p-7 transition-colors hover:bg-paper"
+        <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
+
+          <form
+            action={LEAD_FORM_URL}
+            method="POST"
+            className="flex flex-col gap-6 rounded-none border border-line bg-paper/50 p-8 sm:p-10"
+            data-reveal
+            onSubmit={() => trackCTA('Enviar solicitud (Form)', 'Contact Page')}
+          >
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="nombre" className="text-sm font-semibold text-ink">
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  name="nombre"
+                  id="nombre"
+                  required
+                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  placeholder="Juan Pérez"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email" className="text-sm font-semibold text-ink">
+                  Correo corporativo
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  placeholder="juan@empresa.com"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="empresa" className="text-sm font-semibold text-ink">
+                  Empresa
+                </label>
+                <input
+                  type="text"
+                  name="empresa"
+                  id="empresa"
+                  required
+                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  placeholder="Constructora XYZ"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="cargo" className="text-sm font-semibold text-ink">
+                  Cargo
+                </label>
+                <input
+                  type="text"
+                  name="cargo"
+                  id="cargo"
+                  required
+                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  placeholder="Director de Proyectos"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="telefono" className="text-sm font-semibold text-ink">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  name="telefono"
+                  id="telefono"
+                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  placeholder="+52 55 1234 5678"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="tipo_proyecto" className="text-sm font-semibold text-ink">
+                  Tipo de proyecto
+                </label>
+                <select
+                  name="tipo_proyecto"
+                  id="tipo_proyecto"
+                  required
+                  defaultValue=""
+                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
                 >
-                  <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper transition-transform duration-500 group-hover:-translate-y-1">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h2 className="mb-2 text-lg font-semibold tracking-tight text-ink">{o.title}</h2>
-                  <p className="mb-6 text-sm leading-relaxed text-muted">{o.body}</p>
-                  <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
-                    {o.cta}
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
-                </a>
-              );
-            })}
-          </div>
+                  <option value="" disabled>Selecciona una opción</option>
+                  <option value="edificacion">Edificación</option>
+                  <option value="industrial">Industrial</option>
+                  <option value="infraestructura">Infraestructura</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label htmlFor="herramientas" className="text-sm font-semibold text-ink">
+                Herramientas actuales
+              </label>
+              <input
+                type="text"
+                name="herramientas"
+                id="herramientas"
+                className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                placeholder="P6, MS Project, Revit, Procore, Excel…"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="group mt-4 inline-flex items-center justify-center gap-2 rounded-none bg-ink px-6 py-4 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              Enviar solicitud
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </button>
+          </form>
 
           <div
             data-reveal
@@ -104,15 +156,15 @@ export default function Contact() {
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-ink" />
               <div>
-                <p className="text-sm font-semibold text-ink">Correo directo</p>
+                <p className="text-sm font-semibold text-ink">Correo directo (Ventas)</p>
                 <p className="text-sm text-muted">Escríbenos cuando lo prefieras.</p>
               </div>
             </div>
             <a
-              href={CONTACT.general}
+              href={`mailto:${SALES_EMAIL}`}
               className="font-mono text-sm font-medium text-ink underline underline-offset-4"
             >
-              {SUPPORT_EMAIL}
+              {SALES_EMAIL}
             </a>
           </div>
         </div>
