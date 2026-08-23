@@ -27,11 +27,6 @@ function initials(name: string): string {
 
 /* ---------------------------- Modo A: logos ---------------------------- */
 function LogoStrip() {
-  // Duplicamos para el marquee sólo si hay suficientes logos para que
-  // el desplazamiento tenga sentido; con pocos, se muestran centrados.
-  const marquee = clientLogos.length >= 5;
-  const items = marquee ? [...clientLogos, ...clientLogos] : clientLogos;
-
   const Logo = ({ logo }: { logo: (typeof clientLogos)[number] }) => {
     const img = (
       <img
@@ -55,26 +50,14 @@ function LogoStrip() {
       <p data-reveal className="mb-8 text-center label-mono text-muted-soft">
         Quienes ya confían en mnnsor
       </p>
-      {marquee ? (
-        <div className="marquee-mask relative overflow-hidden" data-reveal>
-          <div className="animate-marquee flex w-max items-center gap-14 pr-14">
-            {items.map((logo, i) => (
-              <div key={`${logo.name}-${i}`} aria-hidden={i >= clientLogos.length}>
-                <Logo logo={logo} />
-              </div>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div
-          data-reveal
-          className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8"
-        >
-          {clientLogos.map((logo) => (
-            <Logo key={logo.name} logo={logo} />
-          ))}
-        </div>
-      )}
+      <div
+        data-reveal
+        className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8"
+      >
+        {clientLogos.map((logo) => (
+          <Logo key={logo.name} logo={logo} />
+        ))}
+      </div>
     </div>
   );
 }

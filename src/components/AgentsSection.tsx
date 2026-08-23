@@ -94,7 +94,7 @@ function FlagshipAgent() {
   return (
     <div
       data-reveal
-      className="mt-12 grid grid-cols-1 items-center gap-10 rounded-none border border-line-strong bg-paper p-6 shadow-[0_40px_90px_-50px_rgba(0,0,0,0.35)] sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
+      className="mt-12 grid grid-cols-1 items-center gap-10 rounded-none border border-line-strong bg-paper p-6 sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
     >
       <div>
         <div className="mb-6 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">

@@ -8,13 +8,13 @@ const pillars = [
   },
   {
     icon: KeyRound,
-    title: 'Cifrado extremo a extremo',
-    description: 'AES-256 en reposo y TLS 1.3 en tránsito para cada plano, estimación y bitácora.',
+    title: 'Cifrado en reposo y en tránsito',
+    description: 'Cifrado estándar de la industria (AES-256, TLS) para cada plano, estimación y bitácora.',
   },
   {
     icon: EyeOff,
-    title: 'Cero retención en modelos',
-    description: 'Los LLM no se entrenan con tus datos. La información sensible se anonimiza de forma automática.',
+    title: 'Sin entrenamiento con tus datos',
+    description: 'Los LLM no se entrenan con tu contenido. La información sensible se minimiza antes de su procesamiento.',
   },
 ];
 

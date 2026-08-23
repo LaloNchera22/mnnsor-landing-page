@@ -2,8 +2,8 @@
 
 Sitio de **mnnsor**, una plataforma de agentes de IA para la industria
 de la construcción. Construido con React 19, TypeScript, Vite, Tailwind CSS v4
-y React Router. Diseño editorial y profesional, inspirado en sitios de producto
-empresarial (p. ej. Palantir).
+y React Router. Diseño minimalista y monocromático: tipografía sobria, mucho
+espacio en blanco y cero adornos superfluos.
 
 ## Páginas
 
@@ -39,11 +39,11 @@ El sitio es una SPA. Para hosting estático se incluye fallback a `index.html`:
 
 - **Sistema monocromático** (blanco y negro cálido) definido con tokens en
   `src/index.css` bajo `@theme`.
-- **Tipografía**: Instrument Serif (display editorial), Inter (texto) e
-  IBM Plex Mono (etiquetas técnicas).
-- **Animaciones sobrias**: reveal on-scroll (`src/hooks/useReveal.ts`),
-  contadores animados (`src/hooks/useCountUp.ts`), micro-interacciones y un
-  grano de papel sutil. Todo respeta `prefers-reduced-motion`.
+- **Tipografía**: Inter (texto y titulares) e IBM Plex Mono (etiquetas
+  técnicas). Sin adornos ni fuentes decorativas.
+- **Animaciones mínimas**: reveal on-scroll (`src/hooks/useReveal.ts`) y
+  contadores animados (`src/hooks/useCountUp.ts`). Todo respeta
+  `prefers-reduced-motion`.
 - **Accesibilidad**: landmarks semánticos, `skip link`, estados de foco
   visibles y `aria-label` en controles.
 

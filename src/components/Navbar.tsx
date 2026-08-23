@@ -141,14 +141,6 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-6 md:flex">
             <a
-              href="https://app.mnnsor.io"
-              className={`text-sm font-medium transition-colors ${
-                !isLightText ? 'text-muted hover:text-ink' : 'text-paper/80 hover:text-paper'
-              }`}
-            >
-              Iniciar sesión
-            </a>
-            <a
               href={CONTACT.demo}
               className={`group inline-flex items-center gap-1.5 rounded-none px-4 py-2 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5 ${
                 !isLightText ? 'bg-ink text-paper' : 'bg-paper text-ink'

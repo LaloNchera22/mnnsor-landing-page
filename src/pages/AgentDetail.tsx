@@ -71,7 +71,7 @@ export default function AgentDetail() {
               <div className="font-sans text-6xl tracking-tight text-ink">{agent.metric.value}</div>
               <p className="mt-3 leading-relaxed text-muted">{agent.metric.label}</p>
               <p className="mt-4 font-mono text-[11px] text-muted-soft">
-                Rango ilustrativo observado en despliegues; los resultados varían por proyecto.
+                Rango ilustrativo de diseño; los resultados varían por proyecto.
               </p>
             </div>
           </div>

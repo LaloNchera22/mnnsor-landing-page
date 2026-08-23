@@ -49,13 +49,8 @@ export default function ProblemCards() {
                 key={p.title}
                 data-reveal
                 style={{ transitionDelay: `${idx * 110}ms` }}
-                className="group relative border border-line bg-paper p-8 transition-colors duration-500 hover:bg-panel/50 lg:p-10"
+                className="group relative border border-line bg-paper p-8 lg:p-10"
               >
-                <span className="absolute -top-px -left-px h-2 w-2 border-t border-l border-ink/40 transition-colors group-hover:border-ink z-10" />
-                <span className="absolute -top-px -right-px h-2 w-2 border-t border-r border-ink/40 transition-colors group-hover:border-ink z-10" />
-                <span className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-ink/40 transition-colors group-hover:border-ink z-10" />
-                <span className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-ink/40 transition-colors group-hover:border-ink z-10" />
-
                 <p className="mb-2 label-mono text-muted-soft">{p.kicker}</p>
                 <h3 className="mb-3 text-2xl font-bold tracking-tight text-ink">{p.title}</h3>
                 <p className="leading-relaxed text-muted">{p.description}</p>

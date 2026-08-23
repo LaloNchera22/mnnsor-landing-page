@@ -20,16 +20,7 @@ interface PageHeaderProps {
  */
 export default function PageHeader({ eyebrow, title, description, crumbs, children }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden border-b border-line pt-32 pb-16 lg:pt-40 lg:pb-20">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(55%_55%_at_50%_0%,rgba(0,0,0,0.045),transparent_70%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.3] [background-image:linear-gradient(to_right,var(--color-line)_1px,transparent_1px)] [background-size:88px_100%] [mask-image:radial-gradient(70%_50%_at_50%_0%,#000,transparent)]"
-      />
-
+    <section className="relative border-b border-line pt-32 pb-16 lg:pt-40 lg:pb-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {crumbs && crumbs.length > 0 && (
           <nav aria-label="Ruta" className="mb-8 flex items-center gap-1.5 text-xs text-muted-soft">

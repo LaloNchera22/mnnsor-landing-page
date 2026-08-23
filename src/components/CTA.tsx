@@ -8,12 +8,6 @@ export default function CTA() {
         data-reveal
         className="relative mx-auto max-w-6xl overflow-hidden rounded-none bg-ink px-6 py-16 text-center sm:px-10 lg:py-24"
       >
-        {/* Faint grid inside the dark panel */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(70%_70%_at_50%_50%,#000,transparent)]"
-        />
-
         <div className="relative">
           <p className="mb-6 label-mono text-paper/45">Empieza hoy</p>
           <h2 className="mx-auto max-w-2xl font-sans text-4xl leading-[1.05] tracking-tight text-paper sm:text-5xl lg:text-6xl">

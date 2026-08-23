@@ -210,7 +210,7 @@ export default function Platform() {
             <Link
               to={`/agentes/${flagship.slug}`}
               data-reveal
-              className="group mt-14 grid grid-cols-1 gap-8 rounded-none border border-line-strong bg-paper p-8 shadow-[0_40px_90px_-50px_rgba(0,0,0,0.35)] transition-colors hover:bg-paper/70 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:p-12"
+              className="group mt-14 grid grid-cols-1 gap-8 rounded-none border border-line-strong bg-paper p-8 transition-colors hover:bg-paper/70 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:p-12"
             >
               <div>
                 <div className="mb-5 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">

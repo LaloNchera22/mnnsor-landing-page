@@ -29,12 +29,6 @@ const company = {
   ],
 };
 
-const socials = [
-  { id: 'x-icon', label: 'X', href: '#' },
-  { id: 'github-icon', label: 'GitHub', href: '#' },
-  { id: 'discord-icon', label: 'Discord', href: '#' },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-ink pt-20 pb-10 text-paper">
@@ -94,30 +88,12 @@ export default function Footer() {
           <p className="text-sm text-paper/45">
             © {new Date().getFullYear()} mnnsor. Todos los derechos reservados.
           </p>
-          <div className="flex items-center gap-5">
-            <a href="#" className="text-sm text-paper/45 transition-colors hover:text-paper">
-              Privacidad
-            </a>
-            <a href="#" className="text-sm text-paper/45 transition-colors hover:text-paper">
-              Términos
-            </a>
-            <span className="h-4 w-px bg-white/15" />
-            {socials.map(({ id, label, href }) => (
-              <a
-                key={label}
-                href={href}
-                aria-label={label}
-                className="opacity-55 transition-opacity duration-300 hover:opacity-100"
-              >
-                <svg
-                  className="h-[18px] w-[18px] [filter:invert(1)]"
-                  aria-hidden="true"
-                >
-                  <use href={`/icons.svg#${id}`} />
-                </svg>
-              </a>
-            ))}
-          </div>
+          <a
+            href={CONTACT.general}
+            className="font-mono text-sm text-paper/45 transition-colors hover:text-paper"
+          >
+            {SUPPORT_EMAIL}
+          </a>
         </div>
       </div>
     </footer>

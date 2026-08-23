@@ -79,7 +79,7 @@ export default function Results() {
       <section className="bg-ink py-24 text-paper lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <p data-reveal className="mb-12 label-mono text-paper/45">
-            Rangos observados en despliegues
+            Objetivos de diseño
           </p>
           <div className="grid grid-cols-2 gap-x-10 gap-y-12 lg:grid-cols-4">
             {metrics.map((m, i) => (
@@ -87,8 +87,8 @@ export default function Results() {
             ))}
           </div>
           <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
-            Cifras ilustrativas basadas en la experiencia de despliegue. No constituyen una
-            garantía de resultados; el impacto real depende de la madurez de tus procesos y de
+            Rangos ilustrativos que orientan el diseño de los agentes; aún no representan una
+            garantía de resultados. El impacto real depende de la madurez de tus procesos y de
             la calidad de tu documentación.
           </p>
         </div>

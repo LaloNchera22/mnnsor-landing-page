@@ -27,7 +27,7 @@ const options = [
   {
     icon: ShieldCheck,
     title: 'Seguridad y cumplimiento',
-    body: 'Documentación SOC 2, tratamiento de datos y sesión técnica con tu equipo de TI.',
+    body: 'Postura de seguridad, tratamiento de datos y sesión técnica con tu equipo de TI.',
     href: CONTACT.security,
     cta: 'Escribir a seguridad',
   },

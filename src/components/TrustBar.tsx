@@ -33,19 +33,19 @@ export default function TrustBar() {
       >
         SE CONECTA CON EL STACK QUE YA USAS EN OBRA
       </p>
-      <div className="marquee-mask relative overflow-hidden" data-reveal>
-        <div className="animate-marquee flex w-max items-center gap-14 pr-14">
-          {[...tools, ...tools].map((tool, i) => (
-            <span
-              key={i}
-              aria-hidden={i >= tools.length}
-              className="flex items-center gap-2 whitespace-nowrap font-mono text-sm font-medium tracking-tight text-muted-soft transition-colors hover:text-ink group"
-            >
-              <tool.icon className="h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity" />
-              {tool.name}
-            </span>
-          ))}
-        </div>
+      <div
+        data-reveal
+        className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-10 gap-y-5 px-6"
+      >
+        {tools.map((tool) => (
+          <span
+            key={tool.name}
+            className="group flex items-center gap-2 whitespace-nowrap font-mono text-sm font-medium tracking-tight text-muted-soft transition-colors hover:text-ink"
+          >
+            <tool.icon className="h-4 w-4 opacity-70 transition-opacity group-hover:opacity-100" />
+            {tool.name}
+          </span>
+        ))}
       </div>
     </section>
   );

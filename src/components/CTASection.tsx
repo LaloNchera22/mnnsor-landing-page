@@ -28,10 +28,6 @@ export default function CTASection({
         data-reveal
         className="relative mx-auto max-w-6xl overflow-hidden rounded-none bg-ink px-6 py-16 text-center sm:px-10 lg:py-20"
       >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(70%_70%_at_50%_50%,#000,transparent)]"
-        />
         <div className="relative">
           <h2 className="mx-auto max-w-2xl font-sans text-3xl leading-[1.08] tracking-tight text-paper sm:text-4xl lg:text-5xl">
             {title}
