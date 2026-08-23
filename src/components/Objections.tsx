@@ -30,7 +30,7 @@ const objections: Objection[] = [
     icon: Layers,
     question: '¿Por qué no usar solo el Procore/Autodesk que ya tengo?',
     answer:
-      'Porque mnnsor no los reemplaza. Es una capa de agentes que trabaja encima de tu stack: lee la documentación que esas herramientas ya generan y opera sobre P6, Revit, Procore y Excel. Sigues usando lo que tienes; los agentes le suman una capa de análisis continuo.',
+      'mnnsor es una capa de agentes que potencia tu stack actual. Lee la documentación que esas herramientas ya generan y opera sobre P6, Revit, Procore y Excel. Sigues usando lo que tienes; los agentes le suman una capa de análisis continuo.',
     proof: { label: 'Cómo se despliega sobre tu stack', to: '/plataforma' },
   },
   {

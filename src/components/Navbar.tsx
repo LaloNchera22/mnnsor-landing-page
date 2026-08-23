@@ -4,6 +4,7 @@ import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import Logo from './Logo';
 import { AGENTS } from '../data/agents';
 import { CONTACT } from '../lib/contact';
+import { trackCTA } from '../lib/analytics';
 
 const links = [
   { label: 'Plataforma', to: '/plataforma' },
@@ -141,7 +142,17 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-6 md:flex">
             <a
+              href="https://app.mnnsor.io"
+              onClick={() => trackCTA('Iniciar sesión', 'Navbar')}
+              className={`text-sm font-medium transition-colors ${
+                !isLightText ? 'text-muted hover:text-ink' : 'text-paper/80 hover:text-paper'
+              }`}
+            >
+              Iniciar sesión
+            </a>
+            <a
               href={CONTACT.demo}
+              onClick={() => trackCTA('Agendar demo', 'Navbar')}
               className={`group inline-flex items-center gap-1.5 rounded-none px-4 py-2 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5 ${
                 !isLightText ? 'bg-ink text-paper' : 'bg-paper text-ink'
               }`}
@@ -188,6 +199,7 @@ export default function Navbar() {
             ))}
             <a
               href={CONTACT.demo}
+              onClick={() => trackCTA('Agendar demo Mobile', 'Navbar')}
               className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-none bg-ink px-4 py-3 text-sm font-medium text-paper"
             >
               Agendar demo <ArrowUpRight className="h-4 w-4" />

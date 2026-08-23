@@ -64,7 +64,8 @@ export default function Results() {
   return (
     <>
       <PageHeader
-        eyebrow="El impacto"
+        /* CAMINO A: eyebrow="El impacto" */
+        eyebrow="Objetivos de diseño"
         crumbs={[{ label: 'Inicio', to: '/' }, { label: 'Resultados' }]}
         title={
           <>
@@ -72,13 +73,14 @@ export default function Results() {
             <span className="text-muted"> no solo el flujo de trabajo.</span>
           </>
         }
-        description="Los agentes no engrosan tu plantilla de supervisión: la multiplican. Escala más obras con el mismo equipo senior, con decisiones que llegan a tiempo."
+        description="Los agentes multiplican la capacidad de tu plantilla de supervisión. Escala más obras con el mismo equipo senior, con decisiones que llegan a tiempo."
       />
 
       {/* Métricas */}
       <section className="bg-ink py-24 text-paper lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <p data-reveal className="mb-12 label-mono text-paper/45">
+            {/* CAMINO A: Rangos observados en despliegues */}
             Objetivos de diseño
           </p>
           <div className="grid grid-cols-2 gap-x-10 gap-y-12 lg:grid-cols-4">
@@ -86,10 +88,14 @@ export default function Results() {
               <Stat key={m.label} metric={m} index={i} />
             ))}
           </div>
+          {/* CAMINO A:
           <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
-            Rangos ilustrativos que orientan el diseño de los agentes; aún no representan una
-            garantía de resultados. El impacto real depende de la madurez de tus procesos y de
-            la calidad de tu documentación.
+            Fuente: Piloto Torre X, 2025
+          </p>
+          */}
+          {/* CAMINO B: */}
+          <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
+            Rangos ilustrativos; los resultados varían por proyecto.
           </p>
         </div>
       </section>
@@ -163,7 +169,7 @@ export default function Results() {
                 { icon: TrendingUp, k: 'Definimos el indicador', v: 'Tiempo de re-programación, horas de captura, desvío por estimación… el que importe para tu obra.' },
                 { icon: Clock, k: 'Medimos tu punto de partida', v: 'Registramos cómo se hace hoy, sin la plataforma, para tener una comparación honesta.' },
                 { icon: ScanLine, k: 'Corremos un piloto acotado', v: 'Sobre una obra real y un alcance definido, con el agente que aplique a tu reto.' },
-                { icon: ShieldAlert, k: 'Comparamos con evidencia', v: 'Tú ves el antes y el después con tus propios datos, no con un ejemplo genérico.' },
+                { icon: ShieldAlert, k: 'Comparamos con evidencia', v: 'Tú ves el antes y el después con tus propios datos, desde el primer minuto.' },
               ].map((row) => {
                 const Icon = row.icon;
                 return (

@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import Logo from './Logo';
 import { AGENTS } from '../data/agents';
-import { CONTACT, SUPPORT_EMAIL } from '../lib/contact';
+import { CONTACT, SALES_EMAIL } from '../lib/contact';
+import { trackCTA } from '../lib/analytics';
 
 const platform = {
   title: 'Plataforma',
@@ -43,16 +44,18 @@ export default function Footer() {
             </p>
             <a
               href={CONTACT.demo}
+              onClick={() => trackCTA('Agendar una demo', 'Footer')}
               className="group mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-paper"
             >
               Agendar una demo
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
-              href={CONTACT.general}
+              href={`mailto:${SALES_EMAIL}`}
+              onClick={() => trackCTA('Sales Email Click', 'Footer')}
               className="mt-4 block font-mono text-xs text-paper/45 transition-colors hover:text-paper"
             >
-              {SUPPORT_EMAIL}
+              {SALES_EMAIL}
             </a>
           </div>
 
@@ -65,6 +68,7 @@ export default function Footer() {
                     {'to' in l && l.to ? (
                       <Link
                         to={l.to}
+                        onClick={() => trackCTA(l.label, 'Footer Links')}
                         className="text-sm text-paper/65 transition-colors hover:text-paper"
                       >
                         {l.label}
@@ -72,6 +76,7 @@ export default function Footer() {
                     ) : (
                       <a
                         href={(l as { href: string }).href}
+                        onClick={() => trackCTA(l.label, 'Footer Links')}
                         className="text-sm text-paper/65 transition-colors hover:text-paper"
                       >
                         {l.label}
