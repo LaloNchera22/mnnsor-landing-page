@@ -65,9 +65,9 @@ export const AGENTS: Agent[] = [
     name: 'Agente Atlas',
     discipline: 'Documentación técnica, RFI y submittals',
     icon: FileText,
-    tagline: 'Encuentra contradicciones entre planos, especificaciones y RFIs.',
+    tagline: 'Resuelve RFIs y contradicciones antes de que frenen la obra, evitando semanas de retraso y retrabajo: encuentra discrepancias entre planos, especificaciones y RFIs.',
     summary:
-      'Lee planos, especificaciones y correspondencia técnica para localizar discrepancias, rastrear RFIs y redactar borradores de respuesta que un ingeniero revisa y firma.',
+      'Resuelve RFIs y contradicciones antes de que frenen la obra, evitando semanas de retraso y retrabajo: lee planos, especificaciones y correspondencia técnica para localizar discrepancias, rastrear RFIs y redactar borradores de respuesta que un ingeniero revisa y firma.',
     intro:
       'Atlas ordena el volumen documental de una obra: cientos de planos, cuadernos de especificaciones, RFIs y submittals. Cruza esas fuentes para encontrar contradicciones —una cota que no coincide entre disciplinas, una especificación que contradice el detalle— y prepara borradores de respuesta a RFIs con las referencias correspondientes. La decisión técnica sigue siendo del ingeniero; Atlas le ahorra la búsqueda y el primer borrador.',
     capabilities: [
