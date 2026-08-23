@@ -20,6 +20,9 @@ export default function Navbar() {
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
+  const isHome = pathname === '/';
+  const isLightText = isHome && !scrolled;
+
   // Cierra menús al cambiar de ruta.
   useEffect(() => {
     setOpen(false);
@@ -46,14 +49,14 @@ export default function Navbar() {
       <nav
         aria-label="Principal"
         className={`transition-all duration-500 ${
-          scrolled
+          !isLightText
             ? 'border-b border-line bg-paper/90 backdrop-blur-xl text-ink'
             : 'bg-transparent text-paper'
         }`}
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
           <Link to="/" aria-label="mnnsor — inicio" className="shrink-0">
-            <Logo tone={scrolled ? 'dark' : 'light'} />
+            <Logo tone={!isLightText ? 'dark' : 'light'} />
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -70,8 +73,8 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       `group inline-flex items-center gap-1 text-sm font-medium transition-colors ${
                         isActive
-                          ? (scrolled ? 'text-ink' : 'text-paper')
-                          : (scrolled ? 'text-muted hover:text-ink' : 'text-paper/70 hover:text-paper')
+                          ? (!isLightText ? 'text-ink' : 'text-paper')
+                          : (!isLightText ? 'text-muted hover:text-ink' : 'text-paper/70 hover:text-paper')
                       }`
                     }
                   >
@@ -125,8 +128,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `group relative text-sm font-medium transition-colors ${
                       isActive
-                        ? (scrolled ? 'text-ink' : 'text-paper')
-                        : (scrolled ? 'text-muted hover:text-ink' : 'text-paper/70 hover:text-paper')
+                        ? (!isLightText ? 'text-ink' : 'text-paper')
+                        : (!isLightText ? 'text-muted hover:text-ink' : 'text-paper/70 hover:text-paper')
                     }`
                   }
                 >
@@ -140,7 +143,7 @@ export default function Navbar() {
             <a
               href="https://app.mnnsor.io"
               className={`text-sm font-medium transition-colors ${
-                scrolled ? 'text-muted hover:text-ink' : 'text-paper/80 hover:text-paper'
+                !isLightText ? 'text-muted hover:text-ink' : 'text-paper/80 hover:text-paper'
               }`}
             >
               Iniciar sesión
@@ -148,7 +151,7 @@ export default function Navbar() {
             <a
               href={CONTACT.demo}
               className={`group inline-flex items-center gap-1.5 rounded-none px-4 py-2 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5 ${
-                scrolled ? 'bg-ink text-paper' : 'bg-paper text-ink'
+                !isLightText ? 'bg-ink text-paper' : 'bg-paper text-ink'
               }`}
             >
               Agendar demo
@@ -161,7 +164,7 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={open}
-            className={`md:hidden ${scrolled ? 'text-ink' : 'text-paper'}`}
+            className={`md:hidden ${!isLightText ? 'text-ink' : 'text-paper'}`}
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -170,7 +173,7 @@ export default function Navbar() {
         {/* Mobile sheet */}
         <div
           className={`overflow-hidden border-t bg-paper/95 backdrop-blur-2xl backdrop-saturate-150 transition-[max-height] duration-500 md:hidden ${
-            scrolled ? 'border-line' : 'border-paper/20'
+            !isLightText ? 'border-line' : 'border-paper/20'
           } ${
             open ? 'max-h-[36rem]' : 'max-h-0'
           }`}
