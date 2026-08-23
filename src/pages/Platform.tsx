@@ -364,7 +364,7 @@ export default function Platform() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
-              Por qué esto es defendible
+              Por qué es defendible
             </p>
             <h2
               data-reveal
@@ -386,16 +386,16 @@ export default function Platform() {
           <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
-                title: 'Nadie firma a ciegas',
-                body: 'Cada acción de los agentes se propone, tu equipo la aprueba o rechaza, y todo queda en bitácora. Tienes la trazabilidad que exigen tu cliente, tu contraloría y una auditoría —sin depender de la memoria de nadie.',
+                title: 'Capa de gobernanza auditable',
+                body: 'Cada acción de los agentes se propone y tu equipo la aprueba o rechaza. Esto genera un registro inalterable que te da trazabilidad y control total para auditorías o revisiones con clientes.',
               },
               {
-                title: 'Tu historial, cada obra',
-                body: 'Cruzamos lo proyectado, lo comprado y lo realmente instalado, partida por partida. Ese registro se acumula obra tras obra: mientras más operas, antes detectamos los desvíos —una ventaja que un recién llegado no puede improvisar.',
+                title: 'Conciliación propietaria obra ↔ comprado ↔ instalado',
+                body: 'Cruzamos continuamente lo proyectado, lo comprado y lo realmente instalado. Este registro se acumula obra tras obra, afinando la detección de desvíos con cada proyecto que operas.',
               },
               {
-                title: 'Empiezas con lo que ya usas',
-                body: 'No te pedimos cambiar a Procore ni migrar nada. Los agentes leen tus PDF, cronogramas P6, modelos IFC y hojas de Excel tal como existen hoy. Sin un proyecto de TI de meses de por medio.',
+                title: 'Integración con tu stack legacy de construcción',
+                body: 'Nos conectamos con las herramientas que ya utilizas, desde PDF y hojas de Excel hasta cronogramas P6 y modelos IFC. Sin migraciones forzadas ni proyectos de TI de meses.',
               },
             ].map((c, i) => {
               return (
