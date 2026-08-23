@@ -16,18 +16,18 @@ import { CONTACT } from '../lib/contact';
 const pillars = [
   {
     icon: ShieldCheck,
-    title: 'SOC 2 Tipo II',
-    body: 'Infraestructura y controles operativos auditados de forma independiente y continua, con reporte disponible bajo NDA.',
+    title: 'Prácticas alineadas a SOC 2',
+    body: 'Infraestructura y controles operativos diseñados según los criterios de SOC 2, en preparación para una auditoría formal.',
   },
   {
     icon: KeyRound,
-    title: 'Cifrado extremo a extremo',
-    body: 'AES-256 en reposo y TLS 1.3 en tránsito para cada plano, estimación, modelo y bitácora que ingresa a la plataforma.',
+    title: 'Cifrado en reposo y en tránsito',
+    body: 'Cifrado estándar de la industria (AES-256 en reposo, TLS en tránsito) para cada plano, estimación, modelo y bitácora que ingresa a la plataforma.',
   },
   {
     icon: EyeOff,
-    title: 'Cero retención en modelos',
-    body: 'Los LLM no se entrenan con tus datos. La información sensible se anonimiza automáticamente antes de cualquier procesamiento.',
+    title: 'Sin entrenamiento con tus datos',
+    body: 'Los LLM no se entrenan con tu contenido. La información sensible se minimiza antes de su procesamiento.',
   },
   {
     icon: Server,
@@ -49,7 +49,7 @@ const pillars = [
 const dataFlow = [
   {
     k: 'Ingesta',
-    v: 'Los documentos se cifran al cargarse. La información personal o sensible se detecta y anonimiza antes de procesarse.',
+    v: 'Los documentos se cifran al cargarse. La información personal o sensible se minimiza antes de procesarse.',
   },
   {
     k: 'Procesamiento',
@@ -178,14 +178,14 @@ export default function SecurityPage() {
             >
               <div className="mb-6 flex items-center gap-2.5">
                 <Building2 className="h-4 w-4 text-ink" />
-                <span className="label-mono text-ink">Disponible bajo NDA</span>
+                <span className="label-mono text-ink">A solicitud, bajo NDA</span>
               </div>
               <ul className="space-y-3.5">
                 {[
-                  'Reporte SOC 2 Tipo II',
+                  'Estado y hoja de ruta de cumplimiento SOC 2',
                   'Arquitectura de seguridad y diagrama de flujo de datos',
                   'Política de tratamiento y retención de datos',
-                  'Cuestionario de seguridad (SIG / CAIQ) respondido',
+                  'Cuestionario de seguridad (SIG / CAIQ)',
                   'Acuerdo de procesamiento de datos (DPA)',
                 ].map((item) => (
                   <li
