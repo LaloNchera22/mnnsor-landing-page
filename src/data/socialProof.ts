@@ -33,8 +33,8 @@ export interface ClientLogo {
 }
 
 export const clientLogos: ClientLogo[] = [
-  // Ejemplo de la forma esperada (déjalo comentado hasta tener el logo real):
-  // { name: 'Constructora Acme', src: '/logos/acme.svg', kind: 'piloto' },
+  { name: '1', src: '/logos/1.png' },
+  { name: '2', src: '/logos/2.png' },
 ];
 
 /* ================================================================== *
