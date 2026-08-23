@@ -40,6 +40,12 @@ export default function ImpactMetrics() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
+            {/* CAMINO A (con datos reales):
+            <p data-reveal className="mb-5 label-mono text-paper/45">
+              El impacto
+            </p>
+            */}
+            {/* CAMINO B (sin datos aún): */}
             <p data-reveal className="mb-5 label-mono text-paper/45">
               Objetivos de diseño
             </p>
@@ -67,12 +73,20 @@ export default function ImpactMetrics() {
                 <Stat key={m.label} metric={m} index={i} />
               ))}
             </div>
+            {/* CAMINO A (con datos reales):
             <p
               data-reveal
               className="mt-10 border-t border-white/15 pt-5 text-xs leading-relaxed text-paper/45"
             >
-              Rangos ilustrativos que orientan el diseño de los agentes; los
-              resultados varían por proyecto y aún no representan una garantía.
+              Fuente: Piloto Torre X, 2025
+            </p>
+            */}
+            {/* CAMINO B (sin datos aún): */}
+            <p
+              data-reveal
+              className="mt-10 border-t border-white/15 pt-5 text-xs leading-relaxed text-paper/45"
+            >
+              Rangos ilustrativos; los resultados varían por proyecto.
             </p>
           </div>
         </div>

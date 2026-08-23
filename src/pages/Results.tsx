@@ -64,7 +64,8 @@ export default function Results() {
   return (
     <>
       <PageHeader
-        eyebrow="El impacto"
+        /* CAMINO A: eyebrow="El impacto" */
+        eyebrow="Objetivos de diseño"
         crumbs={[{ label: 'Inicio', to: '/' }, { label: 'Resultados' }]}
         title={
           <>
@@ -79,17 +80,22 @@ export default function Results() {
       <section className="bg-ink py-24 text-paper lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <p data-reveal className="mb-12 label-mono text-paper/45">
-            Rangos observados en despliegues
+            {/* CAMINO A: Rangos observados en despliegues */}
+            Objetivos de diseño
           </p>
           <div className="grid grid-cols-2 gap-x-10 gap-y-12 lg:grid-cols-4">
             {metrics.map((m, i) => (
               <Stat key={m.label} metric={m} index={i} />
             ))}
           </div>
+          {/* CAMINO A:
           <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
-            Cifras ilustrativas basadas en la experiencia de despliegue. No constituyen una
-            garantía de resultados; el impacto real depende de la madurez de tus procesos y de
-            la calidad de tu documentación.
+            Fuente: Piloto Torre X, 2025
+          </p>
+          */}
+          {/* CAMINO B: */}
+          <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
+            Rangos ilustrativos; los resultados varían por proyecto.
           </p>
         </div>
       </section>
