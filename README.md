@@ -40,10 +40,11 @@ El sitio es una SPA. Para hosting estático se incluye fallback a `index.html`:
 - **Sistema monocromático** (blanco y negro cálido) definido con tokens en
   `src/index.css` bajo `@theme`.
 - **Tipografía**: Inter (texto y titulares) e IBM Plex Mono (etiquetas
-  técnicas). Sin adornos ni fuentes decorativas.
-- **Animaciones mínimas**: reveal on-scroll (`src/hooks/useReveal.ts`) y
-  contadores animados (`src/hooks/useCountUp.ts`). Todo respeta
-  `prefers-reduced-motion`.
+  técnicas). Sin fuentes decorativas.
+- **Animaciones sobrias**: hero con fondo *lava lamp* (WebGL, `LavaLamp`) y
+  titular con efecto *typewriter* (`Typewriter`); reveal on-scroll
+  (`src/hooks/useReveal.ts`) y contadores animados (`src/hooks/useCountUp.ts`).
+  Todo respeta `prefers-reduced-motion`.
 - **Accesibilidad**: landmarks semánticos, `skip link`, estados de foco
   visibles y `aria-label` en controles.
 
