@@ -62,8 +62,8 @@ export default function ImpactMetrics() {
               style={{ transitionDelay: '160ms' }}
               className="mt-6 max-w-md leading-relaxed text-paper/55"
             >
-              Los agentes no engrosan tu plantilla de supervisión: la
-              multiplican. Escala más obras con el mismo equipo senior.
+              Los agentes multiplican la capacidad de tu plantilla de
+              supervisión. Escala más obras con el mismo equipo senior.
             </p>
           </div>
 

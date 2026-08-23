@@ -23,8 +23,8 @@ export default function CTA() {
           </h2>
           <p className="mx-auto mt-6 max-w-lg leading-relaxed text-paper/60">
             Agenda una demo de 30 minutos con tu propio programa de obra. Verás
-            los agentes trabajando sobre tus documentos reales, no sobre un
-            ejemplo genérico.
+            los agentes trabajando sobre tus propios documentos, desde el primer
+            minuto.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
