@@ -1,9 +1,11 @@
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { trackCTA } from '../lib/analytics';
 
 type Variant = 'solid' | 'outline' | 'solid-light' | 'outline-light' | 'link';
 
 interface MailButtonProps {
-  /** Enlace `mailto:` predefinido (ver src/lib/contact.ts). */
+  /** Enlace a donde redirige. */
   href: string;
   children: React.ReactNode;
   variant?: Variant;
@@ -11,6 +13,8 @@ interface MailButtonProps {
   /** Muestra la flecha ↗ (activada por defecto salvo en `link`). */
   arrow?: boolean;
   full?: boolean;
+  /** Nombre del CTA para analíticas. Si se omite, se intentará usar el texto del children. */
+  ctaName?: string;
 }
 
 const base =
@@ -25,9 +29,8 @@ const variants: Record<Variant, string> = {
 };
 
 /**
- * Botón de acción que abre un correo predefinido a support@mnnsor.com.
- * Centraliza el estilo de CTA para que todos los "botones de mandar
- * correo" del sitio se vean y comporten igual.
+ * Botón de acción que centraliza el estilo de CTA del sitio.
+ * Emite eventos de analítica al hacer clic.
  */
 export default function MailButton({
   href,
@@ -36,12 +39,37 @@ export default function MailButton({
   className = '',
   arrow,
   full,
+  ctaName,
 }: MailButtonProps) {
   const showArrow = arrow ?? variant !== 'link';
+  const name = ctaName || (typeof children === 'string' ? children : 'CTA Button');
+
+  const handleClick = () => {
+    trackCTA(name);
+  };
+
+  const isInternal = href.startsWith('/');
+
+  if (isInternal) {
+    return (
+      <Link
+        to={href}
+        className={`${base} ${variants[variant]} ${full ? 'w-full sm:w-auto' : ''} ${className}`}
+        onClick={handleClick}
+      >
+        {children}
+        {showArrow && (
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        )}
+      </Link>
+    );
+  }
+
   return (
     <a
       href={href}
       className={`${base} ${variants[variant]} ${full ? 'w-full sm:w-auto' : ''} ${className}`}
+      onClick={handleClick}
     >
       {children}
       {showArrow && (

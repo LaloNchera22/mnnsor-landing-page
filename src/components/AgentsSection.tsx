@@ -2,6 +2,7 @@ import { ArrowUpRight, Check, FileText, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AGENTS } from '../data/agents';
 import { CONTACT } from '../lib/contact';
+import { trackCTA } from '../lib/analytics';
 
 /* Los agentes que se "suman" al protagonista, en el orden del catálogo
  * (todos menos Atlas, que va destacado arriba). */
@@ -122,6 +123,7 @@ function FlagshipAgent() {
         <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center">
           <a
             href={CONTACT.demoAtlas}
+            onClick={() => trackCTA('Agenda una demo de Atlas', 'AgentsSection')}
             className="group inline-flex items-center justify-center gap-2 rounded-none bg-ink px-5 py-3 text-sm font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
           >
             Agenda una demo de Atlas
@@ -129,6 +131,7 @@ function FlagshipAgent() {
           </a>
           <Link
             to="/agentes/atlas"
+            onClick={() => trackCTA('Ver capacidades y límites - Atlas', 'AgentsSection')}
             className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
           >
             Ver capacidades y límites
