@@ -76,11 +76,11 @@ export default function Platform() {
         crumbs={[{ label: 'Inicio', to: '/' }, { label: 'Plataforma' }]}
         title={
           <>
-            Una capa de agentes sobre el stack que ya usas,
-            <span className="text-muted"> no una herramienta más que administrar.</span>
+            Una capa de agentes que corre
+            <span className="text-muted"> sobre el stack que ya utilizas.</span>
           </>
         }
-        description="mnnsor no reemplaza tu Procore, tu P6 ni tu Excel: corre encima de ellos. Conecta la documentación que ya generas con una fuerza de trabajo de agentes de IA especializados que opera bajo la supervisión de tu equipo senior."
+        description="Corre sobre tu Procore, tu P6 y tu Excel. Conecta la documentación que ya generas con una fuerza de trabajo de agentes de IA especializados que opera bajo la supervisión de tu equipo senior."
       >
         <div>
           <div className="flex flex-col gap-3.5 sm:flex-row">
@@ -291,7 +291,7 @@ export default function Platform() {
               </h2>
               <ul data-reveal style={{ transitionDelay: '160ms' }} className="mt-8 space-y-4">
                 {[
-                  'Implementación en días sobre tu documentación real, no sobre un ejemplo genérico.',
+                  'Implementación en días sobre tus propios documentos, desde el primer minuto.',
                   'Sin migrar tus herramientas: los agentes trabajan sobre P6, Revit, Procore y Excel.',
                   'Flujo de aprobación configurable por tipo de decisión y por responsable.',
                   'Bitácora auditable de cada acción propuesta, aprobada o rechazada.',

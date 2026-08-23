@@ -79,7 +79,7 @@ export default function Hero() {
           style={{ transitionDelay: '340ms' }}
           className="mt-3 text-sm text-paper/60"
         >
-          Demo de 30 min sobre tu documentación real, no un ejemplo genérico.
+          Demo de 30 min sobre tu documentación real, desde el primer minuto.
         </p>
       </div>
     </section>

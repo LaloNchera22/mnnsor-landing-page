@@ -5,7 +5,7 @@ const features = [
     icon: Workflow,
     title: 'Lee tu obra tal como es',
     description:
-      'Planos, catálogos de conceptos y programas existentes se ingieren sin reformatear nada. El sistema se adapta a tu documentación, no al revés.',
+      'Planos, catálogos de conceptos y programas existentes se ingieren sin reformatear nada. El sistema se ajusta naturalmente a tus formatos existentes.',
   },
   {
     icon: ScanText,

@@ -72,7 +72,7 @@ export default function Results() {
             <span className="text-muted"> no solo el flujo de trabajo.</span>
           </>
         }
-        description="Los agentes no engrosan tu plantilla de supervisión: la multiplican. Escala más obras con el mismo equipo senior, con decisiones que llegan a tiempo."
+        description="Los agentes multiplican la capacidad de tu plantilla de supervisión. Escala más obras con el mismo equipo senior, con decisiones que llegan a tiempo."
       />
 
       {/* Métricas */}
@@ -163,7 +163,7 @@ export default function Results() {
                 { icon: TrendingUp, k: 'Definimos el indicador', v: 'Tiempo de re-programación, horas de captura, desvío por estimación… el que importe para tu obra.' },
                 { icon: Clock, k: 'Medimos tu punto de partida', v: 'Registramos cómo se hace hoy, sin la plataforma, para tener una comparación honesta.' },
                 { icon: ScanLine, k: 'Corremos un piloto acotado', v: 'Sobre una obra real y un alcance definido, con el agente que aplique a tu reto.' },
-                { icon: ShieldAlert, k: 'Comparamos con evidencia', v: 'Tú ves el antes y el después con tus propios datos, no con un ejemplo genérico.' },
+                { icon: ShieldAlert, k: 'Comparamos con evidencia', v: 'Tú ves el antes y el después con tus propios datos, desde el primer minuto.' },
               ].map((row) => {
                 const Icon = row.icon;
                 return (
