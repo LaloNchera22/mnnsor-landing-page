@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import { CONTACT } from '../lib/contact';
 import Typewriter from './Typewriter';
 import { trackCTA } from '../lib/analytics';
+import LavaLamp from './LavaLamp';
 
 const cycleWords = ['el mañana', 'tu obra', 'tu proyecto', 'tu trabajo', 'tu vida'];
 
 export default function Hero() {
   return (
     <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-36 bg-paper overflow-hidden flex flex-col items-center justify-center min-h-[90vh]" id="plataforma">
+      <div className="absolute inset-0 z-0">
+        <LavaLamp top="#ffffff" bottom="#f4f4f5" sheen="#ffffff" />
+      </div>
       <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-6 text-center flex flex-col items-center">
         <h1
           data-reveal

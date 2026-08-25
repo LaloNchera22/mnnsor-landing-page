@@ -63,7 +63,7 @@ export default function Navbar() {
                       `group inline-flex items-center gap-1 text-sm font-medium transition-colors ${
                         isActive
                           ? (!isLightText ? 'text-ink' : 'text-paper')
-                          : (!isLightText ? 'text-muted hover:text-ink' : 'text-paper/70 hover:text-paper')
+                          : (!isLightText ? 'text-muted' : 'text-paper/70')
                       }`
                     }
                   >
@@ -112,7 +112,7 @@ export default function Navbar() {
                     `group relative text-sm font-medium transition-colors ${
                       isActive
                         ? (!isLightText ? 'text-ink' : 'text-paper')
-                        : (!isLightText ? 'text-muted hover:text-ink' : 'text-paper/70 hover:text-paper')
+                        : (!isLightText ? 'text-muted' : 'text-paper/70')
                     }`
                   }
                 >
@@ -147,7 +147,7 @@ export default function Navbar() {
 
         {/* Mobile sheet */}
         <div
-          className={`overflow-hidden bg-paper/95 backdrop-blur-2xl backdrop-saturate-150 md:hidden ${ !isLightText ? 'border-line' : 'border-paper/20' } ${ open ? 'max-h-[36rem]' : 'max-h-0' }`}
+          className={`overflow-hidden bg-paper md:hidden ${ !isLightText ? 'border-line' : 'border-paper/20' } ${ open ? 'max-h-[36rem]' : 'max-h-0' }`}
         >
           <div className="flex flex-col gap-1 px-5 py-4">
             {links.map((l) => (
@@ -158,7 +158,7 @@ export default function Navbar() {
                   `rounded-none px-3 py-2.5 text-base font-medium transition-colors ${
                     isActive
                       ? 'bg-panel text-ink'
-                      : 'text-muted hover:bg-panel hover:text-ink'
+                      : 'text-muted'
                   }`
                 }
               >
