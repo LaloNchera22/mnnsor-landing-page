@@ -24,7 +24,7 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
     <div
       data-reveal
       style={{ transitionDelay: `${index * 90}ms` }}
-      className="border-t border-white/15 pt-6"
+      className="pt-6"
     >
       <div className="font-sans text-5xl tracking-tight text-paper sm:text-6xl">
         {metric.prefix}
@@ -70,7 +70,7 @@ export default function Results() {
         title={
           <>
             Cambia la economía de cada proyecto,
-            <span className="text-muted"> no solo el flujo de trabajo.</span>
+            <span className="text-muted"> optimizando las operaciones de construcción.</span>
           </>
         }
         description="Los agentes multiplican la capacidad de tu plantilla de supervisión. Escala más obras con el mismo equipo senior, con decisiones que llegan a tiempo."
@@ -101,7 +101,7 @@ export default function Results() {
       </section>
 
       {/* Escenarios antes / después */}
-      <section className="border-b border-line bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -124,7 +124,7 @@ export default function Results() {
                   key={s.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="grid grid-cols-1 gap-6 rounded-none border border-line bg-paper/50 p-7 lg:grid-cols-[0.8fr_1fr_1fr] lg:items-center lg:p-9"
+                  className="grid grid-cols-1 gap-6 rounded-none bg-paper/50 p-7 lg:grid-cols-[0.8fr_1fr_1fr] lg:items-center lg:p-9"
                 >
                   <div>
                     <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-none bg-ink text-paper">
@@ -133,7 +133,7 @@ export default function Results() {
                     <p className="label-mono text-muted-soft">{s.tag}</p>
                     <h3 className="mt-1 text-lg font-semibold tracking-tight text-ink">{s.title}</h3>
                   </div>
-                  <div className="rounded-none border border-line bg-paper p-5">
+                  <div className="rounded-none bg-paper p-5">
                     <p className="mb-2 label-mono text-muted-soft">Antes</p>
                     <p className="text-sm leading-relaxed text-muted">{s.before}</p>
                   </div>
@@ -149,7 +149,7 @@ export default function Results() {
       </section>
 
       {/* Cómo se mide */}
-      <section className="border-b border-line bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div>
@@ -173,7 +173,7 @@ export default function Results() {
               ].map((row) => {
                 const Icon = row.icon;
                 return (
-                  <div key={row.k} className="flex items-start gap-4 rounded-none border border-line bg-paper p-5">
+                  <div key={row.k} className="flex items-start gap-4 rounded-none bg-paper p-5">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-ink text-paper">
                       <Icon className="h-4.5 w-4.5" />
                     </span>

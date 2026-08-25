@@ -14,7 +14,7 @@ const pillars = [
   {
     icon: EyeOff,
     title: 'Cero retención en modelos',
-    description: 'Los LLM no se entrenan con tus datos. La información sensible se anonimiza de forma automática.',
+    description: 'Los modelos operan con estricta privacidad de datos. La información sensible se anonimiza de forma automática.',
   },
 ];
 

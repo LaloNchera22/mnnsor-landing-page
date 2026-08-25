@@ -36,17 +36,17 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
     <article
       data-reveal
       style={{ transitionDelay: `${index * 100}ms` }}
-      className="group border border-line bg-paper p-8 transition-colors duration-500 hover:bg-panel/50 lg:p-10"
+      className="group bg-paper p-8 lg:p-10"
     >
       {member.photo ? (
         <img
           src={member.photo}
           alt={member.name}
           loading="lazy"
-          className="mb-6 h-20 w-20 rounded-none object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+          className="mb-6 h-20 w-20 rounded-none object-cover grayscale"
         />
       ) : (
-        <span className="mb-6 flex h-20 w-20 items-center justify-center rounded-none border border-line bg-panel font-mono text-lg font-medium text-muted">
+        <span className="mb-6 flex h-20 w-20 items-center justify-center rounded-none bg-panel font-mono text-lg font-medium text-muted">
           {initials(member.name)}
         </span>
       )}
@@ -59,7 +59,7 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`LinkedIn de ${member.name}`}
-            className="text-muted-soft transition-colors hover:text-ink"
+            className="text-muted-soft"
           >
             <LinkedinGlyph className="h-4 w-4" />
           </a>
@@ -67,7 +67,7 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
       </div>
       <p className="mt-1 label-mono text-muted-soft">{member.role}</p>
 
-      <ul className="mt-5 space-y-2 border-t border-line pt-5">
+      <ul className="mt-5 space-y-2 pt-5">
         {member.credentials.map((c) => (
           <li key={c} className="flex items-start gap-2.5 text-sm text-muted">
             <span
@@ -88,7 +88,7 @@ export default function Team() {
   return (
     <section
       id="equipo"
-      className="border-t border-line bg-paper py-24 lg:py-32"
+      className="bg-paper py-24 lg:py-32"
       aria-label="Equipo fundador"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -107,9 +107,7 @@ export default function Team() {
         </div>
 
         <div
-          className={`mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 ${
-            team.length >= 3 ? 'lg:grid-cols-3' : ''
-          }`}
+          className={`mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 ${ team.length >= 3 ? 'lg:grid-cols-3' : '' }`}
         >
           {team.map((member, i) => (
             <MemberCard key={member.name} member={member} index={i} />

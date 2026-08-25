@@ -5,9 +5,9 @@
  *  A warm black & white palette, technical mono labels, editorial serif.
  * ------------------------------------------------------------------ */
 @theme {
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
-  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --font-mono: "Menlo", "Consolas", monospace;
 
   /* Light surfaces — stark white, neutral grays */
   --color-paper: #ffffff;
@@ -56,11 +56,7 @@ body {
   border-radius: 2px;
 }
 
-/* Editorial serif refinement */
-.font-serif {
-  font-feature-settings: "liga" 1, "calt" 1;
-  letter-spacing: -0.01em;
-}
+
 
 /* Technical eyebrow / label style */
 .label-mono {
@@ -76,18 +72,7 @@ body {
   border-top: 1px solid var(--color-line);
 }
 
-/* ------------------------------------------------------------------ *
- *  Subtle paper grain — the kind of detail a designer adds, not an AI.
- * ------------------------------------------------------------------ */
-.grain::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+
 
 /* ------------------------------------------------------------------ *
  *  Logo handling — assets ship near-white; invert them for light UI.
@@ -100,99 +85,12 @@ body {
  *  Reveal-on-scroll
  * ------------------------------------------------------------------ */
 [data-reveal] {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.9s var(--ease-out-quint),
-    transform 0.9s var(--ease-out-quint);
-  will-change: opacity, transform;
-}
-
-[data-reveal].is-visible {
   opacity: 1;
   transform: none;
 }
 
-/* ------------------------------------------------------------------ *
- *  Ambient keyframes
- * ------------------------------------------------------------------ */
-@keyframes drift {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -14px, 0); }
-}
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
 
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.82); }
-}
-
-@keyframes sweep {
-  0% { transform: translateX(-120%); }
-  100% { transform: translateX(320%); }
-}
-
-/* Soft descending light band — a scanner pass, feathered on both axes so
- * it reads as ambient depth rather than a hard hairline sweeping the page. */
-@keyframes beam {
-  0%   { transform: translateY(-180px); opacity: 0; }
-  18%  { opacity: 1; }
-  82%  { opacity: 1; }
-  100% { transform: translateY(600px); opacity: 0; }
-}
-
-.hero-beam {
-  position: absolute;
-  inset-inline: 0;
-  height: 150px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 0, 0, 0.05) 46%,
-    rgba(0, 0, 0, 0.09) 50%,
-    rgba(0, 0, 0, 0.05) 54%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 28%, #000 72%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 28%, #000 72%, transparent);
-  animation: beam 9s var(--ease-out-quint) infinite;
-}
-
-@keyframes text-fade {
-  0% { opacity: 0; transform: translateY(4px); }
-  20% { opacity: 1; transform: translateY(0); }
-  80% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-4px); }
-}
-
-.animate-drift { animation: drift 9s ease-in-out infinite; }
-.animate-marquee { animation: marquee 32s linear infinite; }
-.animate-pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
-.animate-text-fade { animation: text-fade 2s ease-in-out infinite; }
-
-.marquee-mask {
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-}
-
-/* Shine sweep for the hero product surface */
-.sweep::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.55) 50%, transparent 60%);
-  transform: translateX(-120%);
-  animation: sweep 7s ease-in-out 1.2s infinite;
-  pointer-events: none;
-}
-
-/* ------------------------------------------------------------------ *
- *  Reduced motion — turn all of it off, honestly.
- * ------------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *,
@@ -202,5 +100,8 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  [data-reveal] { opacity: 1; transform: none; }
+  [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
 }

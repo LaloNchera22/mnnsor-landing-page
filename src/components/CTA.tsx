@@ -24,14 +24,14 @@ export default function CTA() {
           <div className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
             <a
               href={CONTACT.demo}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-7 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-7 py-3.5 text-base font-medium text-paper sm:w-auto"
             >
               Agendar demo
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href={CONTACT.sales}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-none border border-line px-7 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-none px-7 py-3.5 text-base font-medium text-ink sm:w-auto"
             >
               Hablar con ventas
             </a>

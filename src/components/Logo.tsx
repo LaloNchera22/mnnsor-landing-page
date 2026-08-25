@@ -11,15 +11,16 @@ interface LogoProps {
  */
 export default function Logo({ tone = 'dark', className = '' }: LogoProps) {
   const inkText = tone === 'dark' ? 'text-ink' : 'text-paper';
+  const logoSrc = tone === 'dark' ? '/1.png' : '/2.png';
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <img
-        src="/1.png"
+        src={logoSrc}
         alt=""
         aria-hidden="true"
         width={26}
         height={26}
-        className={`h-6 w-6 object-contain ${tone === 'dark' ? 'logo-ink' : ''}`}
+        className="h-6 w-6 object-contain"
       />
       <span
         className={`font-semibold text-[1.35rem] leading-none tracking-tight ${inkText}`}

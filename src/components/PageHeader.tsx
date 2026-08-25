@@ -20,7 +20,7 @@ interface PageHeaderProps {
  */
 export default function PageHeader({ eyebrow, title, description, crumbs, children }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden border-b border-line pt-32 pb-16 lg:pt-40 lg:pb-20">
+    <section className="relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-20">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(55%_55%_at_50%_0%,rgba(0,0,0,0.045),transparent_70%)]"
@@ -37,7 +37,7 @@ export default function PageHeader({ eyebrow, title, description, crumbs, childr
               <span key={c.label} className="inline-flex items-center gap-1.5">
                 {i > 0 && <ChevronRight className="h-3 w-3 text-line-strong" />}
                 {c.to ? (
-                  <Link to={c.to} className="font-mono transition-colors hover:text-ink">
+                  <Link to={c.to} className="font-mono">
                     {c.label}
                   </Link>
                 ) : (

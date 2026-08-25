@@ -52,10 +52,10 @@ export default function AgentsSection() {
                   to={`/agentes/${a.slug}`}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="group flex flex-col rounded-none p-6 transition-colors hover:bg-panel"
+                  className="group flex flex-col rounded-none p-6"
                 >
                   <div className="mb-4 flex items-center justify-between">
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-none border border-line text-ink">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-none text-ink">
                       <Icon className="h-4 w-4" />
                     </span>
                     <span className="font-mono text-[11px] text-muted-soft">{a.code}</span>
@@ -64,7 +64,7 @@ export default function AgentsSection() {
                   <p className="mb-5 text-sm leading-relaxed text-muted">{a.tagline}</p>
                   <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
                     Conocerlo
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </Link>
               );
@@ -75,10 +75,10 @@ export default function AgentsSection() {
         <div data-reveal className="mt-10 flex justify-center">
           <Link
             to="/agentes"
-            className="group inline-flex items-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-panel"
+            className="group inline-flex items-center gap-2 rounded-none bg-paper px-6 py-3 text-sm font-medium text-ink"
           >
             Conoce los 4 agentes y su alcance real
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
       </div>
@@ -124,10 +124,10 @@ function FlagshipAgent() {
           <a
             href={CONTACT.demoAtlas}
             onClick={() => trackCTA('Agenda una demo de Atlas', 'AgentsSection')}
-            className="group inline-flex items-center justify-center gap-2 rounded-none bg-ink px-5 py-3 text-sm font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
+            className="group inline-flex items-center justify-center gap-2 rounded-none bg-ink px-5 py-3 text-sm font-medium text-paper"
           >
             Agenda una demo de Atlas
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="h-4 w-4" />
           </a>
           <Link
             to="/agentes/atlas"
@@ -135,7 +135,7 @@ function FlagshipAgent() {
             className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
           >
             Ver capacidades y límites
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
       </div>
@@ -151,7 +151,7 @@ function AtlasMock() {
       <div className="mb-4 flex items-center justify-between pb-4">
         <span className="text-sm font-semibold text-ink">Revisión del expediente técnico</span>
         <span className="inline-flex items-center gap-1.5 rounded-none bg-ink px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-paper">
-          <span className="animate-pulse-dot h-1.5 w-1.5 rounded-none bg-paper" />
+          <span className="h-1.5 w-1.5 rounded-none bg-paper" />
           Cruzando
         </span>
       </div>

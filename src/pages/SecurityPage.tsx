@@ -27,7 +27,7 @@ const pillars = [
   {
     icon: EyeOff,
     title: 'Cero retención en modelos',
-    body: 'Los LLM no se entrenan con tus datos. La información sensible se anonimiza automáticamente antes de cualquier procesamiento.',
+    body: 'Los modelos operan con estricta privacidad de datos. La información sensible se anonimiza automáticamente antes de cualquier procesamiento.',
   },
   {
     icon: Server,
@@ -53,7 +53,7 @@ const dataFlow = [
   },
   {
     k: 'Procesamiento',
-    v: 'Los modelos operan sobre datos aislados por cliente. No hay entrenamiento con tu contenido ni cruce entre organizaciones.',
+    v: 'Los modelos operan sobre datos aislados por cliente. El procesamiento aísla tu contenido garantizando confidencialidad total.',
   },
   {
     k: 'Salida',
@@ -83,7 +83,7 @@ export default function SecurityPage() {
           <MailButton href={CONTACT.security} variant="solid">
             Solicitar documentación de seguridad
           </MailButton>
-          <div className="inline-flex items-center gap-3 rounded-none border border-line bg-paper px-4 py-2.5">
+          <div className="inline-flex items-center gap-3 rounded-none bg-paper px-4 py-2.5">
             <Lock className="h-4 w-4 text-ink" />
             <span className="text-sm font-medium text-ink">Datos en tu región, bajo tus políticas</span>
           </div>
@@ -91,7 +91,7 @@ export default function SecurityPage() {
       </PageHeader>
 
       {/* Pilares */}
-      <section className="border-b border-line bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((p, i) => {
@@ -100,7 +100,7 @@ export default function SecurityPage() {
                   key={p.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
+                  className="group bg-paper p-7 lg:p-8"
                 >
                   <h3 className="mb-2 text-xl font-bold tracking-tight text-ink">{p.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{p.body}</p>
@@ -112,7 +112,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Flujo de datos */}
-      <section className="border-b border-line bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -132,7 +132,7 @@ export default function SecurityPage() {
                 key={d.k}
                 data-reveal
                 style={{ transitionDelay: `${i * 90}ms` }}
-                className="border border-line bg-paper p-7"
+                className="bg-paper p-7"
               >
                 <h3 className="mb-2 text-xl font-bold tracking-tight text-ink">{d.k}</h3>
                 <p className="text-sm leading-relaxed text-muted">{d.v}</p>
@@ -143,7 +143,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Gobernanza empresarial */}
-      <section className="border-b border-line bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
@@ -174,7 +174,7 @@ export default function SecurityPage() {
             <div
               data-reveal
               style={{ transitionDelay: '160ms' }}
-              className="rounded-none border border-line bg-paper/50 p-7 sm:p-9"
+              className="rounded-none bg-paper/50 p-7 sm:p-9"
             >
               <div className="mb-6 flex items-center gap-2.5">
                 <Building2 className="h-4 w-4 text-ink" />
@@ -190,7 +190,7 @@ export default function SecurityPage() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 rounded-none border border-line bg-paper p-4"
+                    className="flex items-start gap-3 rounded-none bg-paper p-4"
                   >
                     <ScrollText className="mt-0.5 h-4.5 w-4.5 shrink-0 text-ink" />
                     <span className="text-sm text-ink">{item}</span>

@@ -22,13 +22,13 @@ const pipeline = [
     icon: FileStack,
     step: '01',
     title: 'Ingesta de tu documentación',
-    body: 'Planos en PDF, modelos IFC, cronogramas P6/MS Project, catálogos de conceptos, estimaciones y bitácoras. Se cargan tal como existen; no se reformatea nada.',
+    body: 'Planos en PDF, modelos IFC, cronogramas P6/MS Project, catálogos de conceptos, estimaciones y bitácoras. Se cargan tal como existen; se procesa en su formato nativo.',
   },
   {
     icon: ScanText,
     step: '02',
     title: 'Comprensión con contexto',
-    body: 'Los modelos interpretan documentos no estructurados y los conectan al contexto de tu proyecto: fases, partidas, contratos y responsables.',
+    body: 'Los modelos interpretan documentos desestructurados y los conectan al contexto de tu proyecto: fases, partidas, contratos y responsables.',
   },
   {
     icon: Cpu,
@@ -48,7 +48,7 @@ const principles = [
   {
     icon: Workflow,
     title: 'Lee tu obra tal como es',
-    body: 'La construcción no corre sobre APIs modernas, sino sobre PDF, hojas de cálculo y decisiones de campo. La plataforma está diseñada para dominar ese terreno.',
+    body: 'Integramos tus flujos de trabajo basados en documentos PDF, hojas de cálculo y decisiones de campo. La plataforma está diseñada para dominar ese terreno.',
   },
   {
     icon: ScanText,
@@ -89,10 +89,10 @@ export default function Platform() {
             </MailButton>
             <Link
               to="/agentes"
-              className="group inline-flex items-center justify-center gap-2 rounded-none border border-line-strong bg-paper px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel"
+              className="group inline-flex items-center justify-center gap-2 rounded-none bg-paper px-6 py-3.5 text-base font-medium text-ink"
             >
               Ver los agentes
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
           <p className="mt-5 text-sm text-muted-soft">
@@ -102,7 +102,7 @@ export default function Platform() {
       </PageHeader>
 
       {/* Cómo funciona */}
-      <section className="border-b border-line bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -124,7 +124,7 @@ export default function Platform() {
                   key={p.step}
                   data-reveal
                   style={{ transitionDelay: `${i * 90}ms` }}
-                  className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
+                  className="group bg-paper p-7 lg:p-8"
                 >
                   <h3 className="mb-2.5 text-xl font-bold tracking-tight text-ink">{p.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{p.body}</p>
@@ -136,7 +136,7 @@ export default function Platform() {
       </section>
 
       {/* Principios de diseño */}
-      <section className="border-b border-line bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-x-16 gap-y-14 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
@@ -149,7 +149,7 @@ export default function Platform() {
                 className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-[3rem]"
               >
                 Construida para la realidad de la obra,
-                <span className="text-muted"> no para el laboratorio.</span>
+                <span className="text-muted"> orientada a resultados concretos.</span>
               </h2>
               <p
                 data-reveal
@@ -168,7 +168,7 @@ export default function Platform() {
                     key={f.title}
                     data-reveal
                     style={{ transitionDelay: `${i * 90}ms` }}
-                    className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
+                    className="group bg-paper p-7 lg:p-8"
                   >
                     <h3 className="mb-2.5 text-xl font-bold tracking-tight text-ink">{f.title}</h3>
                     <p className="text-sm leading-relaxed text-muted">{f.body}</p>
@@ -181,7 +181,7 @@ export default function Platform() {
       </section>
 
       {/* Los agentes como módulos */}
-      <section className="border-b border-line bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -210,7 +210,7 @@ export default function Platform() {
             <Link
               to={`/agentes/${flagship.slug}`}
               data-reveal
-              className="group mt-14 grid grid-cols-1 gap-8 rounded-none border border-line-strong bg-paper p-8 shadow-[0_40px_90px_-50px_rgba(0,0,0,0.35)] transition-colors hover:bg-paper/70 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:p-12"
+              className="group mt-14 grid grid-cols-1 gap-8 rounded-none bg-paper p-8 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:p-12"
             >
               <div>
                 <div className="mb-5 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">
@@ -220,16 +220,16 @@ export default function Platform() {
                 <h3 className="mb-3 font-sans text-3xl tracking-tight text-ink sm:text-4xl">{flagship.name}</h3>
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
                   Ver capacidades y límites
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-4 w-4" />
                 </span>
               </div>
-              <div className="border-t border-line pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
+              <div className="pt-6 lg:pt-0 lg:pl-10">
                 <p className="mb-6 leading-relaxed text-muted">{flagship.intro}</p>
                 <div className="flex flex-wrap gap-2">
                   {flagship.integrations.slice(0, 5).map((t) => (
                     <span
                       key={t}
-                      className="rounded-none border border-line bg-paper px-2 py-1 font-mono text-[11px] text-muted"
+                      className="rounded-none bg-paper px-2 py-1 font-mono text-[11px] text-muted"
                     >
                       {t}
                     </span>
@@ -252,10 +252,10 @@ export default function Platform() {
                   to={`/agentes/${a.slug}`}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="group flex flex-col rounded-none border border-line bg-paper/50 p-7 transition-colors hover:bg-paper"
+                  className="group flex flex-col rounded-none bg-paper/50 p-7"
                 >
                   <div className="mb-5 flex items-center justify-between">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-none border border-line text-ink">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-none text-ink">
                       <Icon className="h-4.5 w-4.5" />
                     </span>
                     <span className="font-mono text-[11px] text-muted-soft">{a.code}</span>
@@ -265,7 +265,7 @@ export default function Platform() {
                   <p className="mb-6 text-sm leading-relaxed text-muted">{a.summary}</p>
                   <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
                     Ver alcance real
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </Link>
               );
@@ -275,7 +275,7 @@ export default function Platform() {
       </section>
 
       {/* Despliegue + gobernanza */}
-      <section className="border-b border-line bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             <div>
@@ -316,7 +316,7 @@ export default function Platform() {
                   className="group inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
                 >
                   Ver las objeciones frecuentes
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -324,7 +324,7 @@ export default function Platform() {
             <div
               data-reveal
               style={{ transitionDelay: '160ms' }}
-              className="rounded-none border border-line bg-paper p-7 sm:p-9"
+              className="rounded-none bg-paper p-7 sm:p-9"
             >
               <div className="mb-6 flex items-center gap-2.5">
                 <ShieldCheck className="h-4 w-4 text-ink" />
@@ -333,17 +333,17 @@ export default function Platform() {
               <div className="space-y-4">
                 {[
                   { icon: Boxes, k: 'Tus datos', v: 'Alojados en tu región, bajo tus políticas.' },
-                  { icon: Cpu, k: 'Los agentes', v: 'Proponen; no ejecutan acciones críticas sin aprobación.' },
+                  { icon: Cpu, k: 'Los agentes', v: 'Preparan propuestas para su validación ejecutiva.' },
                   { icon: GitPullRequestArrow, k: 'Tu equipo', v: 'Autoriza cada decisión financiera o de ruta crítica.' },
-                  { icon: ShieldCheck, k: 'Cero entrenamiento', v: 'Los modelos no se entrenan con tu información.' },
+                  { icon: ShieldCheck, k: 'Cero entrenamiento', v: 'Los modelos operan garantizando privacidad de datos.' },
                 ].map((row) => {
                   const Icon = row.icon;
                   return (
                     <div
                       key={row.k}
-                      className="flex items-start gap-4 rounded-none border border-line bg-paper/50 p-4"
+                      className="flex items-start gap-4 rounded-none bg-paper/50 p-4"
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-none border border-line text-ink">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-none text-ink">
                         <Icon className="h-4 w-4" />
                       </span>
                       <div>
@@ -360,7 +360,7 @@ export default function Platform() {
       </section>
 
       {/* Por qué esto es defendible */}
-      <section className="border-b border-line bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -371,15 +371,14 @@ export default function Platform() {
               style={{ transitionDelay: '80ms' }}
               className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
-              Tres cosas que no se copian con otra suscripción.
+              Ventajas operativas que escalan con cada proyecto.
             </h2>
             <p
               data-reveal
               style={{ transitionDelay: '160ms' }}
               className="mt-6 leading-relaxed text-muted"
             >
-              No competimos por ser el enésimo tablero. Corremos encima de lo que ya
-              tienes y, con el tiempo, la ventaja se vuelve tuya.
+              Operamos sobre tu infraestructura actual para acelerar tus flujos de trabajo, convirtiendo tus datos en una ventaja competitiva duradera.
             </p>
           </div>
 
@@ -403,7 +402,7 @@ export default function Platform() {
                   key={c.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 90}ms` }}
-                  className="group border border-line bg-paper p-7 lg:p-8"
+                  className="group bg-paper p-7 lg:p-8"
                 >
                   <h3 className="mb-2.5 text-xl font-bold tracking-tight text-ink">{c.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{c.body}</p>

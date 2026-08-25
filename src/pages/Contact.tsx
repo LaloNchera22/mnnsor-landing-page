@@ -12,7 +12,7 @@ export default function Contact() {
         title={
           <>
             Hablemos de tu obra,
-            <span className="text-muted"> no de un caso genérico.</span>
+            <span className="text-muted"> centrándonos en tus operaciones.</span>
           </>
         }
         description={
@@ -32,7 +32,7 @@ export default function Contact() {
           <form
             action={LEAD_FORM_URL}
             method="POST"
-            className="flex flex-col gap-6 rounded-none border border-line bg-paper/50 p-8 sm:p-10"
+            className="flex flex-col gap-6 rounded-none bg-paper/50 p-8 sm:p-10"
             data-reveal
             onSubmit={() => trackCTA('Enviar solicitud (Form)', 'Contact Page')}
           >
@@ -46,7 +46,7 @@ export default function Contact() {
                   name="nombre"
                   id="nombre"
                   required
-                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
                   placeholder="Juan Pérez"
                 />
               </div>
@@ -59,7 +59,7 @@ export default function Contact() {
                   name="email"
                   id="email"
                   required
-                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
                   placeholder="juan@empresa.com"
                 />
               </div>
@@ -75,7 +75,7 @@ export default function Contact() {
                   name="empresa"
                   id="empresa"
                   required
-                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
                   placeholder="Constructora XYZ"
                 />
               </div>
@@ -88,7 +88,7 @@ export default function Contact() {
                   name="cargo"
                   id="cargo"
                   required
-                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
                   placeholder="Director de Proyectos"
                 />
               </div>
@@ -103,7 +103,7 @@ export default function Contact() {
                   type="tel"
                   name="telefono"
                   id="telefono"
-                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
                   placeholder="+52 55 1234 5678"
                 />
               </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                   id="tipo_proyecto"
                   required
                   defaultValue=""
-                  className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink"
                 >
                   <option value="" disabled>Selecciona una opción</option>
                   <option value="edificacion">Edificación</option>
@@ -135,23 +135,23 @@ export default function Contact() {
                 type="text"
                 name="herramientas"
                 id="herramientas"
-                className="rounded-none border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink"
+                className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
                 placeholder="P6, MS Project, Revit, Procore, Excel…"
               />
             </div>
 
             <button
               type="submit"
-              className="group mt-4 inline-flex items-center justify-center gap-2 rounded-none bg-ink px-6 py-4 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
+              className="group mt-4 inline-flex items-center justify-center gap-2 rounded-none bg-ink px-6 py-4 text-base font-medium text-paper"
             >
               Enviar solicitud
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-4 w-4" />
             </button>
           </form>
 
           <div
             data-reveal
-            className="mt-10 flex flex-col items-center justify-between gap-4 rounded-none border border-line bg-paper/50 px-7 py-6 sm:flex-row"
+            className="mt-10 flex flex-col items-center justify-between gap-4 rounded-none bg-paper/50 px-7 py-6 sm:flex-row"
           >
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-ink" />

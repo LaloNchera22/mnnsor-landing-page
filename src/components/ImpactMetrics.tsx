@@ -20,7 +20,7 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
     <div
       data-reveal
       style={{ transitionDelay: `${index * 90}ms` }}
-      className="border-t border-line pt-6"
+      className="pt-6"
     >
       <div className="font-sans text-5xl tracking-tight text-ink sm:text-6xl">
         {metric.prefix}
@@ -55,7 +55,7 @@ export default function ImpactMetrics() {
               className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
               Cambia la economía de cada proyecto,
-              <span className="text-muted"> no solo el flujo de trabajo.</span>
+              <span className="text-muted"> optimizando las operaciones de construcción.</span>
             </h2>
             <p
               data-reveal
@@ -76,7 +76,7 @@ export default function ImpactMetrics() {
             {/* CAMINO A (con datos reales):
             <p
               data-reveal
-              className="mt-10 border-t border-white/15 pt-5 text-xs leading-relaxed text-paper/45"
+              className="mt-10 pt-5 text-xs leading-relaxed text-paper/45"
             >
               Fuente: Piloto Torre X, 2025
             </p>
@@ -84,7 +84,7 @@ export default function ImpactMetrics() {
             {/* CAMINO B (sin datos aún): */}
             <p
               data-reveal
-              className="mt-10 border-t border-line pt-5 text-xs leading-relaxed text-muted-soft"
+              className="mt-10 pt-5 text-xs leading-relaxed text-muted-soft"
             >
               Rangos ilustrativos; los resultados varían por proyecto.
             </p>

@@ -7,7 +7,7 @@ import { AGENTS } from '../data/agents';
 const honesty = [
   {
     icon: ScanText,
-    title: 'Trabajan sobre datos, no sobre magia',
+    title: 'Operan estrictamente sobre tus datos y flujos',
     body: 'Un agente solo conoce lo que le entregas. Su lectura es tan buena como la documentación y los reportes que recibe.',
   },
   {
@@ -38,7 +38,7 @@ export default function Agents() {
       />
 
       {/* Filosofía honesta */}
-      <section className="border-b border-line bg-paper py-16 lg:py-20">
+      <section className="bg-paper py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {honesty.map((h, i) => {
@@ -47,7 +47,7 @@ export default function Agents() {
                   key={h.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 90}ms` }}
-                  className="border border-line bg-paper p-7 lg:p-8"
+                  className="bg-paper p-7 lg:p-8"
                 >
                   <h3 className="mb-2 text-xl font-bold tracking-tight text-ink">{h.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{h.body}</p>
@@ -70,7 +70,7 @@ export default function Agents() {
                   to={`/agentes/${a.slug}`}
                   data-reveal
                   style={{ transitionDelay: `${i * 70}ms` }}
-                  className="group grid grid-cols-1 gap-8 rounded-none border border-line bg-paper p-7 transition-colors hover:bg-paper/60 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:p-10"
+                  className="group grid grid-cols-1 gap-8 rounded-none bg-paper p-7 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:p-10"
                 >
                   <div>
                     <div className="mb-5 flex flex-wrap items-center gap-2.5">
@@ -79,7 +79,7 @@ export default function Agents() {
                           Empieza aquí
                         </span>
                       )}
-                      <div className="inline-flex items-center gap-2.5 rounded-none border border-line bg-paper px-3 py-1.5">
+                      <div className="inline-flex items-center gap-2.5 rounded-none bg-paper px-3 py-1.5">
                         <Icon className="h-3.5 w-3.5 text-ink" />
                         <span className="label-mono text-ink">{a.discipline}</span>
                         <span className="font-mono text-[11px] text-muted-soft">· {a.code}</span>
@@ -89,18 +89,18 @@ export default function Agents() {
                     <p className="max-w-xl leading-relaxed text-muted">{a.summary}</p>
                     <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
                       Ver capacidades y límites
-                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>
 
-                  <div className="rounded-none border border-line bg-paper/50 p-6">
+                  <div className="rounded-none bg-paper/50 p-6">
                     <div className="font-sans text-5xl tracking-tight text-ink">{a.metric.value}</div>
                     <p className="mt-2 text-sm leading-relaxed text-muted">{a.metric.label}</p>
                     <div className="mt-5 flex flex-wrap gap-2">
                       {a.integrations.slice(0, 4).map((t) => (
                         <span
                           key={t}
-                          className="rounded-none border border-line bg-paper px-2 py-1 font-mono text-[11px] text-muted"
+                          className="rounded-none bg-paper px-2 py-1 font-mono text-[11px] text-muted"
                         >
                           {t}
                         </span>

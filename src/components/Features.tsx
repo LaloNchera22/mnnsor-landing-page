@@ -11,7 +11,7 @@ const features = [
     icon: ScanText,
     title: 'Extracción con criterio',
     description:
-      'Interpreta datos no estructurados —bitácoras, estimaciones en PDF, correos con contratistas— y los convierte en información accionable con fiabilidad de nivel humano.',
+      'Interpreta datos desestructurados —bitácoras, estimaciones en PDF, correos con contratistas— y los convierte en información accionable con fiabilidad de nivel humano.',
   },
   {
     icon: Zap,
@@ -43,14 +43,14 @@ export default function Features() {
               className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-[3.25rem]"
             >
               Construida para la realidad de la obra,
-              <span className="text-muted"> no para el laboratorio.</span>
+              <span className="text-muted"> orientada a resultados concretos.</span>
             </h2>
             <p
               data-reveal
               style={{ transitionDelay: '160ms' }}
               className="mt-6 max-w-md leading-relaxed text-muted"
             >
-              La construcción no corre sobre APIs modernas. Corre sobre PDF,
+              Integramos tus flujos de trabajo basados en documentos PDF,
               hojas de cálculo y decisiones de campo. mnnsor está diseñado para
               dominar ese terreno.
             </p>

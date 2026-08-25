@@ -14,7 +14,7 @@ import {
  *
  *  Respuestas cortas y verificables: cada una remite a una página del
  *  sitio donde el claim puede comprobarse (plataforma, seguridad,
- *  agentes). No se añade nada que no podamos sustentar con el resto
+ *  agentes). Aseguramos evidencia en todas las aserciones con el resto
  *  del contenido.
  * ------------------------------------------------------------------ */
 
@@ -28,7 +28,7 @@ interface Objection {
 const objections: Objection[] = [
   {
     icon: Layers,
-    question: '¿Por qué no usar solo el Procore/Autodesk que ya tengo?',
+    question: '¿Cómo complementa mnnsor a plataformas como Procore o Autodesk?',
     answer:
       'mnnsor es una capa de agentes que potencia tu stack actual. Lee la documentación que esas herramientas ya generan y opera sobre P6, Revit, Procore y Excel. Sigues usando lo que tienes; los agentes le suman una capa de análisis continuo.',
     proof: { label: 'Cómo se despliega sobre tu stack', to: '/plataforma' },
@@ -37,21 +37,21 @@ const objections: Objection[] = [
     icon: ShieldCheck,
     question: '¿Y si la IA se equivoca en una obra de millones?',
     answer:
-      'Los agentes proponen; no ejecutan acciones con impacto financiero o de ruta crítica sin aprobación humana. Cada propuesta llega con su evidencia, tu equipo autoriza o rechaza, y toda decisión —aprobada o no— queda en una bitácora auditable.',
+      'Los agentes proponen; preparan las acciones con impacto financiero para tu validación o de ruta crítica sin aprobación humana. Cada propuesta llega con su evidencia, tu equipo autoriza o rechaza, y todo el proceso de decisión queda en una bitácora auditable.',
     proof: { label: 'Ver el modelo de gobernanza', to: '/plataforma' },
   },
   {
     icon: Zap,
     question: '¿Cuánto tarda implementar?',
     answer:
-      'Días, no meses. Cargas tu documentación real —planos, cronogramas, estimaciones— y los agentes aprenden la estructura del proyecto en horas. Sin proyecto de TI y sin migrar tus herramientas actuales.',
+      'Implementación acelerada en días. Cargas tu documentación real —planos, cronogramas, estimaciones— y los agentes aprenden la estructura del proyecto en horas. Sin proyecto de TI y sin migrar tus herramientas actuales.',
     proof: { label: 'Ver el proceso de ingesta', to: '/plataforma' },
   },
   {
     icon: Lock,
     question: '¿Qué pasa con mis datos?',
     answer:
-      'Se alojan en tu región, bajo tus políticas. Los modelos no se entrenan con tu información y los datos sensibles se anonimizan de forma automática. Tus planos, presupuestos y bitácoras permanecen bajo tu control.',
+      'Se alojan en tu región, bajo tus políticas. Los modelos operan con una política estricta de privacidad de datos y los datos sensibles se anonimizan de forma automática. Tus planos, presupuestos y bitácoras permanecen bajo tu control.',
     proof: { label: 'Ver seguridad', to: '/seguridad' },
   },
   {
@@ -86,7 +86,7 @@ export default function Objections() {
           >
             Lo que un director de proyecto o control de costos pregunta antes de
             aprobar un piloto. Respuestas cortas y verificables, sin promesas que
-            no podamos sostener.
+            sean inverificables.
           </p>
         </div>
 
@@ -98,9 +98,7 @@ export default function Objections() {
                 key={o.question}
                 data-reveal
                 style={{ transitionDelay: `${(i % 2) * 90}ms` }}
-                className={`group flex flex-col bg-paper p-7 lg:p-9 ${
-                  isLast ? 'md:col-span-2' : ''
-                }`}
+                className={`group flex flex-col bg-paper p-7 lg:p-9 ${ isLast ? 'md:col-span-2' : '' }`}
               >
                 <h3 className="mb-3 text-xl font-bold tracking-tight text-ink">
                   {o.question}
@@ -112,7 +110,7 @@ export default function Objections() {
                     className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-ink"
                   >
                     {o.proof.label}
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 )}
               </article>

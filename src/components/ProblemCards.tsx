@@ -37,7 +37,7 @@ export default function ProblemCards() {
             style={{ transitionDelay: '80ms' }}
             className="font-sans text-3xl leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl"
           >
-            La construcción no falla por falta de talento.
+            La construcción requiere herramientas que escalen con tu talento.
             <span className="text-muted"> Falla por falta de datos a tiempo.</span>
           </h2>
         </div>
