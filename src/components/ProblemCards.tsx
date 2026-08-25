@@ -26,7 +26,7 @@ const problems = [
 
 export default function ProblemCards() {
   return (
-    <section className="bg-paper py-24 lg:py-32">
+    <section className="bg-paper py-4 lg:py-6">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -42,7 +42,7 @@ export default function ProblemCards() {
           </h2>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
           {problems.map((p, idx) => {
             return (
               <article

@@ -54,7 +54,7 @@ export default function AgentDetail() {
       </PageHeader>
 
       {/* Intro + métrica */}
-      <section className="bg-paper py-20 lg:py-24">
+      <section className="bg-paper py-6 lg:py-8">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-center">
             <p
@@ -79,7 +79,7 @@ export default function AgentDetail() {
       </section>
 
       {/* Capacidades vs Límites — el alcance honesto */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -102,7 +102,7 @@ export default function AgentDetail() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
             {/* Capacidades */}
             <div data-reveal className="rounded-none bg-paper p-7 sm:p-9">
               <div className="mb-6 inline-flex items-center gap-2.5 rounded-none bg-paper px-3 py-1.5">
@@ -147,7 +147,7 @@ export default function AgentDetail() {
       </section>
 
       {/* Entradas / Salidas */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-2">
             <div>
@@ -194,7 +194,7 @@ export default function AgentDetail() {
       </section>
 
       {/* Flujo de trabajo */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -209,7 +209,7 @@ export default function AgentDetail() {
             </h2>
           </div>
 
-          <ol className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {agent.workflow.map((s, i) => (
               <li
                 key={s.title}
@@ -223,7 +223,7 @@ export default function AgentDetail() {
             ))}
           </ol>
 
-          <div data-reveal className="mt-10 flex flex-wrap items-center gap-3">
+          <div data-reveal className="mt-5 flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-2 label-mono text-muted-soft">
               <Plug className="h-3.5 w-3.5" /> Integra con
             </span>
@@ -240,7 +240,7 @@ export default function AgentDetail() {
       </section>
 
       {/* Otros agentes */}
-      <section className="bg-paper py-20 lg:py-24">
+      <section className="bg-paper py-6 lg:py-8">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <p data-reveal className="mb-8 label-mono text-muted-soft">
             Otros agentes

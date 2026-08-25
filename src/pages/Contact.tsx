@@ -26,7 +26,7 @@ export default function Contact() {
         }
       />
 
-      <section className="bg-paper py-20 lg:py-24">
+      <section className="bg-paper py-6 lg:py-8">
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
 
           <form
@@ -151,7 +151,7 @@ export default function Contact() {
 
           <div
             data-reveal
-            className="mt-10 flex flex-col items-center justify-between gap-4 rounded-none bg-paper/50 px-7 py-6 sm:flex-row"
+            className="mt-5 flex flex-col items-center justify-between gap-4 rounded-none bg-paper/50 px-7 py-6 sm:flex-row"
           >
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-ink" />

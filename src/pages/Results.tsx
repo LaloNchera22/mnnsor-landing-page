@@ -77,7 +77,7 @@ export default function Results() {
       />
 
       {/* Métricas */}
-      <section className="bg-ink py-24 text-paper lg:py-28">
+      <section className="bg-ink py-8 text-paper lg:py-10">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <p data-reveal className="mb-12 label-mono text-paper/45">
             {/* CAMINO A: Rangos observados en despliegues */}
@@ -89,19 +89,19 @@ export default function Results() {
             ))}
           </div>
           {/* CAMINO A:
-          <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
+          <p data-reveal className="mt-6 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
             Fuente: Piloto Torre X, 2025
           </p>
           */}
           {/* CAMINO B: */}
-          <p data-reveal className="mt-12 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
+          <p data-reveal className="mt-6 max-w-xl font-mono text-[11px] leading-relaxed text-paper/40">
             Rangos ilustrativos; los resultados varían por proyecto.
           </p>
         </div>
       </section>
 
       {/* Escenarios antes / después */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -116,7 +116,7 @@ export default function Results() {
             </h2>
           </div>
 
-          <div className="mt-14 space-y-5">
+          <div className="mt-6 space-y-5">
             {scenarios.map((s, i) => {
               const Icon = s.icon;
               return (
@@ -149,7 +149,7 @@ export default function Results() {
       </section>
 
       {/* Cómo se mide */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div>

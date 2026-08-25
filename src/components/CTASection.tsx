@@ -23,10 +23,10 @@ export default function CTASection({
   secondaryLabel = 'Hablar con ventas',
 }: CTASectionProps) {
   return (
-    <section className="bg-paper px-5 py-20 sm:px-6 lg:py-28">
+    <section className="bg-paper px-5 py-6 sm:px-6 lg:py-10">
       <div
         data-reveal
-        className="relative mx-auto max-w-6xl overflow-hidden rounded-none bg-ink px-6 py-16 text-center sm:px-10 lg:py-20"
+        className="relative mx-auto max-w-6xl overflow-hidden rounded-none bg-ink px-6 py-8 text-center sm:px-10 lg:py-10"
       >
         <div
           aria-hidden="true"
@@ -37,7 +37,7 @@ export default function CTASection({
             {title}
           </h2>
           <p className="mx-auto mt-6 max-w-lg leading-relaxed text-paper/60">{description}</p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
+          <div className="mt-5 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
             <MailButton href={primaryHref} variant="solid-light" full>
               {primaryLabel}
             </MailButton>

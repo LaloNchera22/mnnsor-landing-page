@@ -3,10 +3,10 @@ import { CONTACT } from '../lib/contact';
 
 export default function CTA() {
   return (
-    <section id="contacto" className="bg-paper px-5 py-20 sm:px-6 lg:py-28">
+    <section id="contacto" className="bg-paper px-5 py-6 sm:px-6 lg:py-10">
       <div
         data-reveal
-        className="relative mx-auto max-w-6xl px-6 py-16 text-center sm:px-10 lg:py-24"
+        className="relative mx-auto max-w-6xl px-6 py-4 text-center sm:px-10 lg:py-6"
       >
         <div className="relative">
           <p className="mb-6 label-mono text-muted-soft">Empieza hoy</p>
@@ -21,7 +21,7 @@ export default function CTA() {
             minuto.
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
+          <div className="mt-5 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
             <a
               href={CONTACT.demo}
               className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-7 py-3.5 text-base font-medium text-paper sm:w-auto"

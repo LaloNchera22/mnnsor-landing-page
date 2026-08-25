@@ -29,7 +29,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="bg-paper py-24 lg:py-32">
+    <section className="bg-paper py-4 lg:py-6">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-x-16 gap-y-14 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Sticky heading */}
