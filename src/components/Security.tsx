@@ -20,7 +20,7 @@ const pillars = [
 
 export default function Security() {
   return (
-    <section id="seguridad" className="border-t border-line bg-paper py-24 lg:py-32">
+    <section id="seguridad" className="bg-paper py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
@@ -47,7 +47,7 @@ export default function Security() {
             <div
               data-reveal
               style={{ transitionDelay: '240ms' }}
-              className="mt-8 inline-flex items-center gap-3 rounded-none border border-line bg-paper px-4 py-2.5"
+              className="mt-8 inline-flex items-center gap-3 rounded-none bg-panel px-4 py-2.5"
             >
               <Lock className="h-4 w-4 text-ink" />
               <span className="text-sm font-medium text-ink">Datos alojados en tu región, bajo tus políticas</span>
@@ -61,7 +61,7 @@ export default function Security() {
                   key={p.title}
                   data-reveal
                   style={{ transitionDelay: `${idx * 100}ms` }}
-                  className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper"
+                  className="group bg-paper p-7"
                 >
                   <h3 className="mb-2 text-lg font-bold tracking-tight text-ink">{p.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{p.description}</p>

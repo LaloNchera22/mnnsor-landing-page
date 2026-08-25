@@ -98,6 +98,8 @@ function OriginkitBase_Typewriter(props: Props) {
         currentTextIndex,
         isStatic,
         hasTexts,
+        list,
+        list.length,
     ])
 
     const textsKey = list.join("")

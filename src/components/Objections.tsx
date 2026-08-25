@@ -65,7 +65,7 @@ const objections: Objection[] = [
 
 export default function Objections() {
   return (
-    <section id="objeciones" className="border-t border-line bg-paper py-24 lg:py-32">
+    <section id="objeciones" className="bg-paper py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -98,7 +98,7 @@ export default function Objections() {
                 key={o.question}
                 data-reveal
                 style={{ transitionDelay: `${(i % 2) * 90}ms` }}
-                className={`group flex flex-col border border-line bg-paper p-7 transition-colors duration-500 hover:bg-panel/50 lg:p-9 ${
+                className={`group flex flex-col bg-paper p-7 lg:p-9 ${
                   isLast ? 'md:col-span-2' : ''
                 }`}
               >

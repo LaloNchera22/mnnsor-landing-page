@@ -26,7 +26,7 @@ const tools = [
 
 export default function TrustBar() {
   return (
-    <section className="border-y border-line bg-paper py-10" aria-label="Integraciones">
+    <section className="bg-paper py-10" aria-label="Integraciones">
       <p
         data-reveal
         className="mx-auto mb-7 max-w-7xl px-6 text-center label-mono text-muted-soft"
