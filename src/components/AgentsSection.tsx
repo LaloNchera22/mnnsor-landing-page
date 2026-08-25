@@ -10,7 +10,7 @@ const SECONDARY_AGENTS = AGENTS.filter((a) => a.slug !== 'atlas');
 
 export default function AgentsSection() {
   return (
-    <section id="agentes" className="border-t border-line bg-paper py-24 lg:py-32">
+    <section id="agentes" className="bg-paper py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -52,7 +52,7 @@ export default function AgentsSection() {
                   to={`/agentes/${a.slug}`}
                   data-reveal
                   style={{ transitionDelay: `${i * 80}ms` }}
-                  className="group flex flex-col rounded-none border border-line bg-paper/50 p-6 transition-colors hover:bg-paper"
+                  className="group flex flex-col rounded-none p-6 transition-colors hover:bg-panel"
                 >
                   <div className="mb-4 flex items-center justify-between">
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-none border border-line text-ink">
@@ -95,7 +95,7 @@ function FlagshipAgent() {
   return (
     <div
       data-reveal
-      className="mt-12 grid grid-cols-1 items-center gap-10 rounded-none border border-line-strong bg-paper p-6 shadow-[0_40px_90px_-50px_rgba(0,0,0,0.35)] sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
+      className="mt-12 grid grid-cols-1 items-center gap-10 rounded-none bg-paper p-6 sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
     >
       <div>
         <div className="mb-6 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">
@@ -147,8 +147,8 @@ function FlagshipAgent() {
 
 function AtlasMock() {
   return (
-    <div className="rounded-none border border-line bg-paper/50 p-5">
-      <div className="mb-4 flex items-center justify-between border-b border-line pb-4">
+    <div className="rounded-none p-5">
+      <div className="mb-4 flex items-center justify-between pb-4">
         <span className="text-sm font-semibold text-ink">Revisión del expediente técnico</span>
         <span className="inline-flex items-center gap-1.5 rounded-none bg-ink px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-paper">
           <span className="animate-pulse-dot h-1.5 w-1.5 rounded-none bg-paper" />
@@ -172,7 +172,7 @@ function AtlasMock() {
           </p>
         </div>
         {/* Borrador — baja jerarquía: outline */}
-        <div className="rounded-none border border-line bg-paper p-4">
+        <div className="rounded-none bg-panel p-4">
           <div className="mb-2 flex items-start justify-between">
             <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-muted">
               <Check className="h-3 w-3" /> Borrador de RFI listo

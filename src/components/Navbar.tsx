@@ -19,10 +19,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuTimer = useRef<number | undefined>(undefined);
   const { pathname } = useLocation();
-  const [scrolled, setScrolled] = useState(false);
 
-  const isHome = pathname === '/';
-  const isLightText = isHome && !scrolled;
+  const isLightText = false;
 
   // Cierra menús al cambiar de ruta.
   useEffect(() => {
@@ -30,12 +28,6 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   const openMenu = () => {
     window.clearTimeout(menuTimer.current);
@@ -51,7 +43,7 @@ export default function Navbar() {
         aria-label="Principal"
         className={`transition-all duration-500 ${
           !isLightText
-            ? 'border-b border-line bg-paper/90 backdrop-blur-xl text-ink'
+            ? 'bg-paper/90 text-ink'
             : 'bg-transparent text-paper'
         }`}
       >
@@ -141,15 +133,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-6 md:flex">
-            <a
-              href="https://app.mnnsor.io"
-              onClick={() => trackCTA('Iniciar sesión', 'Navbar')}
-              className={`text-sm font-medium transition-colors ${
-                !isLightText ? 'text-muted hover:text-ink' : 'text-paper/80 hover:text-paper'
-              }`}
-            >
-              Iniciar sesión
-            </a>
+
             <a
               href={CONTACT.demo}
               onClick={() => trackCTA('Agendar demo', 'Navbar')}

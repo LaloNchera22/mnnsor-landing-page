@@ -29,7 +29,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="border-t border-line bg-paper py-24 lg:py-32">
+    <section className="bg-paper py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-x-16 gap-y-14 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Sticky heading */}
@@ -64,7 +64,7 @@ export default function Features() {
                   key={f.title}
                   data-reveal
                   style={{ transitionDelay: `${idx * 90}ms` }}
-                  className="group border border-line bg-paper p-7 transition-colors duration-500 hover:bg-paper lg:p-8"
+                  className="group bg-paper p-7 lg:p-8"
                 >
                   <h3 className="mb-2.5 text-xl font-bold tracking-tight text-ink">{f.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{f.description}</p>

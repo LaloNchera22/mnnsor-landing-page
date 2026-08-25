@@ -20,14 +20,14 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
     <div
       data-reveal
       style={{ transitionDelay: `${index * 90}ms` }}
-      className="border-t border-white/15 pt-6"
+      className="border-t border-line pt-6"
     >
-      <div className="font-sans text-5xl tracking-tight text-paper sm:text-6xl">
+      <div className="font-sans text-5xl tracking-tight text-ink sm:text-6xl">
         {metric.prefix}
         <span ref={ref}>{value}</span>
         {metric.suffix}
       </div>
-      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-paper/55">
+      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-muted-soft">
         {metric.label}
       </p>
     </div>
@@ -36,7 +36,7 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
 
 export default function ImpactMetrics() {
   return (
-    <section id="resultados" className="bg-ink py-24 text-paper lg:py-32">
+    <section id="resultados" className="bg-paper py-24 text-ink lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
@@ -46,21 +46,21 @@ export default function ImpactMetrics() {
             </p>
             */}
             {/* CAMINO B (sin datos aún): */}
-            <p data-reveal className="mb-5 label-mono text-paper/45">
+            <p data-reveal className="mb-5 label-mono text-muted-soft">
               Objetivos de diseño
             </p>
             <h2
               data-reveal
               style={{ transitionDelay: '80ms' }}
-              className="font-sans text-3xl leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl"
+              className="font-sans text-3xl leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
               Cambia la economía de cada proyecto,
-              <span className="text-paper/60"> no solo el flujo de trabajo.</span>
+              <span className="text-muted"> no solo el flujo de trabajo.</span>
             </h2>
             <p
               data-reveal
               style={{ transitionDelay: '160ms' }}
-              className="mt-6 max-w-md leading-relaxed text-paper/55"
+              className="mt-6 max-w-md leading-relaxed text-muted"
             >
               Los agentes multiplican la capacidad de tu plantilla de
               supervisión. Escala más obras con el mismo equipo senior.
@@ -84,7 +84,7 @@ export default function ImpactMetrics() {
             {/* CAMINO B (sin datos aún): */}
             <p
               data-reveal
-              className="mt-10 border-t border-white/15 pt-5 text-xs leading-relaxed text-paper/45"
+              className="mt-10 border-t border-line pt-5 text-xs leading-relaxed text-muted-soft"
             >
               Rangos ilustrativos; los resultados varían por proyecto.
             </p>
