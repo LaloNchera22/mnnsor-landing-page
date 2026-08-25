@@ -10,13 +10,19 @@ interface LogoProps {
  * surfaces we use it as-is.
  */
 export default function Logo({ tone = 'dark', className = '' }: LogoProps) {
-  const logoSrc = tone === 'dark' ? '/1.png' : '/2.png';
+  const filterClass = tone === 'dark' ? 'invert' : '';
+
   return (
-    <span className={`inline-flex items-center ${className}`}>
+    <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <img
-        src={logoSrc}
-        alt="mnnsor logo"
-        className="h-6 w-auto object-contain"
+        src="/1.png"
+        alt="mnnsor logo mark"
+        className={`h-6 w-auto object-contain ${filterClass}`}
+      />
+      <img
+        src="/2.png"
+        alt="mnnsor wordmark"
+        className={`h-5 w-auto object-contain ${filterClass}`}
       />
     </span>
   );
