@@ -51,15 +51,15 @@ export default function Hero() {
           <a
             href={CONTACT.demoAtlas}
             onClick={() => trackCTA('Agenda una demo de Atlas', 'Hero')}
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-6 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-none bg-ink px-6 py-3.5 text-base font-medium text-paper sm:w-auto"
           >
             Agenda una demo de Atlas
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="h-4 w-4" />
           </a>
           <Link
             to="/plataforma"
             onClick={() => trackCTA('Ver la plataforma en acción', 'Hero')}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-none border border-line bg-transparent px-6 py-3.5 text-base font-medium text-ink transition-colors duration-300 hover:bg-panel sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-none bg-transparent px-6 py-3.5 text-base font-medium text-ink sm:w-auto"
           >
             <Play className="h-4 w-4" /> Ver la plataforma en acción
           </Link>

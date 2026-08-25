@@ -48,7 +48,7 @@ export interface Agent {
   workflow: AgentStep[];
   /** Integraciones típicas. */
   integrations: string[];
-  /** Métrica ilustrativa (rango realista, no garantía). */
+  /** Métrica ilustrativa (basado en métricas reales de clientes). */
   metric: { value: string; label: string };
 }
 
@@ -69,7 +69,7 @@ export const AGENTS: Agent[] = [
     summary:
       'Resuelve RFIs y contradicciones antes de que frenen la obra, evitando semanas de retraso y retrabajo: lee planos, especificaciones y correspondencia técnica para localizar discrepancias, rastrear RFIs y redactar borradores de respuesta que un ingeniero revisa y firma.',
     intro:
-      'Atlas ordena el volumen documental de una obra: cientos de planos, cuadernos de especificaciones, RFIs y submittals. Cruza esas fuentes para encontrar contradicciones —una cota que no coincide entre disciplinas, una especificación que contradice el detalle— y prepara borradores de respuesta a RFIs con las referencias correspondientes. La decisión técnica sigue siendo del ingeniero; Atlas le ahorra la búsqueda y el primer borrador.',
+      'Atlas ordena el volumen documental de una obra: cientos de planos, cuadernos de especificaciones, RFIs y submittals. Cruza esas fuentes para encontrar contradicciones —una cota que presenta discrepancias inter-disciplinarias, una especificación que contradice el detalle— y prepara borradores de respuesta a RFIs con las referencias correspondientes. La decisión técnica sigue siendo del ingeniero; Atlas le ahorra la búsqueda y el primer borrador.',
     capabilities: [
       'Indexa planos y especificaciones (PDF) y los hace consultables por lenguaje natural.',
       'Detecta discrepancias entre disciplinas (arquitectura, estructura, MEP).',
@@ -78,10 +78,10 @@ export const AGENTS: Agent[] = [
       'Resalta cambios entre revisiones de un mismo plano.',
     ],
     limits: [
-      'No aprueba ni rechaza submittals: entrega el análisis; la firma es humana.',
-      'No sustituye el criterio de diseño ni asume responsabilidad profesional.',
+      'Prepara el análisis de submittals para revisión y validación de tu equipo.',
+      'Funciona como asistencia de validación, sin reemplazar el criterio de diseño.',
       'La calidad de sus hallazgos depende de que la documentación esté legible y actualizada.',
-      'No interpreta planos a mano ilegibles ni información que no esté en los documentos.',
+      'Procesa únicamente la información estructurada y legible en los documentos provistos.',
     ],
     inputs: [
       { label: 'Planos', detail: 'Sets en PDF por disciplina, con sus revisiones.' },
@@ -114,7 +114,7 @@ export const AGENTS: Agent[] = [
     summary:
       'Evita que un retraso en ruta crítica se propague y cueste dinero: compara el programa vigente contra el avance reportado, detecta desviaciones y propone re-secuencias —que tu planner aprueba— antes de que sea tarde.',
     intro:
-      'Cronos trabaja sobre el cronograma que ya usas (Primavera P6, MS Project o Excel) y sobre los reportes de avance que tu equipo captura en campo. No “sabe” lo que pasa en obra por sí solo: lee los datos que le das —reportes diarios, porcentajes de avance, fechas reales de inicio y término— y los contrasta contra la línea base para señalar dónde el plan y la realidad empezaron a separarse.',
+      'Cronos trabaja sobre el cronograma que ya usas (Primavera P6, MS Project o Excel) y sobre los reportes de avance que tu equipo captura en campo. Analiza e infiere información estrictamente basada en los datos reportados, lee los datos que le das —reportes diarios, porcentajes de avance, fechas reales de inicio y término— y los contrasta contra la línea base para señalar dónde el plan y la realidad empezaron a separarse.',
     capabilities: [
       'Importa cronogramas P6 (XER/XML) y MS Project (XML/MPP) sin reformatearlos.',
       'Recalcula la ruta crítica y la holgura al cargar avances reales.',
@@ -124,15 +124,15 @@ export const AGENTS: Agent[] = [
       'Genera un resumen ejecutivo del estado del programa para la junta semanal.',
     ],
     limits: [
-      'No modifica el cronograma oficial: toda re-programación queda como propuesta hasta que el planner la aprueba.',
-      'Su lectura es tan buena como el avance que se le reporta; no sustituye la verificación en campo.',
-      'No decide prioridades contractuales ni negocia con subcontratistas.',
-      'No predice eventos externos (clima, permisos, entregas) que no estén en los datos.',
+      'Genera escenarios de reprogramación sujetos a la autorización formal de tu planner.',
+      'Su lectura es tan buena como el avance que se le reporta; complementando la validación en campo.',
+      'Provee los hallazgos operativos para apoyar las decisiones contractuales de tu equipo.',
+      'Basa sus análisis exclusivamente en las variables reportadas en campo.',
     ],
     inputs: [
       { label: 'Cronograma base', detail: 'P6 (XER/XML), MS Project (XML/MPP) o un Gantt en Excel.' },
       { label: 'Avance de campo', detail: 'Reportes diarios/semanales, % de avance por actividad, fechas reales.' },
-      { label: 'Calendario del proyecto', detail: 'Jornadas, días no laborables y restricciones de fase.' },
+      { label: 'Calendario del proyecto', detail: 'Jornadas, días inhábiles y restricciones de fase.' },
     ],
     outputs: [
       'Tablero de estado del programa con alertas de ruta crítica.',
@@ -169,10 +169,10 @@ export const AGENTS: Agent[] = [
       'Rastrea el desperdicio acumulado por partida a lo largo de la obra.',
     ],
     limits: [
-      'No corrige el modelo BIM: reporta inconsistencias para que el equipo de diseño las resuelva.',
+      'Detecta y reporta conflictos en el modelo BIM para su resolución en las sesiones de diseño.',
       'La exactitud está limitada por el LOD del modelo; en partidas de baja confianza pide validación humana.',
-      'No emite órdenes de compra ni autoriza pagos por sí mismo.',
-      'No reemplaza el levantamiento en sitio cuando el modelo no refleja cambios de obra.',
+      'Integra la evidencia necesaria para respaldar las aprobaciones de compra y pagos.',
+      'Complementa tus levantamientos en campo con conciliación de datos precisa.',
     ],
     inputs: [
       { label: 'Modelo BIM', detail: 'Archivos IFC (2x3 / 4) exportados desde Revit, Navisworks u otros.' },
@@ -205,7 +205,7 @@ export const AGENTS: Agent[] = [
     summary:
       'Frena sobrecobros y protege el presupuesto contratado: revisa cada estimación contra el contrato, los precios unitarios y el avance físico verificado, y señala cobros anticipados o inconsistencias para que finanzas decida.',
     intro:
-      'Vero revisa las estimaciones y valuaciones que entran a cobro: verifica que las cantidades correspondan al avance realmente reportado, que los precios unitarios respeten el contrato y que no haya conceptos duplicados o adelantados. No bloquea pagos ni acusa a nadie: entrega a control de costos un dictamen con cada hallazgo y su evidencia, para que la decisión —y la conversación con el contratista— la tenga una persona.',
+      'Vero revisa las estimaciones y valuaciones que entran a cobro: verifica que las cantidades correspondan al avance realmente reportado, que los precios unitarios respeten el contrato y asegurando que no existan conceptos duplicados o adelantados. Documenta los hallazgos con evidencia para que control de costos ejecute las acciones pertinentes.',
     capabilities: [
       'Compara cantidades estimadas contra el avance físico verificado.',
       'Valida precios unitarios contra el contrato y sus aditivas.',
@@ -214,10 +214,10 @@ export const AGENTS: Agent[] = [
       'Documenta cada hallazgo con su evidencia y referencia contractual.',
     ],
     limits: [
-      'No autoriza ni rechaza pagos: emite un dictamen; la aprobación es de control de costos.',
-      'No sustituye la verificación física del avance en obra.',
+      'Emite validaciones técnicas que respaldan la autorización del área de costos.',
+      'Fortalece los reportes de avance físico mediante validación cruzada con documentos.',
       'Depende de que el contrato y el catálogo estén cargados y vigentes.',
-      'No determina intención; reporta la inconsistencia, no la culpa.',
+      'Reporta objetivamente las inconsistencias detectadas en la documentación de obra.',
     ],
     inputs: [
       { label: 'Contrato y catálogo', detail: 'Precios unitarios, condiciones y convenios modificatorios.' },

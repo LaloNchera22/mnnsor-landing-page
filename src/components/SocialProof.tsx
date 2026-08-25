@@ -38,7 +38,7 @@ function LogoStrip() {
         src={logo.src}
         alt={logo.name}
         loading="lazy"
-        className="h-8 w-auto max-w-[150px] object-contain opacity-60 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0"
+        className="h-8 w-auto max-w-[150px] object-contain opacity-60 grayscale"
       />
     );
     return logo.href ? (
@@ -57,7 +57,7 @@ function LogoStrip() {
       </p>
       {marquee ? (
         <div className="marquee-mask relative overflow-hidden" data-reveal>
-          <div className="animate-marquee flex w-max items-center gap-14 pr-14">
+          <div className="flex w-max items-center gap-14 pr-14">
             {items.map((logo, i) => (
               <div key={`${logo.name}-${i}`} aria-hidden={i >= clientLogos.length}>
                 <Logo logo={logo} />
@@ -85,12 +85,12 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
     <figure
       data-reveal
       style={{ transitionDelay: `${index * 110}ms` }}
-      className="relative flex flex-col border border-line bg-paper p-8 lg:p-10"
+      className="relative flex flex-col bg-paper p-8 lg:p-10"
     >
       <blockquote className="flex-1 text-lg leading-relaxed tracking-tight text-ink sm:text-xl">
         “{t.quote}”
       </blockquote>
-      <figcaption className="mt-8 flex items-center gap-4 border-t border-line pt-6">
+      <figcaption className="mt-8 flex items-center gap-4 pt-6">
         {t.avatar ? (
           <img
             src={t.avatar}
@@ -99,7 +99,7 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
             className="h-11 w-11 rounded-none object-cover grayscale"
           />
         ) : (
-          <span className="flex h-11 w-11 items-center justify-center rounded-none border border-line bg-panel font-mono text-xs font-medium text-muted">
+          <span className="flex h-11 w-11 items-center justify-center rounded-none bg-panel font-mono text-xs font-medium text-muted">
             {initials(t.name)}
           </span>
         )}
@@ -119,9 +119,7 @@ function Testimonials() {
   return (
     <div className="mb-20">
       <div
-        className={`grid grid-cols-1 gap-8 ${
-          testimonials.length > 1 ? 'md:grid-cols-2' : ''
-        }`}
+        className={`grid grid-cols-1 gap-8 ${ testimonials.length > 1 ? 'md:grid-cols-2' : '' }`}
       >
         {testimonials.map((t, i) => (
           <TestimonialCard key={t.name} t={t} index={i} />
@@ -159,7 +157,7 @@ function TractionStats() {
           key={stat.label}
           data-reveal
           style={{ transitionDelay: `${i * 90}ms` }}
-          className="border-t border-line-strong pt-6"
+          className="pt-6"
         >
           <StatValue stat={stat} />
           <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-muted">
@@ -183,7 +181,7 @@ export default function SocialProof() {
   return (
     <section
       id="prueba-social"
-      className="border-t border-line bg-paper py-24 lg:py-32"
+      className="bg-paper py-24 lg:py-32"
       aria-label="Prueba social"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -198,7 +196,7 @@ export default function SocialProof() {
               className="font-sans text-3xl leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
               Resultados reales en obra,
-              <span className="text-muted"> no promesas de folleto.</span>
+              <span className="text-muted"> avalados por métricas reales en campo.</span>
             </h2>
           </div>
         )}

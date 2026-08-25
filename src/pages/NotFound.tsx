@@ -14,10 +14,10 @@ export default function NotFound() {
         </p>
         <Link
           to="/"
-          className="group mt-9 inline-flex items-center gap-2 rounded-none bg-ink px-6 py-3.5 text-base font-medium text-paper transition-transform duration-300 hover:-translate-y-0.5"
+          className="group mt-9 inline-flex items-center gap-2 rounded-none bg-ink px-6 py-3.5 text-base font-medium text-paper"
         >
           Volver al inicio
-          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <ArrowUpRight className="h-4 w-4" />
         </Link>
       </div>
     </section>
