@@ -1,5 +1,4 @@
 import Hero from '../components/Hero';
-import TrustBar from '../components/TrustBar';
 import ProblemCards from '../components/ProblemCards';
 import Features from '../components/Features';
 import ImpactMetrics from '../components/ImpactMetrics';
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TrustBar />
       <ProblemCards />
       <Features />
       <ImpactMetrics />
