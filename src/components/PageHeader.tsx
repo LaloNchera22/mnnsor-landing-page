@@ -20,7 +20,7 @@ interface PageHeaderProps {
  */
 export default function PageHeader({ eyebrow, title, description, crumbs, children }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden pt-10 pb-6 lg:pt-14 lg:pb-8">
+    <section className="relative overflow-hidden pt-28 pb-6 lg:pt-32 lg:pb-8">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(55%_55%_at_50%_0%,rgba(0,0,0,0.045),transparent_70%)]"
