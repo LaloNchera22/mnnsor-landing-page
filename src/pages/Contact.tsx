@@ -26,13 +26,14 @@ export default function Contact() {
         }
       />
 
-      <section className="bg-paper py-6 lg:py-8">
-        <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
+      <section className="bg-paper pb-16 lg:pb-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
 
           <form
             action={LEAD_FORM_URL}
             method="POST"
-            className="flex flex-col gap-6 rounded-none bg-paper/50 p-8 sm:p-10"
+            className="flex flex-col gap-6 rounded-none"
             data-reveal
             onSubmit={() => trackCTA('Enviar solicitud (Form)', 'Contact Page')}
           >
@@ -46,7 +47,7 @@ export default function Contact() {
                   name="nombre"
                   id="nombre"
                   required
-                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
+                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
                   placeholder="Juan Pérez"
                 />
               </div>
@@ -59,7 +60,7 @@ export default function Contact() {
                   name="email"
                   id="email"
                   required
-                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
+                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
                   placeholder="juan@empresa.com"
                 />
               </div>
@@ -75,7 +76,7 @@ export default function Contact() {
                   name="empresa"
                   id="empresa"
                   required
-                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
+                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
                   placeholder="Constructora XYZ"
                 />
               </div>
@@ -88,7 +89,7 @@ export default function Contact() {
                   name="cargo"
                   id="cargo"
                   required
-                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
+                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
                   placeholder="Director de Proyectos"
                 />
               </div>
@@ -103,7 +104,7 @@ export default function Contact() {
                   type="tel"
                   name="telefono"
                   id="telefono"
-                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
+                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
                   placeholder="+52 55 1234 5678"
                 />
               </div>
@@ -116,7 +117,7 @@ export default function Contact() {
                   id="tipo_proyecto"
                   required
                   defaultValue=""
-                  className="rounded-none bg-paper px-4 py-3 text-sm text-ink"
+                  className="rounded-none bg-transparent py-3 text-sm text-ink focus:outline-none"
                 >
                   <option value="" disabled>Selecciona una opción</option>
                   <option value="edificacion">Edificación</option>
@@ -135,14 +136,14 @@ export default function Contact() {
                 type="text"
                 name="herramientas"
                 id="herramientas"
-                className="rounded-none bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted"
+                className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
                 placeholder="P6, MS Project, Revit, Procore, Excel…"
               />
             </div>
 
             <button
               type="submit"
-              className="group mt-4 inline-flex items-center justify-center gap-2 rounded-none bg-ink px-6 py-4 text-base font-medium text-paper"
+              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-none bg-ink px-6 py-4 text-base font-medium text-paper"
             >
               Enviar solicitud
               <ArrowUpRight className="h-4 w-4" />
@@ -151,7 +152,7 @@ export default function Contact() {
 
           <div
             data-reveal
-            className="mt-5 flex flex-col items-center justify-between gap-4 rounded-none bg-paper/50 px-7 py-6 sm:flex-row"
+            className="mt-5 flex flex-col items-center justify-between gap-4 rounded-none px-0 py-6 sm:flex-row"
           >
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-ink" />
@@ -166,6 +167,7 @@ export default function Contact() {
             >
               {SALES_EMAIL}
             </a>
+          </div>
           </div>
         </div>
       </section>
