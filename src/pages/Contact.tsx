@@ -47,8 +47,7 @@ export default function Contact() {
                   name="nombre"
                   id="nombre"
                   required
-                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
-                  placeholder="Juan Pérez"
+                  className="rounded-none border border-line bg-transparent px-3 py-3 text-sm text-ink focus:border-ink focus:outline-none"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -60,8 +59,7 @@ export default function Contact() {
                   name="email"
                   id="email"
                   required
-                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
-                  placeholder="juan@empresa.com"
+                  className="rounded-none border border-line bg-transparent px-3 py-3 text-sm text-ink focus:border-ink focus:outline-none"
                 />
               </div>
             </div>
@@ -76,8 +74,7 @@ export default function Contact() {
                   name="empresa"
                   id="empresa"
                   required
-                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
-                  placeholder="Constructora XYZ"
+                  className="rounded-none border border-line bg-transparent px-3 py-3 text-sm text-ink focus:border-ink focus:outline-none"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -89,8 +86,7 @@ export default function Contact() {
                   name="cargo"
                   id="cargo"
                   required
-                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
-                  placeholder="Director de Proyectos"
+                  className="rounded-none border border-line bg-transparent px-3 py-3 text-sm text-ink focus:border-ink focus:outline-none"
                 />
               </div>
             </div>
@@ -104,8 +100,7 @@ export default function Contact() {
                   type="tel"
                   name="telefono"
                   id="telefono"
-                  className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
-                  placeholder="+52 55 1234 5678"
+                  className="rounded-none border border-line bg-transparent px-3 py-3 text-sm text-ink focus:border-ink focus:outline-none"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -117,7 +112,7 @@ export default function Contact() {
                   id="tipo_proyecto"
                   required
                   defaultValue=""
-                  className="rounded-none bg-transparent py-3 text-sm text-ink focus:outline-none"
+                  className="rounded-none border border-line bg-transparent px-3 py-3 text-sm text-ink focus:border-ink focus:outline-none"
                 >
                   <option value="" disabled>Selecciona una opción</option>
                   <option value="edificacion">Edificación</option>
@@ -136,8 +131,7 @@ export default function Contact() {
                 type="text"
                 name="herramientas"
                 id="herramientas"
-                className="rounded-none bg-transparent py-3 text-sm text-ink placeholder:text-muted focus:outline-none"
-                placeholder="P6, MS Project, Revit, Procore, Excel…"
+                className="rounded-none border border-line bg-transparent px-3 py-3 text-sm text-ink focus:border-ink focus:outline-none"
               />
             </div>
 
