@@ -47,8 +47,8 @@ export const FALLBACK_MAILS = {
  * - soporte sigue abriendo el mail local
  */
 export const CONTACT = {
-  demo: SCHEDULER_URL,
-  demoAtlas: SCHEDULER_URL,
+  demo: FALLBACK_MAILS.sales,
+  demoAtlas: FALLBACK_MAILS.sales,
   sales: '/contacto',
   general: '/contacto',
   security: '/contacto',
