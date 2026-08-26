@@ -36,7 +36,7 @@ function Stat({ metric, index }: { metric: Metric; index: number }) {
 
 export default function ImpactMetrics() {
   return (
-    <section id="resultados" className="bg-paper py-24 text-ink lg:py-32">
+    <section id="resultados" className="bg-paper py-8 text-ink lg:py-10">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
@@ -76,7 +76,7 @@ export default function ImpactMetrics() {
             {/* CAMINO A (con datos reales):
             <p
               data-reveal
-              className="mt-10 pt-5 text-xs leading-relaxed text-paper/45"
+              className="mt-5 pt-5 text-xs leading-relaxed text-paper/45"
             >
               Fuente: Piloto Torre X, 2025
             </p>
@@ -84,7 +84,7 @@ export default function ImpactMetrics() {
             {/* CAMINO B (sin datos aún): */}
             <p
               data-reveal
-              className="mt-10 pt-5 text-xs leading-relaxed text-muted-soft"
+              className="mt-5 pt-5 text-xs leading-relaxed text-muted-soft"
             >
               Rangos ilustrativos; los resultados varían por proyecto.
             </p>

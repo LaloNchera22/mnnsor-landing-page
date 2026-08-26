@@ -91,7 +91,7 @@ export default function SecurityPage() {
       </PageHeader>
 
       {/* Pilares */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((p, i) => {
@@ -112,7 +112,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Flujo de datos */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -126,7 +126,7 @@ export default function SecurityPage() {
               Transparencia en cada etapa.
             </h2>
           </div>
-          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-4">
+          <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-4">
             {dataFlow.map((d, i) => (
               <div
                 key={d.k}
@@ -143,7 +143,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Gobernanza empresarial */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>

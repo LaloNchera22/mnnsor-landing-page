@@ -38,7 +38,7 @@ export default function Agents() {
       />
 
       {/* Filosofía honesta */}
-      <section className="bg-paper py-16 lg:py-20">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {honesty.map((h, i) => {
@@ -59,7 +59,7 @@ export default function Agents() {
       </section>
 
       {/* Listado de agentes */}
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="space-y-6">
             {AGENTS.map((a, i) => {

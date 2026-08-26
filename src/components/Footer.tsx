@@ -38,7 +38,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink pt-20 pb-10 text-paper">
+    <footer className="bg-ink pt-12 pb-8 text-paper">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-10 border-b border-white/10 pb-14 md:grid-cols-5">
           <div className="col-span-2">

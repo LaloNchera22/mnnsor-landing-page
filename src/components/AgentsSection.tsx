@@ -10,7 +10,7 @@ const SECONDARY_AGENTS = AGENTS.filter((a) => a.slug !== 'atlas');
 
 export default function AgentsSection() {
   return (
-    <section id="agentes" className="bg-paper py-24 lg:py-32">
+    <section id="agentes" className="bg-paper py-4 lg:py-6">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -39,7 +39,7 @@ export default function AgentsSection() {
         <FlagshipAgent />
 
         {/* Y además, cuando tenga sentido, suma… */}
-        <div className="mt-16">
+        <div className="mt-8">
           <p data-reveal className="mb-6 label-mono text-muted-soft">
             Y cuando tenga sentido, suma…
           </p>
@@ -72,7 +72,7 @@ export default function AgentsSection() {
           </div>
         </div>
 
-        <div data-reveal className="mt-10 flex justify-center">
+        <div data-reveal className="mt-5 flex justify-center">
           <Link
             to="/agentes"
             className="group inline-flex items-center gap-2 rounded-none bg-paper px-6 py-3 text-sm font-medium text-ink"
@@ -95,7 +95,7 @@ function FlagshipAgent() {
   return (
     <div
       data-reveal
-      className="mt-12 grid grid-cols-1 items-center gap-10 rounded-none bg-paper p-6 sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
+      className="mt-6 grid grid-cols-1 items-center gap-10 rounded-none bg-paper p-6 sm:p-9 lg:grid-cols-2 lg:gap-14 lg:p-12"
     >
       <div>
         <div className="mb-6 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">

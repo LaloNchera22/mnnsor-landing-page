@@ -65,7 +65,7 @@ const objections: Objection[] = [
 
 export default function Objections() {
   return (
-    <section id="objeciones" className="bg-paper py-24 lg:py-32">
+    <section id="objeciones" className="bg-paper py-4 lg:py-6">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -90,7 +90,7 @@ export default function Objections() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
           {objections.map((o, i) => {
             const isLast = i === objections.length - 1;
             return (

@@ -181,7 +181,7 @@ export default function SocialProof() {
   return (
     <section
       id="prueba-social"
-      className="bg-paper py-24 lg:py-32"
+      className="bg-paper py-4 lg:py-6"
       aria-label="Prueba social"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">

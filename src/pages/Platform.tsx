@@ -102,7 +102,7 @@ export default function Platform() {
       </PageHeader>
 
       {/* Cómo funciona */}
-      <section className="bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -117,7 +117,7 @@ export default function Platform() {
             </h2>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {pipeline.map((p, i) => {
               return (
                 <article
@@ -136,7 +136,7 @@ export default function Platform() {
       </section>
 
       {/* Principios de diseño */}
-      <section className="bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-x-16 gap-y-14 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
@@ -181,7 +181,7 @@ export default function Platform() {
       </section>
 
       {/* Los agentes como módulos */}
-      <section className="bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -210,7 +210,7 @@ export default function Platform() {
             <Link
               to={`/agentes/${flagship.slug}`}
               data-reveal
-              className="group mt-14 grid grid-cols-1 gap-8 rounded-none bg-paper p-8 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:p-12"
+              className="group mt-6 grid grid-cols-1 gap-8 rounded-none bg-paper p-8 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:p-12"
             >
               <div>
                 <div className="mb-5 inline-flex items-center gap-2.5 rounded-none bg-ink px-3 py-1.5">
@@ -240,7 +240,7 @@ export default function Platform() {
           )}
 
           {/* Y además, cuando tenga sentido, suma… */}
-          <p data-reveal className="mt-16 mb-6 label-mono text-muted-soft">
+          <p data-reveal className="mt-8 mb-6 label-mono text-muted-soft">
             Y además, cuando tenga sentido, suma…
           </p>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -275,7 +275,7 @@ export default function Platform() {
       </section>
 
       {/* Despliegue + gobernanza */}
-      <section className="bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             <div>
@@ -360,7 +360,7 @@ export default function Platform() {
       </section>
 
       {/* Por qué esto es defendible */}
-      <section className="bg-paper py-24 lg:py-32">
+      <section className="bg-paper py-4 lg:py-6">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p data-reveal className="mb-5 label-mono text-muted-soft">
@@ -382,7 +382,7 @@ export default function Platform() {
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
                 title: 'Capa de gobernanza auditable',

@@ -8,7 +8,7 @@ const cycleWords = ['el mañana', 'tu obra', 'tu proyecto', 'tu trabajo', 'tu vi
 
 export default function Hero() {
   return (
-    <section className="relative pt-24 pb-16 lg:pt-36 lg:pb-36 bg-paper overflow-hidden flex flex-col items-center justify-center min-h-[100dvh] md:min-h-[90vh]" id="plataforma">
+    <section className="relative pt-8 pb-6 lg:pt-12 lg:pb-8 bg-paper overflow-hidden flex flex-col items-center justify-center min-h-[100dvh] md:min-h-[90vh]" id="plataforma">
       <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-6 text-center flex flex-col items-center">
         <h1
           data-reveal
@@ -46,7 +46,7 @@ export default function Hero() {
         <div
           data-reveal
           style={{ transitionDelay: '240ms' }}
-          className="mt-10 flex flex-col gap-3.5 sm:flex-row justify-center w-full max-w-md mx-auto"
+          className="mt-5 flex flex-col gap-3.5 sm:flex-row justify-center w-full max-w-md mx-auto"
         >
           <a
             href={CONTACT.demoAtlas}

@@ -88,7 +88,7 @@ export default function Team() {
   return (
     <section
       id="equipo"
-      className="bg-paper py-24 lg:py-32"
+      className="bg-paper py-4 lg:py-6"
       aria-label="Equipo fundador"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -107,7 +107,7 @@ export default function Team() {
         </div>
 
         <div
-          className={`mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 ${ team.length >= 3 ? 'lg:grid-cols-3' : '' }`}
+          className={`mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 ${ team.length >= 3 ? 'lg:grid-cols-3' : '' }`}
         >
           {team.map((member, i) => (
             <MemberCard key={member.name} member={member} index={i} />
