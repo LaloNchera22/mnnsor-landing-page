@@ -14,7 +14,7 @@ export default function SiteLayout() {
   useReveal([pathname]);
 
   return (
-    <div className="relative min-h-screen bg-paper font-sans text-ink">
+    <div className="relative flex min-h-[100dvh] flex-col bg-paper font-sans text-ink">
       <a
         href="#contenido"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-none focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-paper"
@@ -23,7 +23,7 @@ export default function SiteLayout() {
       </a>
       <ScrollToTop />
       <Navbar />
-      <main id="contenido">
+      <main id="contenido" className="flex flex-1 flex-col">
         <Outlet />
       </main>
       <Footer />
