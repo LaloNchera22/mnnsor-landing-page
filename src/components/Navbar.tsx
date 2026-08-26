@@ -41,7 +41,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       <nav
         aria-label="Principal"
-        className={`${ !isLightText ? 'bg-paper/90 text-ink' : 'bg-transparent text-paper' }`}
+        className={`${ !isLightText ? 'bg-paper/70 backdrop-blur-md text-ink' : 'bg-transparent text-paper' }`}
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
           <Link to="/" aria-label="mnnsor — inicio" className="shrink-0">
